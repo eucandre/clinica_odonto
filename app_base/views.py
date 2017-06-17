@@ -52,6 +52,7 @@ def inicia(request):
         Estas sao as vairaveis desta funcao : orcament_odonto,value_orcament,sum,total_tratments ,date_initial_orcament, today
     """
     sum_jan, sum_fev, sum_marc, sum_abr, sum_mai, sum_jun, sum_jul, sum_ago, sum_set, sum_out, sum_nov, sum_dec = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    sum_contrato_jan, sum_contrato_fev, sum_contrato_marc, sum_contrato_abr, sum_contrato_mai, sum_contrato_jun, sum_contrato_jul, sum_contrato_ago, sum_contrato_set, sum_contrato_out, sum_contrato_nov, sum_contrato_dec = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     i=1
 
     try:
@@ -143,13 +144,107 @@ def inicia(request):
             i += 1
     except OrcamentoPlanoPsico.DoesNotExist:
         raise Http404()
+
+    try:
+        while i <= (len(Contrato_odonto.objects.all())):
+            if Contrato_odonto.objects.get(pk=i).format_date() == 1:
+                sum_contrato_jan = sum_contrato_jan + Contrato_odonto.objects.get(pk=i).value_tratment
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 2:
+                sum_contrato_fev = sum_contrato_fev + Contrato_odonto.objects.get(pk=i).value_tratment
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 3:
+                sum_contrato_marc = sum_contrato_marc + Contrato_odonto.objects.get(pk=i).value_tratment
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 4:
+                sum_contrato_abr = sum_contrato_abr + Contrato_odonto.objects.get(pk=i).value_tratment
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 5:
+                sum_contrato_mai = sum_contrato_mai + Contrato_odonto.objects.get(pk=i).value_tratment
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 6:
+                sum_contrato_jun = sum_contrato_jun + Contrato_odonto.objects.get(pk=i).value_tratment
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 7:
+                sum_contrato_jul = sum_contrato_jul + Contrato_odonto.objects.get(pk=i).value_tratment
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 8:
+                sum_contrato_ago = sum_contrato_ago + Contrato_odonto.objects.get(pk=i).value_tratment
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 9:
+                sum_contrato_set = sum_contrato_set + Contrato_odonto.objects.get(pk=i).value_tratment
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 10:
+                sum_contrato_out = sum_contrato_out + Contrato_odonto.objects.get(pk=i).value_tratment
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 11:
+                sum_contrato_nov = sum_contrato_nov + Contrato_odonto.objects.get(pk=i).value_tratment
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 12:
+                sum_contrato_dec = sum_contrato_dec + Contrato_odonto.objects.get(pk=i).value_tratment
+            i += 1
+    except Contrato_odonto.DoesNotExist:
+        raise Http404()
+
+    try:
+        while i <= (len(Contrato_psicologo.objects.all())):
+            if Contrato_psicologo.objects.get(pk=i).format_date() == 1:
+                sum_contrato_jan = sum_contrato_jan + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 2:
+                sum_contrato_fev = sum_contrato_fev + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 3:
+                sum_contrato_marc = sum_contrato_marc + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 4:
+                sum_contrato_abr = sum_contrato_abr + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 5:
+                sum_contrato_mai = sum_contrato_mai + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 6:
+                sum_contrato_jun = sum_contrato_jun + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 7:
+                sum_contrato_jul = sum_contrato_jul + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 8:
+                sum_contrato_ago = sum_contrato_ago + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 9:
+                sum_contrato_set = sum_contrato_set + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 10:
+                sum_contrato_out = sum_contrato_out + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 11:
+                sum_contrato_nov = sum_contrato_nov + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 12:
+                sum_contrato_dec = sum_contrato_dec + Contrato_psicologo.objects.get(pk=i).value_tratment
+            i += 1
+    except Contrato_psicologo.DoesNotExist:
+        raise Http404()
+
+    try:
+        while i <= (len(Contrato_nutricionista.objects.all())):
+            if Contrato_nutricionista.objects.get(pk=i).format_date() == 1:
+                sum_contrato_jan = sum_contrato_jan + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 2:
+                sum_contrato_fev = sum_contrato_fev + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 3:
+                sum_contrato_marc = sum_contrato_marc + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 4:
+                sum_contrato_abr = sum_contrato_abr + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 5:
+                sum_contrato_mai = sum_contrato_mai + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 6:
+                sum_contrato_jun = sum_contrato_jun + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 7:
+                sum_contrato_jul = sum_contrato_jul + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 8:
+                sum_contrato_ago = sum_contrato_ago + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 9:
+                sum_contrato_set = sum_contrato_set + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 10:
+                sum_contrato_out = sum_contrato_out + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 11:
+                sum_contrato_nov = sum_contrato_nov + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 12:
+                sum_contrato_dec = sum_contrato_dec + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            i += 1
+    except Contrato_nutricionista.DoesNotExist:
+        raise Http404()
+
+
     total_orcamentos = sum_jan+ sum_fev+ sum_marc+ sum_abr+ sum_mai+ sum_jun+ sum_jul+ sum_ago+ sum_set+ sum_out+ sum_nov+ sum_dec
+
+    total_contratos = sum_contrato_jan+ sum_contrato_fev+ sum_contrato_marc+ sum_contrato_abr+ sum_contrato_mai+ sum_contrato_jun+ sum_contrato_jul+ sum_contrato_ago+ sum_contrato_set+ sum_contrato_out+ sum_contrato_nov+ sum_contrato_dec
 
     if permissao_funcionario == False and permissao_profissional == True:
         pagamentos_planos = RecebimentoPlano.objects.all()
 
-        return render(request, 'index_geren'
-                               'cia.html', {'recebimentos_plano':pagamentos_planos})
+        return render(request, 'index_gerencia.html', {'recebimentos_plano':pagamentos_planos})
+
     if permissao_profissional == False:
         data_de_hoje = date.today()
         agendamentos_odonto = agendamemto_plano_odonto.objects.all().filter(date_atendence=data_de_hoje)
