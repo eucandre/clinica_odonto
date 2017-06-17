@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    {#<div class="col-lg-10 col-sm-10 col-md-10 col-xs-10">#}
+<div class="col-md-10 col-sm-10 col-xs-10 center-block">
+  <ul >
+    {% for i in clientes %}
+        <div class="x_panel fixed_height_400 col-sm-4">
+            <div class="x_title">
+              <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+                <li class="dropdown ">
+                  <a href="/edita_cliente/{{ i.id }}" class="dropdown-toggle" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                </li>
+                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                </li>
+              </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+          <div class="widget_summary">
+            <li class="col-md-10 col-sm-10 col-xs-10">
+              <a href="/item_cliente/{{ i.id }}">
+                <h3>{{ i.name }}</h3> * {{ i.email }} <span class="text-success">Telefone</span> <span class="btn success">{{ i.phone }}</span>
+              </a>
+              {% if i.active %}
+              <span class="label label-success"> Ativo </span>
+              {% endif %}
+              {% if i.active == False %}
+                <span class="label label-danger"> Inativo </span>
+              {% endif %}
+            </li>
+
+          <div class="clearfix"></div>
+          </div>
+        </div>
+        </div>
+        {% empty %}
+            <div class="row fontawesome-icon-list">
+                <div class="fa-hover col-md-12 col-sm-12 col-xs-12"><a href="/insere_cliente/"><i class="fa fa-info-circle"></i> Sem Registro</a></div>
+        {% endfor %}
+      </div>
+  </ul>
+
+</div>
+    <div class="col-sm-4 center">
+        {% if clientes.has_other_pages %}
+          <ul class="pagination">
+            {% if clientes.has_previous %}
+              <li><a href="?page={{ clientes.previous_page_number }}">&laquo;</a></li>
+            {% else %}
+              <li class="disabled"><span>&laquo;</span></li>
+            {% endif %}
+            {% for i in clientes.paginator.page_range %}
+              {% if clientes.number == i %}
+                <li class="active"><span>{{ i }} <span class="sr-only">(current)</span></span></li>
+              {% else %}
+                <li><a href="?page={{ i }}">{{ i }}</a></li>
+              {% endif %}
+            {% endfor %}
+            {% if clientes.has_next %}
+              <li><a href="?page={{ clientes.next_page_number }}">&raquo;</a></li>
+            {% else %}
+              <li class="disabled"><span>&raquo;</span></li>
+            {% endif %}
+          </ul>
+        {% endif %}
+    </div>
+{% endblock %}
+

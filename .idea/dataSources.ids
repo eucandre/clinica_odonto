@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source name="Django default" uuid="6fa56599-ade3-4603-acc0-29bf41586095">
+    <database-info product="SQLite" version="3.8.11" jdbc-version="2.1" driver-name="SQLiteJDBC" driver-version="native"/>
+    <case-sensitivity plain-identifiers="mixed" quoted-identifiers="mixed"/>
+    <schema name="" catalog=""/>
+    <table name="app_atendimento_agendamemto_plano_nutri" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="atendence" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="date_atendence" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="active" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="note" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="name_client_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="professional_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_atendimento_agendamemto_plano_nutri_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_atendimento_agendamemto_plano_nutri_2" columns="professional_id" ref-table="app_base_profissionais" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_atendimento_agendamemto_plano_nutri_3" columns="name_client_id" ref-table="app_contrato_contrato_nutricionista" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_atendimento_agendamemto_plano_nutri_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_atendimento_agendamemto_plano_nutri_3a5d432b" unique="true" columns="professional_id"/>
+      <index name="app_atendimento_agendamemto_plano_nutri_9939697e" unique="true" columns="name_client_id"/>
+    </table>
+    <table name="app_atendimento_agendamemto_plano_odonto" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="atendence" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="date_atendence" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="active" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="note" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="name_client_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="professional_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_atendimento_agendamemto_plano_odonto_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_atendimento_agendamemto_plano_odonto_2" columns="professional_id" ref-table="app_base_profissionais" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_atendimento_agendamemto_plano_odonto_3" columns="name_client_id" ref-table="app_contrato_contrato_odonto" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_atendimento_agendamemto_plano_odonto_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_atendimento_agendamemto_plano_odonto_3a5d432b" unique="true" columns="professional_id"/>
+      <index name="app_atendimento_agendamemto_plano_odonto_9939697e" unique="true" columns="name_client_id"/>
+    </table>
+    <table name="app_atendimento_agendamemto_plano_psico" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="atendence" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="date_atendence" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="active" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="note" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="name_client_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="professional_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_atendimento_agendamemto_plano_psico_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_atendimento_agendamemto_plano_psico_2" columns="professional_id" ref-table="app_base_profissionais" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_atendimento_agendamemto_plano_psico_3" columns="name_client_id" ref-table="app_contrato_contrato_psicologo" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_atendimento_agendamemto_plano_psico_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_atendimento_agendamemto_plano_psico_3a5d432b" unique="true" columns="professional_id"/>
+      <index name="app_atendimento_agendamemto_plano_psico_9939697e" unique="true" columns="name_client_id"/>
+    </table>
+    <table name="app_atendimento_agendamento_simples" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="atendence" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="date_atendence" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="active" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="note" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="name_client_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="professional_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_atendimento_agendamento_simples_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_atendimento_agendamento_simples_2" columns="professional_id" ref-table="app_base_profissionais" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_atendimento_agendamento_simples_3" columns="name_client_id" ref-table="app_base_cliente" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_atendimento_agendamento_simples_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_atendimento_agendamento_simples_3a5d432b" unique="true" columns="professional_id"/>
+      <index name="app_atendimento_agendamento_simples_9939697e" unique="true" columns="name_client_id"/>
+    </table>
+    <table name="app_atendimento_relatorio_exame_nutri" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="date_atendence" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="date_now" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="note" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="name_client_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="professional_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_atendimento_relatorio_exame_nutri_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_atendimento_relatorio_exame_nutri_2" columns="professional_id" ref-table="app_base_profissionais" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_atendimento_relatorio_exame_nutri_3" columns="name_client_id" ref-table="app_base_cliente" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_atendimento_relatorio_exame_nutri_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_atendimento_relatorio_exame_nutri_3a5d432b" unique="true" columns="professional_id"/>
+      <index name="app_atendimento_relatorio_exame_nutri_9939697e" unique="true" columns="name_client_id"/>
+    </table>
+    <table name="app_atendimento_relatorio_exame_odonto" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="date_atendence" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="date_now" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="note" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="name_client_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="professional_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_atendimento_relatorio_exame_odonto_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_atendimento_relatorio_exame_odonto_2" columns="professional_id" ref-table="app_base_profissionais" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_atendimento_relatorio_exame_odonto_3" columns="name_client_id" ref-table="app_base_cliente" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_app_atendimento_relatorio_exame_odonto_faces_tooths_2" table="app_atendimento_relatorio_exame_odonto_faces_tooths" schema="" catalog="" columns="relatorio_exame_odonto_id"/>
+      <exported-key name="#FAKE_app_atendimento_relatorio_exame_odonto_tooths_2" table="app_atendimento_relatorio_exame_odonto_tooths" schema="" catalog="" columns="relatorio_exame_odonto_id"/>
+      <index name="app_atendimento_relatorio_exame_odonto_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_atendimento_relatorio_exame_odonto_3a5d432b" unique="true" columns="professional_id"/>
+      <index name="app_atendimento_relatorio_exame_odonto_9939697e" unique="true" columns="name_client_id"/>
+    </table>
+    <table name="app_atendimento_relatorio_exame_odonto_faces_tooths" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="relatorio_exame_odonto_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="facesdentes_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_atendimento_relatorio_exame_odonto_faces_tooths_1" columns="facesdentes_id" ref-table="app_receita_facesdentes" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_atendimento_relatorio_exame_odonto_faces_tooths_2" columns="relatorio_exame_odonto_id" ref-table="app_atendimento_relatorio_exame_odonto" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_atendimento_relatorio_exame_odonto_faces_tooths_e4a84da6" unique="true" columns="facesdentes_id"/>
+      <index name="app_atendimento_relatorio_exame_odonto_faces_tooths_4b2223fd" unique="true" columns="relatorio_exame_odonto_id"/>
+      <index name="app_atendimento_relatorio_exame_odonto_faces_tooths_relatorio_exame_odonto_id_8054386b_uniq" unique="true" columns="relatorio_exame_odonto_id,facesdentes_id"/>
+    </table>
+    <table name="app_atendimento_relatorio_exame_odonto_tooths" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="relatorio_exame_odonto_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="dentes_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_atendimento_relatorio_exame_odonto_tooths_1" columns="dentes_id" ref-table="app_receita_dentes" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_atendimento_relatorio_exame_odonto_tooths_2" columns="relatorio_exame_odonto_id" ref-table="app_atendimento_relatorio_exame_odonto" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_atendimento_relatorio_exame_odonto_tooths_b1a8b0ee" unique="true" columns="dentes_id"/>
+      <index name="app_atendimento_relatorio_exame_odonto_tooths_4b2223fd" unique="true" columns="relatorio_exame_odonto_id"/>
+      <index name="app_atendimento_relatorio_exame_odonto_tooths_relatorio_exame_odonto_id_8876db05_uniq" unique="true" columns="relatorio_exame_odonto_id,dentes_id"/>
+    </table>
+    <table name="app_atendimento_relatorio_exame_psico" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="date_atendence" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="date_now" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="note" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="name_client_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="professional_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_atendimento_relatorio_exame_psico_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_atendimento_relatorio_exame_psico_2" columns="professional_id" ref-table="app_base_profissionais" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_atendimento_relatorio_exame_psico_3" columns="name_client_id" ref-table="app_base_cliente" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_atendimento_relatorio_exame_psico_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_atendimento_relatorio_exame_psico_3a5d432b" unique="true" columns="professional_id"/>
+      <index name="app_atendimento_relatorio_exame_psico_9939697e" unique="true" columns="name_client_id"/>
+    </table>
+    <table name="app_base_cliente" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="sex" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="date_register" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="profession" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR(254)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="name_other_contact" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="phone_other_contact" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="street_other_contact" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="district_other_contact" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="city_other_contact" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="cep_other_contact" sqlType="VARCHAR(9)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="street" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="district" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="city" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="cep" sqlType="VARCHAR(9)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="rg" sqlType="VARCHAR(25)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="cpf" sqlType="VARCHAR(11)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="birth_day" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="Note" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="active" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_base_cliente_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_app_atendimento_agendamento_simples_3" table="app_atendimento_agendamento_simples" schema="" catalog="" columns="name_client_id"/>
+      <exported-key name="#FAKE_app_atendimento_relatorio_exame_nutri_3" table="app_atendimento_relatorio_exame_nutri" schema="" catalog="" columns="name_client_id"/>
+      <exported-key name="#FAKE_app_atendimento_relatorio_exame_odonto_3" table="app_atendimento_relatorio_exame_odonto" schema="" catalog="" columns="name_client_id"/>
+      <exported-key name="#FAKE_app_atendimento_relatorio_exame_psico_3" table="app_atendimento_relatorio_exame_psico" schema="" catalog="" columns="name_client_id"/>
+      <exported-key name="#FAKE_app_campanha_campanha_venda_3" table="app_campanha_campanha_venda" schema="" catalog="" columns="name_client_id"/>
+      <exported-key name="#FAKE_app_receita_orcamentoplanonutri_2" table="app_receita_orcamentoplanonutri" schema="" catalog="" columns="name_client_id"/>
+      <exported-key name="#FAKE_app_receita_orcamentoplanoodontologico_2" table="app_receita_orcamentoplanoodontologico" schema="" catalog="" columns="name_client_id"/>
+      <exported-key name="#FAKE_app_receita_orcamentoplanopsico_2" table="app_receita_orcamentoplanopsico" schema="" catalog="" columns="name_client_id"/>
+      <exported-key name="#FAKE_app_receita_recebimentoavulso_3" table="app_receita_recebimentoavulso" schema="" catalog="" columns="name_client_id"/>
+      <exported-key name="#FAKE_app_receita_recebimentoplano_2" table="app_receita_recebimentoplano" schema="" catalog="" columns="name_client_id"/>
+      <index name="app_base_cliente_e8701ad4" unique="true" columns="user_id"/>
+    </table>
+    <table name="app_base_funcionario" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="date_entry" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="sex" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="function" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR(254)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR(11)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="street" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="district" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="city" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="rg" sqlType="VARCHAR(25)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="cpf" sqlType="VARCHAR(11)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="cep" sqlType="VARCHAR(9)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="birth_day" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="note" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="salary" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="active" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_base_funcionario_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_app_campanha_campanha_venda_2" table="app_campanha_campanha_venda" schema="" catalog="" columns="name_seller_id"/>
+      <exported-key name="#FAKE_app_estoque_retira_produto_2" table="app_estoque_retira_produto" schema="" catalog="" columns="responsible_id"/>
+      <index name="app_base_funcionario_e8701ad4" unique="true" columns="user_id"/>
+    </table>
+    <table name="app_base_profissionais" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="professional_as" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="sex" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR(254)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="register" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="cep" sqlType="VARCHAR(9)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="birth_day" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="note" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="active" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_base_profissionais_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_app_atendimento_agendamemto_plano_nutri_2" table="app_atendimento_agendamemto_plano_nutri" schema="" catalog="" columns="professional_id"/>
+      <exported-key name="#FAKE_app_atendimento_agendamemto_plano_odonto_2" table="app_atendimento_agendamemto_plano_odonto" schema="" catalog="" columns="professional_id"/>
+      <exported-key name="#FAKE_app_atendimento_agendamemto_plano_psico_2" table="app_atendimento_agendamemto_plano_psico" schema="" catalog="" columns="professional_id"/>
+      <exported-key name="#FAKE_app_atendimento_agendamento_simples_2" table="app_atendimento_agendamento_simples" schema="" catalog="" columns="professional_id"/>
+      <exported-key name="#FAKE_app_atendimento_relatorio_exame_nutri_2" table="app_atendimento_relatorio_exame_nutri" schema="" catalog="" columns="professional_id"/>
+      <exported-key name="#FAKE_app_atendimento_relatorio_exame_odonto_2" table="app_atendimento_relatorio_exame_odonto" schema="" catalog="" columns="professional_id"/>
+      <exported-key name="#FAKE_app_atendimento_relatorio_exame_psico_2" table="app_atendimento_relatorio_exame_psico" schema="" catalog="" columns="professional_id"/>
+      <exported-key name="#FAKE_app_contrato_contrato_nutricionista_3" table="app_contrato_contrato_nutricionista" schema="" catalog="" columns="professional_id"/>
+      <exported-key name="#FAKE_app_contrato_contrato_odonto_3" table="app_contrato_contrato_odonto" schema="" catalog="" columns="professional_id"/>
+      <exported-key name="#FAKE_app_contrato_contrato_psicologo_3" table="app_contrato_contrato_psicologo" schema="" catalog="" columns="professional_id"/>
+      <exported-key name="#FAKE_app_receita_recebimentoavulso_2" table="app_receita_recebimentoavulso" schema="" catalog="" columns="professional_attendance_id"/>
+      <index name="app_base_profissionais_e8701ad4" unique="true" columns="user_id"/>
+    </table>
+    <table name="app_campanha_campanha" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="date_initi" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="date_end" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="reward" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="reward1" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="reward2" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="reward3" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="note" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_campanha_campanha_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_app_campanha_campanha_venda_4" table="app_campanha_campanha_venda" schema="" catalog="" columns="campanha_id"/>
+      <index name="app_campanha_campanha_e8701ad4" unique="true" columns="user_id"/>
+    </table>
+    <table name="app_campanha_campanha_venda" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="value_sell" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="note" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="campanha_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name_client_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name_seller_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_campanha_campanha_venda_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_campanha_campanha_venda_2" columns="name_seller_id" ref-table="app_base_funcionario" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_campanha_campanha_venda_3" columns="name_client_id" ref-table="app_base_cliente" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_campanha_campanha_venda_4" columns="campanha_id" ref-table="app_campanha_campanha" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_campanha_campanha_venda_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_campanha_campanha_venda_661a5fbe" unique="true" columns="name_seller_id"/>
+      <index name="app_campanha_campanha_venda_9939697e" unique="true" columns="name_client_id"/>
+      <index name="app_campanha_campanha_venda_c62193d0" unique="true" columns="campanha_id"/>
+    </table>
+    <table name="app_contrato_contrato_nutricionista" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="time_contract" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="type_plane" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="plane_value" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date_payment_per_month" sqlType="VARCHAR(2)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="input_value" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="note" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="active" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="professional_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="propose_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_contrato_contrato_nutricionista_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_contrato_contrato_nutricionista_2" columns="propose_id" ref-table="app_receita_orcamentoplanonutri" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_contrato_contrato_nutricionista_3" columns="professional_id" ref-table="app_base_profissionais" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_app_atendimento_agendamemto_plano_nutri_3" table="app_atendimento_agendamemto_plano_nutri" schema="" catalog="" columns="name_client_id"/>
+      <index name="app_contrato_contrato_nutricionista_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_contrato_contrato_nutricionista_bd0f0dd0" unique="true" columns="propose_id"/>
+      <index name="app_contrato_contrato_nutricionista_3a5d432b" unique="true" columns="professional_id"/>
+    </table>
+    <table name="app_contrato_contrato_odonto" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="time_contract" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="type_plane" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="plane_value" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date_payment_per_month" sqlType="VARCHAR(2)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="input_value" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="note" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="active" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="professional_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="propose_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_contrato_contrato_odonto_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_contrato_contrato_odonto_2" columns="propose_id" ref-table="app_receita_orcamentoplanoodontologico" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_contrato_contrato_odonto_3" columns="professional_id" ref-table="app_base_profissionais" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_app_atendimento_agendamemto_plano_odonto_3" table="app_atendimento_agendamemto_plano_odonto" schema="" catalog="" columns="name_client_id"/>
+      <index name="app_contrato_contrato_odonto_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_contrato_contrato_odonto_bd0f0dd0" unique="true" columns="propose_id"/>
+      <index name="app_contrato_contrato_odonto_3a5d432b" unique="true" columns="professional_id"/>
+    </table>
+    <table name="app_contrato_contrato_psicologo" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="time_contract" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="type_plane" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="plane_value" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date_payment_per_month" sqlType="VARCHAR(2)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="input_value" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="note" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="active" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="professional_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="propose_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_contrato_contrato_psicologo_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_contrato_contrato_psicologo_2" columns="propose_id" ref-table="app_receita_orcamentoplanopsico" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_contrato_contrato_psicologo_3" columns="professional_id" ref-table="app_base_profissionais" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_app_atendimento_agendamemto_plano_psico_3" table="app_atendimento_agendamemto_plano_psico" schema="" catalog="" columns="name_client_id"/>
+      <index name="app_contrato_contrato_psicologo_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_contrato_contrato_psicologo_bd0f0dd0" unique="true" columns="propose_id"/>
+      <index name="app_contrato_contrato_psicologo_3a5d432b" unique="true" columns="professional_id"/>
+    </table>
+    <table name="app_estoque_compra_produto" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="purchase_date_product" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="value_per_unit_to_buy" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="amout_purchased" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="date_vaidate" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="product_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_estoque_compra_produto_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_estoque_compra_produto_2" columns="product_id" ref-table="app_estoque_produto" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_estoque_compra_produto_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_estoque_compra_produto_9bea82de" unique="true" columns="product_id"/>
+    </table>
+    <table name="app_estoque_fornecedor" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="type_product" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="cnpj" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="social_name" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="fantasy_name" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="matrix" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="street" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="district" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="phone" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="site" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="state_registration" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="note" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="active" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_estoque_fornecedor_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_app_estoque_produto_provider_1" table="app_estoque_produto_provider" schema="" catalog="" columns="fornecedor_id"/>
+      <index name="app_estoque_fornecedor_e8701ad4" unique="true" columns="user_id"/>
+    </table>
+    <table name="app_estoque_produto" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="mark" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="amount" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="value_per_unit_to_buy" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="purchase_date" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="date_vaidate" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="product_type" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="active" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_estoque_produto_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_app_estoque_compra_produto_2" table="app_estoque_compra_produto" schema="" catalog="" columns="product_id"/>
+      <exported-key name="#FAKE_app_estoque_produto_provider_2" table="app_estoque_produto_provider" schema="" catalog="" columns="produto_id"/>
+      <exported-key name="#FAKE_app_estoque_retira_produto_3" table="app_estoque_retira_produto" schema="" catalog="" columns="product_id"/>
+      <index name="app_estoque_produto_e8701ad4" unique="true" columns="user_id"/>
+    </table>
+    <table name="app_estoque_produto_provider" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="produto_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="fornecedor_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_estoque_produto_provider_1" columns="fornecedor_id" ref-table="app_estoque_fornecedor" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_estoque_produto_provider_2" columns="produto_id" ref-table="app_estoque_produto" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_estoque_produto_provider_0074dfda" unique="true" columns="fornecedor_id"/>
+      <index name="app_estoque_produto_provider_b306f3fc" unique="true" columns="produto_id"/>
+      <index name="app_estoque_produto_provider_produto_id_164cfae1_uniq" unique="true" columns="produto_id,fornecedor_id"/>
+    </table>
+    <table name="app_estoque_retira_produto" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="date_for_withdrawal" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="amount_withdrawal" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="amout_refresh" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="product_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="responsible_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_estoque_retira_produto_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_estoque_retira_produto_2" columns="responsible_id" ref-table="app_base_funcionario" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_estoque_retira_produto_3" columns="product_id" ref-table="app_estoque_produto" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_estoque_retira_produto_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_estoque_retira_produto_4c66c5b6" unique="true" columns="responsible_id"/>
+      <index name="app_estoque_retira_produto_9bea82de" unique="true" columns="product_id"/>
+    </table>
+    <table name="app_receita_dentes" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="number_tooth" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_receita_dentes_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_app_atendimento_relatorio_exame_odonto_tooths_1" table="app_atendimento_relatorio_exame_odonto_tooths" schema="" catalog="" columns="dentes_id"/>
+      <exported-key name="#FAKE_app_receita_orcamentoplanoodontologico_tooths_1" table="app_receita_orcamentoplanoodontologico_tooths" schema="" catalog="" columns="dentes_id"/>
+      <index name="app_receita_dentes_e8701ad4" unique="true" columns="user_id"/>
+    </table>
+    <table name="app_receita_facesdentes" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="face" sqlType="VARCHAR(20)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_receita_facesdentes_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_app_atendimento_relatorio_exame_odonto_faces_tooths_1" table="app_atendimento_relatorio_exame_odonto_faces_tooths" schema="" catalog="" columns="facesdentes_id"/>
+      <exported-key name="#FAKE_app_receita_orcamentoplanoodontologico_faces_tooths_1" table="app_receita_orcamentoplanoodontologico_faces_tooths" schema="" catalog="" columns="facesdentes_id"/>
+      <index name="app_receita_facesdentes_e8701ad4" unique="true" columns="user_id"/>
+    </table>
+    <table name="app_receita_orcamentoplanonutri" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="date_today" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="date_to_end_tratment" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="value_tratment" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="active" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name_client_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_receita_orcamentoplanonutri_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_receita_orcamentoplanonutri_2" columns="name_client_id" ref-table="app_base_cliente" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_app_contrato_contrato_nutricionista_2" table="app_contrato_contrato_nutricionista" schema="" catalog="" columns="propose_id"/>
+      <index name="app_receita_orcamentoplanonutri_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_receita_orcamentoplanonutri_9939697e" unique="true" columns="name_client_id"/>
+    </table>
+    <table name="app_receita_orcamentoplanoodontologico" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="date_today" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="date_to_end_tratment" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="value_tratment" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="active" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name_client_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_receita_orcamentoplanoodontologico_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_receita_orcamentoplanoodontologico_2" columns="name_client_id" ref-table="app_base_cliente" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_app_contrato_contrato_odonto_2" table="app_contrato_contrato_odonto" schema="" catalog="" columns="propose_id"/>
+      <exported-key name="#FAKE_app_receita_orcamentoplanoodontologico_faces_tooths_2" table="app_receita_orcamentoplanoodontologico_faces_tooths" schema="" catalog="" columns="orcamentoplanoodontologico_id"/>
+      <exported-key name="#FAKE_app_receita_orcamentoplanoodontologico_tooths_2" table="app_receita_orcamentoplanoodontologico_tooths" schema="" catalog="" columns="orcamentoplanoodontologico_id"/>
+      <index name="app_receita_orcamentoplanoodontologico_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_receita_orcamentoplanoodontologico_9939697e" unique="true" columns="name_client_id"/>
+    </table>
+    <table name="app_receita_orcamentoplanoodontologico_faces_tooths" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="orcamentoplanoodontologico_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="facesdentes_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_receita_orcamentoplanoodontologico_faces_tooths_1" columns="facesdentes_id" ref-table="app_receita_facesdentes" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_receita_orcamentoplanoodontologico_faces_tooths_2" columns="orcamentoplanoodontologico_id" ref-table="app_receita_orcamentoplanoodontologico" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_receita_orcamentoplanoodontologico_faces_tooths_e4a84da6" unique="true" columns="facesdentes_id"/>
+      <index name="app_receita_orcamentoplanoodontologico_faces_tooths_d4d4689f" unique="true" columns="orcamentoplanoodontologico_id"/>
+      <index name="app_receita_orcamentoplanoodontologico_faces_tooths_orcamentoplanoodontologico_id_d045e14d_uniq" unique="true" columns="orcamentoplanoodontologico_id,facesdentes_id"/>
+    </table>
+    <table name="app_receita_orcamentoplanoodontologico_tooths" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="orcamentoplanoodontologico_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="dentes_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_receita_orcamentoplanoodontologico_tooths_1" columns="dentes_id" ref-table="app_receita_dentes" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_receita_orcamentoplanoodontologico_tooths_2" columns="orcamentoplanoodontologico_id" ref-table="app_receita_orcamentoplanoodontologico" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_receita_orcamentoplanoodontologico_tooths_b1a8b0ee" unique="true" columns="dentes_id"/>
+      <index name="app_receita_orcamentoplanoodontologico_tooths_d4d4689f" unique="true" columns="orcamentoplanoodontologico_id"/>
+      <index name="app_receita_orcamentoplanoodontologico_tooths_orcamentoplanoodontologico_id_bd74f428_uniq" unique="true" columns="orcamentoplanoodontologico_id,dentes_id"/>
+    </table>
+    <table name="app_receita_orcamentoplanopsico" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="date_today" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="date_to_end_tratment" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="value_tratment" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="active" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name_client_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_receita_orcamentoplanopsico_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_receita_orcamentoplanopsico_2" columns="name_client_id" ref-table="app_base_cliente" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_app_contrato_contrato_psicologo_2" table="app_contrato_contrato_psicologo" schema="" catalog="" columns="propose_id"/>
+      <index name="app_receita_orcamentoplanopsico_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_receita_orcamentoplanopsico_9939697e" unique="true" columns="name_client_id"/>
+    </table>
+    <table name="app_receita_recebimentoavulso" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="date_attendance" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="payment_for_the_month" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="value_attendanceD" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="value_attendanceCC" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="value_attendanceCD" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="value_attendanceB" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="amount_receivePR" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="leftover_value" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="type_of_payment" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="name_client_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="professional_attendance_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_receita_recebimentoavulso_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_receita_recebimentoavulso_2" columns="professional_attendance_id" ref-table="app_base_profissionais" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_receita_recebimentoavulso_3" columns="name_client_id" ref-table="app_base_cliente" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_receita_recebimentoavulso_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_receita_recebimentoavulso_f2bd6fce" unique="true" columns="professional_attendance_id"/>
+      <index name="app_receita_recebimentoavulso_9939697e" unique="true" columns="name_client_id"/>
+    </table>
+    <table name="app_receita_recebimentoplano" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="date_payment" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="payment_for_the_month" sqlType="DATE" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="amount_receivedD" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="amount_receivedCC" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="amount_receivedCD" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="amount_receivedB" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="amount_receiveCH" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="amount_receivePR" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="leftover_value" sqlType="REAL" precision="2000000000" scale="10" nullable="false" jdbcType="6"/>
+      <column name="type_of_payment" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="name_client_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_app_receita_recebimentoplano_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_app_receita_recebimentoplano_2" columns="name_client_id" ref-table="app_base_cliente" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="app_receita_recebimentoplano_e8701ad4" unique="true" columns="user_id"/>
+      <index name="app_receita_recebimentoplano_9939697e" unique="true" columns="name_client_id"/>
+    </table>
+    <table name="auth_group" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="name" sqlType="VARCHAR(80)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <exported-key name="#FAKE_auth_group_permissions_2" table="auth_group_permissions" schema="" catalog="" columns="group_id"/>
+      <exported-key name="#FAKE_auth_user_groups_1" table="auth_user_groups" schema="" catalog="" columns="group_id"/>
+    </table>
+    <table name="auth_group_permissions" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="group_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="permission_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_auth_group_permissions_1" columns="permission_id" ref-table="auth_permission" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_auth_group_permissions_2" columns="group_id" ref-table="auth_group" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="auth_group_permissions_8373b171" unique="true" columns="permission_id"/>
+      <index name="auth_group_permissions_0e939a4f" unique="true" columns="group_id"/>
+      <index name="auth_group_permissions_group_id_0cd325b0_uniq" unique="true" columns="group_id,permission_id"/>
+    </table>
+    <table name="auth_permission" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="content_type_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="codename" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR(255)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_auth_permission_1" columns="content_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <exported-key name="#FAKE_auth_group_permissions_1" table="auth_group_permissions" schema="" catalog="" columns="permission_id"/>
+      <exported-key name="#FAKE_auth_user_user_permissions_1" table="auth_user_user_permissions" schema="" catalog="" columns="permission_id"/>
+      <index name="auth_permission_417f1b1c" unique="true" columns="content_type_id"/>
+      <index name="auth_permission_content_type_id_01ab375a_uniq" unique="true" columns="content_type_id,codename"/>
+    </table>
+    <table name="auth_user" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="password" sqlType="VARCHAR(128)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="last_login" sqlType="DATETIME" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="is_superuser" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="first_name" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="last_name" sqlType="VARCHAR(30)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="email" sqlType="VARCHAR(254)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="is_staff" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="is_active" sqlType="BOOL" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="date_joined" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="username" sqlType="VARCHAR(150)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <exported-key name="#FAKE_app_atendimento_agendamemto_plano_nutri_1" table="app_atendimento_agendamemto_plano_nutri" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_atendimento_agendamemto_plano_odonto_1" table="app_atendimento_agendamemto_plano_odonto" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_atendimento_agendamemto_plano_psico_1" table="app_atendimento_agendamemto_plano_psico" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_atendimento_agendamento_simples_1" table="app_atendimento_agendamento_simples" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_atendimento_relatorio_exame_nutri_1" table="app_atendimento_relatorio_exame_nutri" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_atendimento_relatorio_exame_odonto_1" table="app_atendimento_relatorio_exame_odonto" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_atendimento_relatorio_exame_psico_1" table="app_atendimento_relatorio_exame_psico" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_base_cliente_1" table="app_base_cliente" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_base_funcionario_1" table="app_base_funcionario" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_base_profissionais_1" table="app_base_profissionais" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_campanha_campanha_1" table="app_campanha_campanha" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_campanha_campanha_venda_1" table="app_campanha_campanha_venda" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_contrato_contrato_nutricionista_1" table="app_contrato_contrato_nutricionista" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_contrato_contrato_odonto_1" table="app_contrato_contrato_odonto" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_contrato_contrato_psicologo_1" table="app_contrato_contrato_psicologo" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_estoque_compra_produto_1" table="app_estoque_compra_produto" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_estoque_fornecedor_1" table="app_estoque_fornecedor" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_estoque_produto_1" table="app_estoque_produto" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_estoque_retira_produto_1" table="app_estoque_retira_produto" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_receita_dentes_1" table="app_receita_dentes" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_receita_facesdentes_1" table="app_receita_facesdentes" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_receita_orcamentoplanonutri_1" table="app_receita_orcamentoplanonutri" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_receita_orcamentoplanoodontologico_1" table="app_receita_orcamentoplanoodontologico" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_receita_orcamentoplanopsico_1" table="app_receita_orcamentoplanopsico" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_receita_recebimentoavulso_1" table="app_receita_recebimentoavulso" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_app_receita_recebimentoplano_1" table="app_receita_recebimentoplano" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_auth_user_groups_2" table="auth_user_groups" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_auth_user_user_permissions_2" table="auth_user_user_permissions" schema="" catalog="" columns="user_id"/>
+      <exported-key name="#FAKE_django_admin_log_1" table="django_admin_log" schema="" catalog="" columns="user_id"/>
+    </table>
+    <table name="auth_user_groups" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="group_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_auth_user_groups_1" columns="group_id" ref-table="auth_group" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_auth_user_groups_2" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="auth_user_groups_0e939a4f" unique="true" columns="group_id"/>
+      <index name="auth_user_groups_e8701ad4" unique="true" columns="user_id"/>
+      <index name="auth_user_groups_user_id_94350c0c_uniq" unique="true" columns="user_id,group_id"/>
+    </table>
+    <table name="auth_user_user_permissions" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="permission_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_auth_user_user_permissions_1" columns="permission_id" ref-table="auth_permission" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_auth_user_user_permissions_2" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="auth_user_user_permissions_8373b171" unique="true" columns="permission_id"/>
+      <index name="auth_user_user_permissions_e8701ad4" unique="true" columns="user_id"/>
+      <index name="auth_user_user_permissions_user_id_14a6b632_uniq" unique="true" columns="user_id,permission_id"/>
+    </table>
+    <table name="django_admin_log" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="object_id" sqlType="TEXT" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="object_repr" sqlType="VARCHAR(200)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="action_flag" sqlType="SMALLINT UNSIGNED" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="change_message" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="content_type_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="true" jdbcType="4"/>
+      <column name="user_id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="action_time" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <foreign-key name="#FAKE_django_admin_log_1" columns="user_id" ref-table="auth_user" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <foreign-key name="#FAKE_django_admin_log_2" columns="content_type_id" ref-table="django_content_type" ref-schema="" ref-catalog="" ref-columns="id" update-rule="3" delete-rule="3" deferrability="1"/>
+      <index name="django_admin_log_e8701ad4" unique="true" columns="user_id"/>
+      <index name="django_admin_log_417f1b1c" unique="true" columns="content_type_id"/>
+    </table>
+    <table name="django_content_type" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="app_label" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="model" sqlType="VARCHAR(100)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+      <exported-key name="#FAKE_auth_permission_1" table="auth_permission" schema="" catalog="" columns="content_type_id"/>
+      <exported-key name="#FAKE_django_admin_log_2" table="django_admin_log" schema="" catalog="" columns="content_type_id"/>
+      <index name="django_content_type_app_label_76bd3d3b_uniq" unique="true" columns="app_label,model"/>
+    </table>
+    <table name="django_migrations" schema="" catalog="" type="TABLE">
+      <column name="id" sqlType="INTEGER" precision="2000000000" scale="10" nullable="false" jdbcType="4"/>
+      <column name="app" sqlType="VARCHAR(255)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="name" sqlType="VARCHAR(255)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="applied" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="id"/>
+    </table>
+    <table name="django_session" schema="" catalog="" type="TABLE">
+      <column name="session_key" sqlType="VARCHAR(40)" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="session_data" sqlType="TEXT" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <column name="expire_date" sqlType="DATETIME" precision="2000000000" scale="10" nullable="false" jdbcType="12"/>
+      <primary-key columns="session_key"/>
+      <index name="django_session_de54fa62" unique="true" columns="expire_date"/>
+    </table>
+    <table name="sqlite_sequence" schema="" catalog="" type="TABLE">
+      <column name="name" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+      <column name="seq" sqlType="" precision="2000000000" scale="10" nullable="true" jdbcType="12"/>
+    </table>
+  </data-source>
+</component>

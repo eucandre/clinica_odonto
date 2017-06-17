@@ -1,0 +1,71 @@
+from django import forms
+from app_base.models import *
+TYPE_PROFESSIONAL = ((u'Dentista', 'Dentista'), (u'Nutricionista', 'Nutricionista'), (u'Psicologo', 'Psicologo'))
+SEXO = ((u'Masculino','Masculino'),(u'Feminino','Feminino'))
+
+class FormInsereProfissionais(forms.ModelForm):
+
+    name =  forms.CharField(label='Nome',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    professional_as = forms.ChoiceField(choices=TYPE_PROFESSIONAL, widget=forms.RadioSelect(attrs={'class':'flat'}))
+    sex =   forms.ChoiceField(label='Sexo',choices=SEXO,widget=forms.RadioSelect(attrs={'class':'flat'}))
+    cep =   forms.CharField(label='CEP',max_length=7, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
+    email = forms.EmailField(label='E-mail',widget=forms.TextInput(attrs={'class':'form-control'}))
+    phone = forms.CharField(label='Telefone',max_length=10, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
+    register = forms.CharField(label='Rregistro',max_length=150, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
+    birth_day = forms.DateField(label='Data de nascimento',widget=forms.DateInput(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
+    note = forms.CharField(label='Observacao',widget=forms.Textarea(attrs={"class":"form-control"}))
+    active = forms.BooleanField(label='Ativo na clinica?',widget=forms.CheckboxInput(attrs={'class':'flat'}))
+
+    class Meta:
+        model = Profissionais
+        fields = ('name', 'professional_as', 'sex', 'cep', 'email', 'phone', 'register', 'birth_day', 'note', 'active')
+
+class FormInsereFuncionario(forms.ModelForm):
+    name =  forms.CharField(label='Nome',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    date_entry = forms.DateField(label='Data de entrada',widget=forms.DateInput(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
+    sex =   forms.ChoiceField(label='Sexo',choices=SEXO,widget=forms.RadioSelect(attrs={'class':'flat'}))
+    function = forms.ChoiceField(label='Funcao',choices = FUNCTION,widget=forms.RadioSelect(attrs={'class':'flat'}))
+    email = forms.EmailField(label='E-mail',widget=forms.TextInput(attrs={'class':'form-control'}))
+    phone = forms.CharField(label='Telefone',max_length=10, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
+    street = forms.CharField(label='Rua',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    district = forms.CharField(label='Bairro',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    city = forms.CharField(label='Cidade',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    rg = forms.CharField(max_length=25,  widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    cpf = forms.CharField(max_length=11,  widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    cep = forms.CharField(max_length=9, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    birth_day = forms.DateField(label='Data de nascimento',widget=forms.DateInput(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
+    note = forms.CharField(label='Observacao',widget=forms.Textarea(attrs={"class":"form-control"}))
+    salary = forms.FloatField(label='Salario',widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    active = forms.BooleanField(label='Ativo na clinica?',widget=forms.CheckboxInput(attrs={'class':'flat'}))
+
+    class Meta:
+        model = Funcionario
+        fields = ('name','date_entry','sex','function','email','phone','street','district','city','rg','cpf','cep','birth_day','note','salary','active')
+
+class FormInsereCliente(forms.ModelForm):
+    name = forms.CharField(label='Nome',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    sex = forms.ChoiceField(label='Sexo',choices=SEXO,widget=forms.RadioSelect(attrs={'class':'flat'}))
+    date_register = forms.DateField(label='Data de registro',widget=forms.DateInput(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
+    profession = forms.CharField(label='Profissao', max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    email = forms.EmailField(label='E-mail', widget=forms.EmailInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    phone = forms.CharField(label='Telefone',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    cep = forms.CharField(max_length=9, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
+    rg = forms.CharField(max_length=25,  widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
+    cpf = forms.CharField(max_length=11, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
+    birth_day = forms.DateField(label='Data de Nascimento',widget=forms.DateInput(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
+    name_other_contact = forms.CharField(label='Nome de conhecido',max_length=150, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
+    phone_other_contact = forms.CharField(label='Telefone de conhecido',max_length=150, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
+    street_other_contact = forms.CharField(label='Rua de conhecido',max_length=150, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
+    district_other_contact = forms.CharField(label='Bairro de conhecido',max_length=150, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
+    city_other_contact = forms.CharField(label='Cidade de conhecido',max_length=150, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
+    cep_other_contact = forms.CharField(label='Cep de conhecido',max_length=9, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
+    street = forms.CharField(label='Rua',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    district = forms.CharField(label='Bairro',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    city = forms.CharField(label='Cidade',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    Note = forms.CharField(label='Observacao',widget=forms.Textarea(attrs={"class":"form-control"}))
+    active = forms.BooleanField(label='Cliente ativo?',widget=forms.CheckboxInput(attrs={'class':'flat'}))
+
+    class Meta:
+        model = Cliente
+        fields = ('name','sex','date_register','profession','email','phone','cep','cpf','rg','birth_day','name_other_contact','phone_other_contact',
+                  'street_other_contact','district_other_contact','city_other_contact','cep_other_contact','street','district','city','Note','active')

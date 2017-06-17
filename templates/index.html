@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+
+{% block titulo %}Início{% endblock %}
+    {% block menu_atendente %}
+        <li><a href="/insere_profissional/">Insere Profissional</a>
+        </li>
+
+        <li><a href="/insere_funcionario/">Insere Funcionário</a>
+        </li>
+        <li><a href="/insere_cliente/">Insere Cliente</a>
+        </li>
+        <li><a href="/cria_campanha/">Insere Campanha</a>
+        </li>
+        <li><a href="/insere_fornecedor/">Insere Fornecedor</a>
+        </li>
+        <li><a href="/insere_produto/">Insere Produto</a>
+        </li>
+        <li><a href="/insere_compra_produtos/">Insere Compra Produtos</a>
+        </li>
+        <li><a href="/insere_retirada_produtos/">Insere Retirada de Produtos</a>
+        </li>
+        <li><a href="/insere_dentes/">Insere Dentes</a>
+        </li>
+
+        </li>
+        <li><a href="/insere_orcamento_odonto/">Insere Orçamento Odonto</a>
+        </li>
+        <li><a href="/insere_orcamento_psico/">Insere Orçamento Psico</a>
+        </li>
+        <li><a href="/insere_orcamento_nutri/">Insere Orçamento Nutri</a>
+        </li>
+        <li><a href="/insere_recebimento_plano/">Insere Recebimento Plano</a>
+        </li>
+        <li><a href="/insere_atendiemento_avulso/">Insere Atendimento Independente</a>
+        </li>
+        <li><a href="/insere_contrato_odonto/">Insere Contrato Odonto</a>
+        </li>
+        <li><a href="/insere_contrato_psico/">Insere Contrato Psico</a>
+        </li>
+        <li><a href="/insere_contrato_nutri/">Insere Contrato Nutri</a>
+        </li>
+        <li><a href="/insere_relatorio_exame_odonto/">Insere Relatório de Exame Odonto</a>
+        </li>
+        <li><a href="/insere_relatorio_exame_psico/">Insere Relatório de Exame Psico</a>
+        </li>
+        <li><a href="/insere_relatorio_exame_nutri/">Insere Relatório de Exame Nutri</a>
+        </li>
+        <li><a href="/insere_agendamento_plano_odonto/">Insere Agendamento Plano Odonto</a>
+        </li>
+        <li><a href="/insere_agendamento_plano_nutri/">Insere Agendamento Plano Nutri</a>
+        </li>
+        <li><a href="/insere_agendamento_plano_psico/">Insere Agendamento Plano Psico</a>
+        </li>
+    {% endblock %}
+
+{% block conteudo %}
+    <div class="col-md-3" style="color: limegreen">
+        <div class="x_panel">
+            <i class="fa fa-bullseye fa-2x" aria-hidden="true"> Oportunidade </i><br/>
+            <span>R$ {{ valor }}</span>
+
+        </div>
+    </div>
+    <div class="col-md-3" style="color: #1479B8">
+        <div class="x_panel">
+            <i class="fa fa-money fa-2x" aria-hidden="true"> Conversão </i><br/>
+            <span class="col-sm-5">R$ </span><span class="col-sm-5">  %</span>
+
+            <!--falta colocar as variaveis-->
+        </div>
+    </div>
+    <div class="col-md-3" style="color: #a92222">
+        <div class="x_panel">
+            <i class="fa fa-clock-o fa-2x" aria-hidden="true"> Ocupação </i><br/>
+            <span>  %</span>
+            <!--falta colocar as variaveis-->
+        </div>
+    </div>
+    <div class="col-md-3" style="color: orange">
+        <div class="x_panel">
+            <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"> NPS </i><br/>
+            <span>  %</span>
+            <!--falta colocar as variaveis-->
+        </div>
+    </div>
+
+{% endblock %}
+    {% block corpo_completementar %}
+    <div class="x-panel">
+        <h2>Oportunidade por Conversão</h2>
+
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><div class="col-sm-3 col-md-3 col-lg-3"><div class="fa fa-info-circle"style="color: limegreen" ></div> {{ message }}</div></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <canvas id="canvas_bar" height="247" width="494" style="width: 494px; height: 247px;"></canvas>
+    </div>
+    <script>
+
+        var randomScalingFactor = function () {
+            return Math.round(Math.random() * 100)
+        };
+
+        var barChartData = {
+            labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+            datasets: [
+                {
+                    fillColor: "#26B99A", //rgba(220,220,220,0.5)
+                    strokeColor: "#26B99A", //rgba(220,220,220,0.8)
+                    highlightFill: "#36CAAB", //rgba(220,220,220,0.75)
+                    highlightStroke: "#36CAAB", //rgba(220,220,220,1)
+                    data: [{{ orcamento_jan }}, {{ orcamento_fevereiro }}, {{ orcamento_marco }},{{ orcamento_abril }},
+                        {{ orcamento_maio }}, {{ orcamento_junho }}, {{ orcamento_jul }}, {{ orcamento_agosto }},
+                        {{ orcamento_setembro }}, {{ orcamento_outubro }}, {{ orcamento_novembro }},
+                        {{ orcamento_dezembro }}]
+            },
+                {
+                    fillColor: "#03586A", //rgba(151,187,205,0.5)
+                    strokeColor: "#03586A", //rgba(151,187,205,0.8)
+                    highlightFill: "#066477", //rgba(151,187,205,0.75)
+                    highlightStroke: "#066477", //rgba(151,187,205,1)
+                    data: [41, 56, 25, 48, 72, 34, 12, 23, 45, 71, 60, 3]
+            }
+        ]
+        };
+
+        $(document).ready(function () {
+            new Chart($("#canvas_bar").get(0).getContext("2d")).Bar(barChartData, {
+                tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+                responsive: true,
+                barDatasetSpacing: 6,
+                barValueSpacing: 5
+            });
+        });
+
+
+        var lineChartData = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [
+                {
+                    label: "My First dataset",
+                    fillColor: "rgba(38, 185, 154, 0.31)", //rgba(220,220,220,0.2)
+                    strokeColor: "rgba(38, 185, 154, 0.7)", //rgba(220,220,220,1)
+                    pointColor: "rgba(38, 185, 154, 0.7)", //rgba(220,220,220,1)
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [31, 74, 6, 39, 20, 85, 7]
+            },
+                {
+                    label: "My Second dataset",
+                    fillColor: "rgba(3, 88, 106, 0.3)", //rgba(151,187,205,0.2)
+                    strokeColor: "rgba(3, 88, 106, 0.70)", //rgba(151,187,205,1)
+                    pointColor: "rgba(3, 88, 106, 0.70)", //rgba(151,187,205,1)
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    data: [82, 23, 66, 9, 99, 4, 2]
+            }
+        ]
+
+        };
+
+
+        var sharePiePolorDoughnutData = [
+            {
+                value: 120,
+                color: "#455C73",
+                highlight: "#34495E",
+                label: "Dark Grey"
+        },
+            {
+                value: 50,
+                color: "#9B59B6",
+                highlight: "#B370CF",
+                label: "Purple Color"
+        },
+            {
+                value: 150,
+                color: "#BDC3C7",
+                highlight: "#CFD4D8",
+                label: "Gray Color"
+        },
+            {
+                value: 180,
+                color: "#26B99A",
+                highlight: "#36CAAB",
+                label: "Green Color"
+        },
+            {
+                value: 100,
+                color: "#3498DB",
+                highlight: "#49A9EA",
+                label: "Blue Color"
+        }
+
+    ];
+
+
+        var radarChartData = {
+            labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+            datasets: [
+                {
+                    label: "My First dataset",
+                    fillColor: "rgba(3, 88, 106, 0.2)",
+                    strokeColor: "rgba(3, 88, 106, 0.80)",
+                    pointColor: "rgba(3, 88, 106, 0.80)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [65, 59, 90, 81, 56, 55, 40]
+            },
+                {
+                    label: "My Second dataset",
+                    fillColor: "rgba(38, 185, 154, 0.2)",
+                    strokeColor: "rgba(38, 185, 154, 0.85)",
+                    pointColor: "rgba(38, 185, 154, 0.85)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    data: [28, 48, 40, 19, 96, 27, 100]
+            }
+        ]
+        };
+    </script>
+{% endblock %}

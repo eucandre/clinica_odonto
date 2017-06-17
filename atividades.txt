@@ -1,0 +1,6 @@
+Criar:
+	contas a pagar;
+	contas a receber;
+	controle de ponto, este depende de equipamento externo;
+	controlar a participação dos lideres na empresa (a dona e gerentes devem sempre atender quando requisitados);
+	Regras para a cortesia;
