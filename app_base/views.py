@@ -256,6 +256,10 @@ def inicia(request):
                                          'orcamento_maio':sum_mai, 'orcamento_junho':sum_jun,
                                          'orcamento_jul':sum_jul,'orcamento_agosto':sum_ago,'orcamento_setembro':sum_set,
                                          'orcamento_outubro':sum_out,'orcamento_novembro':sum_nov, 'orcamento_dezembro':sum_dec,
+                                          'contrato_jan':sum_contrato_jan, 'contrato_fev':sum_contrato_fev, 'contrato_mar':sum_contrato_marc,
+                                          'contrato_abril':sum_contrato_abr, 'contrato_maio':sum_contrato_mai, 'contrato_jun':sum_contrato_jun,
+                                          'contrato_julho':sum_contrato_jul, 'contrato_agosto':sum_contrato_ago, 'contrato_setembro':sum_contrato_set,
+                                          'contrato_outubro':sum_contrato_out, 'contrato_novembro':sum_contrato_nov, 'contrato_dezembro':sum_contrato_dec,
                                          'permissao_cliente':permissao_cliente, 'permissao_funcionario':permissao_funcionario,
                                          'permissao_profissional':permissao_profissional})
 
