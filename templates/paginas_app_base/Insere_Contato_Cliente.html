@@ -52,11 +52,8 @@
         {% csrf_token %}
         {{ form.errors }}
         {{ form.as_p }}
-        <br >
-        
-        <a href="#" onclick="window.open('/insere_contato_cliente_indica/', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="glyphicon glyphicon-user"> Adicionar Indicados </span></a><br ><br >
         <button type="submit" class="btn btn-success">ENVIAR</button>
         <button type="reset" class="btn btn-danger">CANCELAR</button>
-
     </form>
+
     {% endblock %}

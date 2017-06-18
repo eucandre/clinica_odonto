@@ -80,7 +80,9 @@ class FormInsereContatoCliente(forms.ModelForm):
                              widget=forms.EmailInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
     city = forms.CharField(label='Cidade', max_length=150,
                            widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
-    cliente = forms.BooleanField(label='Cliente ativo?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
+    profession = forms.CharField(label='Profissao', max_length=150,
+                                 widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
+    cliente = forms.BooleanField(label='Cliente ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
     indicado_por = forms.ModelChoiceField(queryset=Cliente.objects.all(),
                                          widget=forms.Select(attrs={'class': 'form-control'}))
     class Meta:

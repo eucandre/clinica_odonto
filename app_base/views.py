@@ -351,7 +351,7 @@ def insere_cliente(request):
 @login_required(login_url='/login/')
 def insere_contato_cliente(request):
     if request.method == 'POST':
-        form = FormInsereCliente(request.POST)
+        form = FormInsereContatoCliente(request.POST)
         if form.is_valid():
             item = form.save(commit= False)
             item.user = request.user
@@ -359,8 +359,8 @@ def insere_contato_cliente(request):
             messages.success(request, 'Inserido com sucesso!')
             return render(request, 'salvo.html')
     else:
-        form = FormInsereCliente()
-    return render(request, 'paginas_app_base/insere_cliente.html', {'form': form})
+        form = FormInsereContatoCliente()
+    return render(request, 'paginas_app_base/Insere_Contato_Cliente.html', {'form': form})
 
 @login_required(login_url='/login/')
 def detalha_profissional(request, nr_item):

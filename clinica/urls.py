@@ -37,6 +37,8 @@ urlpatterns = [
     url(r'^insere_agendamento_plano_odonto/',insere_agendamento_plano_odonto),
     url(r'^insere_agendamento_plano_nutri/',insere_agendamento_plano_nutri),
     url(r'^insere_agendamento_plano_psico/',insere_agendamento_plano_psico),
+    url(r'^insere_contato_cliente_indica/',insere_contato_cliente),
+
 
     url(r'^login/$', auth_views.login, {'template_name': 'login.html'}, name='login'),
     url(r'^logout/$', auth_views.logout, {'template_name': 'login.html'}, name='logout'),
