@@ -348,6 +348,19 @@ def insere_cliente(request):
     else:
         form = FormInsereCliente()
     return render(request, 'paginas_app_base/insere_cliente.html', {'form': form})
+@login_required(login_url='/login/')
+def insere_contato_cliente(request):
+    if request.method == 'POST':
+        form = FormInsereCliente(request.POST)
+        if form.is_valid():
+            item = form.save(commit= False)
+            item.user = request.user
+            item.save()
+            messages.success(request, 'Inserido com sucesso!')
+            return render(request, 'salvo.html')
+    else:
+        form = FormInsereCliente()
+    return render(request, 'paginas_app_base/insere_cliente.html', {'form': form})
 
 @login_required(login_url='/login/')
 def detalha_profissional(request, nr_item):
@@ -375,3 +388,4 @@ def detalha_cliente(request, nr_item):
     except Cliente.DoesNotExist:
         raise Http404('Sem Registro!')
     return render(request, "paginas_app_base/item_cliente.html", {'item': item})
+

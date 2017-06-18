@@ -69,3 +69,20 @@ class FormInsereCliente(forms.ModelForm):
         model = Cliente
         fields = ('name','sex','date_register','profession','email','phone','cep','cpf','rg','birth_day','name_other_contact','phone_other_contact',
                   'street_other_contact','district_other_contact','city_other_contact','cep_other_contact','street','district','city','Note','active')
+
+class FormInsereContatoCliente(forms.ModelForm):
+    name = forms.CharField(label='Nome', max_length=150,
+                           widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
+    sex = forms.ChoiceField(label='Sexo', choices=SEXO, widget=forms.RadioSelect(attrs={'class': 'flat'}))
+    phone = forms.CharField(label='Telefone', max_length=150,
+                            widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
+    email = forms.EmailField(label='E-mail',
+                             widget=forms.EmailInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
+    city = forms.CharField(label='Cidade', max_length=150,
+                           widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
+    cliente = forms.BooleanField(label='Cliente ativo?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
+    indicado_por = forms.ModelChoiceField(queryset=Cliente.objects.all(),
+                                         widget=forms.Select(attrs={'class': 'form-control'}))
+    class Meta:
+        model = Cotatos_Clientes_indicacoes
+        fields = ('name','sex','phone','email','city','profession','cliente','indicado_por')

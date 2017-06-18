@@ -106,6 +106,7 @@ class Cotatos_Clientes_indicacoes(models.Model):
     profession = models.CharField(max_length=150)
     cliente = models.BooleanField()
     indicado_por = models.ForeignKey(Cliente)
+    user = models.ForeignKey(User)
 
     def __unicode__(self):
         return self.name
