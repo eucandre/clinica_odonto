@@ -251,7 +251,7 @@ def inicia(request):
 
         return render(request,"index_atendente.html", {'agenda_odonto':agendamentos_odonto})
     else:
-        return render(request, "index.html",{'orcamento_jan':sum_jan,'valor':total_orcamentos,
+        return render(request, "index.html",{'orcamento_jan':sum_jan,'valor':total_orcamentos, 'valor_contratos':total_contratos,
         'orcamento_fevereiro':sum_fev, 'orcamento_marco':sum_marc, 'orcamento_abril':sum_abr,
                                          'orcamento_maio':sum_mai, 'orcamento_junho':sum_jun,
                                          'orcamento_jul':sum_jul,'orcamento_agosto':sum_ago,'orcamento_setembro':sum_set,
