@@ -61,6 +61,7 @@ urlpatterns = [
     url(r'^agendamentos_plano_odonto/', lista_agendamento_plano_odonto),
     url(r'^agendamentos_plano_nutri/', lista_agendamento_plano_nutri),
     url(r'^agendamentos_plano_psico/', lista_agendamento_plano_psico),
+    #----------------item detalhados---------------#
     url(r'^item_dentista/(?P<nr_item>\d+)/$', detalha_profissional),
     url(r'^item_funcionario/(?P<nr_item>\d+)/$', detalha_funcinario),
     url(r'^item_cliente/(?P<nr_item>\d+)/$', detalha_cliente),
@@ -100,6 +101,8 @@ urlpatterns = [
 
     url(r'^mapa_odonto/$', mapa_atendimento_odonto),
     url(r'^registrar/$', registrar),
+    url(r'^usuarios/$', lista_usuarios),
+    url(r'^edita_usuarios/(?P<nr>\d+)/$', edita_usuario),
 
     url(r'^campanha_venda/$', camapanha_venda),
     url(r'^cria_campanha/$', campanha),

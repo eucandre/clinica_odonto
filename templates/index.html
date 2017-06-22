@@ -4,7 +4,6 @@
     {% block menu_atendente %}
         <li><a href="/insere_profissional/">Insere Profissional</a>
         </li>
-
         <li><a href="/insere_funcionario/">Insere Funcionário</a>
         </li>
         <li><a href="/insere_cliente/">Insere Cliente</a>
@@ -20,8 +19,6 @@
         <li><a href="/insere_retirada_produtos/">Insere Retirada de Produtos</a>
         </li>
         <li><a href="/insere_dentes/">Insere Dentes</a>
-        </li>
-
         </li>
         <li><a href="/insere_orcamento_odonto/">Insere Orçamento Odonto</a>
         </li>
@@ -58,14 +55,12 @@
         <div class="x_panel">
             <i class="fa fa-bullseye fa-2x" aria-hidden="true"> Oportunidade </i><br/>
             <span>R$ {{ valor }}</span>
-
         </div>
     </div>
     <div class="col-md-3" style="color: #1479B8">
         <div class="x_panel">
             <i class="fa fa-money fa-2x" aria-hidden="true"> Conversão </i><br/>
             <span class="col-sm-5">R$ {{ valor_contratos }}</span><span class="col-sm-5">  %</span>
-
             <!--falta colocar as variaveis-->
         </div>
     </div>
@@ -92,7 +87,7 @@
         {% if messages %}
             <ul class="messages">
                 {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><div class="col-sm-3 col-md-3 col-lg-3"><div class="fa fa-info-circle"style="color: limegreen" ></div> {{ message }}</div></li>
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><div class="col-sm-3 col-md-3 col-lg-3"><div class="fa fa-info-circle" style="color: limegreen" ></div> {{ message }}</div></li>
                 {% endfor %}
             </ul>
         {% endif %}

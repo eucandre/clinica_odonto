@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-    {% csrf_token %}
-    <div>{{ form.as_p }}</div>
+    <form action="." method="post">
+        {% csrf_token %}
+        {{ form.errors }}
 
-    <button>ENVIAR</button>
-{% endblock %}
+        <p><label for="id_username">Usuário</label> <input class="form-control" autofocus="" id="id_username" maxlength="150" name="username" type="text" required /> <span class="helptext">Obrigatório. 150 caracteres ou menos. Letras, números e @/./+/-/_ apenas.</span></p>
+        <p><label for="id_password1">Senha</label> <input class="form-control" id="id_password1" name="password1" type="password" required /></p>
+        <p><label for="id_password2">Confirmação de senha</label> <input class="form-control" id="id_password2" name="password2" type="password" required /> <span class="helptext">Informe a mesma senha informada anteriormente, para verificação.</span></p>
+
+        <button type="submit" class="btn btn-success">ENVIAR</button>
+        <button type="reset" class="btn btn-danger">CANCELAR</button>
+    </form>
+    {% endblock %}

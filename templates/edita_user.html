@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block conteudo %}
+    <form method="get" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+    </form>
+{% endblock %}
