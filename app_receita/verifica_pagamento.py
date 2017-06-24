@@ -14,4 +14,4 @@ def getNomeOdonto(nr_id):
         return 0
 
     if obj_contrato_odonto.date_payment_per_month > hoje.day:
-        return obj_contrato_odonto.date_payment_per_month - hoje.day
+        return int(obj_contrato_odonto.date_payment_per_month) - hoje.day

@@ -72,7 +72,7 @@
                 <h3>{{ i.propose.name_client }}</h3> * Vínculo com {{ i.type_plane }}, Dia do vencimento mensal <span class="btn success">{{ i.date_payment_per_month }}</span>
               </a>
               {% if i.active %}
-              <span class="label label-success"> Ativo </span>
+              <span class="label label-success"> Ativo </span> desde {{ i.date_today }}
               {% endif %}
               {% if i.active == False %}
                 <span class="label label-danger"> Inativo </span>

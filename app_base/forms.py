@@ -53,12 +53,6 @@ class FormInsereCliente(forms.ModelForm):
     rg = forms.CharField(max_length=25,  widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
     cpf = forms.CharField(max_length=11, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
     birth_day = forms.DateField(label='Data de Nascimento',widget=forms.DateInput(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
-    name_other_contact = forms.CharField(label='Nome de conhecido',max_length=150, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
-    phone_other_contact = forms.CharField(label='Telefone de conhecido',max_length=150, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
-    street_other_contact = forms.CharField(label='Rua de conhecido',max_length=150, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
-    district_other_contact = forms.CharField(label='Bairro de conhecido',max_length=150, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
-    city_other_contact = forms.CharField(label='Cidade de conhecido',max_length=150, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
-    cep_other_contact = forms.CharField(label='Cep de conhecido',max_length=9, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
     street = forms.CharField(label='Rua',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     district = forms.CharField(label='Bairro',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     city = forms.CharField(label='Cidade',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
@@ -67,8 +61,7 @@ class FormInsereCliente(forms.ModelForm):
 
     class Meta:
         model = Cliente
-        fields = ('name','sex','date_register','profession','email','phone','cep','cpf','rg','birth_day','name_other_contact','phone_other_contact',
-                  'street_other_contact','district_other_contact','city_other_contact','cep_other_contact','street','district','city','Note','active')
+        fields = ('name','sex','date_register','profession','email','phone','cep','cpf','rg','birth_day','street','district','city','Note','active')
 
 class FormInsereContatoCliente(forms.ModelForm):
     name = forms.CharField(label='Nome', max_length=150,

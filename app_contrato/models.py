@@ -22,6 +22,8 @@ class Contrato_odonto(models.Model):
     def __unicode__(self):
         return self.propose.__unicode__()
 
+    def value_tratment(self):
+        return self.plane_value.__int__()
 
 class Contrato_nutricionista(models.Model):
 

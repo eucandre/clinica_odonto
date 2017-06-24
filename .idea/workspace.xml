@@ -5,9 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fec82e5-1724-4330-a579-f2da07df0f87" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app_contrato/migrations/0002_auto_20170624_1057.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.clinica" afterPath="$PROJECT_DIR$/db.clinica" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_base/forms.py" afterPath="$PROJECT_DIR$/app_base/forms.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_base/views.py" afterPath="$PROJECT_DIR$/app_base/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_contrato/models.py" afterPath="$PROJECT_DIR$/app_contrato/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_contrato/views.py" afterPath="$PROJECT_DIR$/app_contrato/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_receita/verifica_pagamento.py" afterPath="$PROJECT_DIR$/app_receita/verifica_pagamento.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/base.html" afterPath="$PROJECT_DIR$/templates/base.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/paginas_app_base/item_cliente.html" afterPath="$PROJECT_DIR$/templates/paginas_app_base/item_cliente.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/paginas_app_base/lista_clientes.html" afterPath="$PROJECT_DIR$/templates/paginas_app_base/lista_clientes.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/paginas_app_contrato/item_contrato_odonto.html" afterPath="$PROJECT_DIR$/templates/paginas_app_contrato/item_contrato_odonto.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/paginas_app_contrato/lista_contrato_odonto.html" afterPath="$PROJECT_DIR$/templates/paginas_app_contrato/lista_contrato_odonto.html" />
     </list>
     <ignored path="clinica.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -71,34 +81,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app_atendimento/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4544">
-              <caret line="289" column="4" lean-forward="false" selection-start-line="289" selection-start-column="4" selection-end-line="289" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="verifica_pagamento.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="verifica_pagamento.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app_receita/verifica_pagamento.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="128">
-              <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+            <state relative-caret-position="256">
+              <caret line="16" column="62" lean-forward="false" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
               <folding>
                 <element signature="e#0#21#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app_contrato/models.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="48" column="47" lean-forward="true" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -120,6 +110,8 @@
       <find>filter</find>
       <find>lista</find>
       <find>permiss</find>
+      <find>Regis</find>
+      <find>ativo</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -131,14 +123,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app_atendimento/views.py" />
-        <option value="$PROJECT_DIR$/templates/mapa_atendiemnto.html" />
-        <option value="$PROJECT_DIR$/templates/paginas_app_campanha/camapanha_venda.html" />
-        <option value="$PROJECT_DIR$/templates/paginas_app_contrato/item_contrato_odonto.html" />
         <option value="$PROJECT_DIR$/templates/paginas_app_contrato/insere_contrato_nutri.html" />
         <option value="$PROJECT_DIR$/templates/paginas_app_contrato/insere_contrato_psico.html" />
         <option value="$PROJECT_DIR$/templates/paginas_app_contrato/insere_contrato_odonto.html" />
-        <option value="$PROJECT_DIR$/templates/paginas_app_contrato/lista_contrato_odonto.html" />
         <option value="$PROJECT_DIR$/templates/paginas_app_estoque/lista_produto.html" />
         <option value="$PROJECT_DIR$/templates/paginas_app_estoque/item_produto.html" />
         <option value="$PROJECT_DIR$/templates/paginas_app_estoque/insere_retira_produtos.html" />
@@ -169,19 +156,24 @@
         <option value="$PROJECT_DIR$/clinica/settings.py" />
         <option value="$PROJECT_DIR$/app_base/models.py" />
         <option value="$PROJECT_DIR$/templates/paginas_app_base/Insere_Contato_Cliente.html" />
-        <option value="$PROJECT_DIR$/app_base/forms.py" />
         <option value="$PROJECT_DIR$/templates/paginas_app_base/insere_cliente.html" />
         <option value="$PROJECT_DIR$/templates/login.html" />
-        <option value="$PROJECT_DIR$/app_base/views.py" />
         <option value="$PROJECT_DIR$/templates/index.html" />
         <option value="$PROJECT_DIR$/templates/registrar.html" />
         <option value="$PROJECT_DIR$/clinica/urls.py" />
         <option value="$PROJECT_DIR$/templates/edita_user.html" />
         <option value="$PROJECT_DIR$/app_perfis/views.py" />
         <option value="$PROJECT_DIR$/templates/lista_usuarios.html" />
+        <option value="$PROJECT_DIR$/app_contrato/views.py" />
+        <option value="$PROJECT_DIR$/app_base/forms.py" />
+        <option value="$PROJECT_DIR$/templates/paginas_app_base/lista_clientes.html" />
+        <option value="$PROJECT_DIR$/templates/paginas_app_base/item_cliente.html" />
         <option value="$PROJECT_DIR$/templates/base.html" />
         <option value="$PROJECT_DIR$/app_contrato/models.py" />
+        <option value="$PROJECT_DIR$/app_base/views.py" />
         <option value="$PROJECT_DIR$/app_receita/verifica_pagamento.py" />
+        <option value="$PROJECT_DIR$/templates/paginas_app_contrato/lista_contrato_odonto.html" />
+        <option value="$PROJECT_DIR$/templates/paginas_app_contrato/item_contrato_odonto.html" />
       </list>
     </option>
   </component>
@@ -229,20 +221,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="clinica_odonto-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="clinica" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="clinica_odonto-master" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="media" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -754,13 +732,6 @@
       <option name="presentableId" value="Default" />
       <updated>1479613257887</updated>
     </task>
-    <task id="LOCAL-00042" summary="Criaçao do app contrato&#10;&#10;">
-      <created>1487426551442</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1487426551442</updated>
-    </task>
     <task id="LOCAL-00043" summary="Criaçao do app contrato&#10;&#10;">
       <created>1487437091736</created>
       <option name="number" value="00043" />
@@ -1097,7 +1068,14 @@
       <option name="project" value="LOCAL" />
       <updated>1498277032409</updated>
     </task>
-    <option name="localTasksCounter" value="91" />
+    <task id="LOCAL-00091" summary="edição do dashboard">
+      <created>1498312077233</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1498312077234</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1117,9 +1095,10 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32843137" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771823" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771823" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32159266" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32159266" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771823" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="manage.py@clinica" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32618684" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12990937" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30438066" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15582451" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1130,7 +1109,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="manage.py@clinica" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32618684" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1239,62 +1217,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/paginas_app_receita/lista_orcamento_odonto.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="48" column="14" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/paginas_app_receita/insere_dentes.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="48" column="14" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/paginas_app_receita/item_orcamentoodonto.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="48" column="14" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/paginas_app_receita/insere_orcamento_odonto.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="48" column="14" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/paginas_app_receita/lista_orcamentonutri.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="48" column="14" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/paginas_app_receita/insere_orcamento_nutri.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="48" column="14" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/paginas_app_receita/item_orcamento_nutri.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="48" column="14" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/paginas_app_receita/lista_orcamento_psico.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="362">
-          <caret line="48" column="14" lean-forward="false" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/paginas_app_receita/insere_orcamento_psico.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="362">
@@ -1415,31 +1337,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/paginas_app_base/insere_cliente.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="56" column="72" lean-forward="false" selection-start-line="56" selection-start-column="72" selection-end-line="56" selection-end-column="72" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/paginas_app_base/Insere_Contato_Cliente.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="508">
           <caret line="58" column="18" lean-forward="false" selection-start-line="58" selection-start-column="18" selection-end-line="58" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_base/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="83" column="108" lean-forward="false" selection-start-line="83" selection-start-column="108" selection-end-line="83" selection-end-column="108" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_base/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="364">
-          <caret line="105" column="25" lean-forward="true" selection-start-line="105" selection-start-column="25" selection-end-line="105" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -1511,6 +1412,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
           <caret line="11" column="69" lean-forward="false" selection-start-line="11" selection-start-column="69" selection-end-line="11" selection-end-column="69" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1518,6 +1420,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-404">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1525,13 +1428,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="32">
           <caret line="2" column="22" lean-forward="false" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/base.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="54" column="78" lean-forward="false" selection-start-line="54" selection-start-column="78" selection-end-line="54" selection-end-column="78" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1539,6 +1436,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="17" lean-forward="false" selection-start-line="0" selection-start-column="17" selection-end-line="0" selection-end-column="17" />
+          <folding>
+            <element signature="e#2718#2748#0#HTML" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1546,13 +1446,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="291">
           <caret line="33" column="37" lean-forward="false" selection-start-line="33" selection-start-column="37" selection-end-line="33" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clinica/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="103" column="29" lean-forward="true" selection-start-line="103" selection-start-column="29" selection-end-line="103" selection-end-column="29" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1560,39 +1454,173 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
           <caret line="135" column="0" lean-forward="false" selection-start-line="135" selection-start-column="0" selection-end-line="135" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_base/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="59" column="61" lean-forward="false" selection-start-line="59" selection-start-column="61" selection-end-line="59" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/salvo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-480">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/paginas_app_base/insere_cliente.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="56" column="72" lean-forward="false" selection-start-line="56" selection-start-column="72" selection-end-line="56" selection-end-column="72" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/base.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="75" column="89" lean-forward="false" selection-start-line="75" selection-start-column="89" selection-end-line="75" selection-end-column="89" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/paginas_app_base/lista_clientes.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="14" lean-forward="true" selection-start-line="0" selection-start-column="14" selection-end-line="0" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/paginas_app_base/item_cliente.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_base/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="385">
+          <caret line="105" column="24" lean-forward="true" selection-start-line="105" selection-start-column="24" selection-end-line="105" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_receita/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-624">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#39#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/clinica/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="56" column="11" lean-forward="true" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app_base/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4592">
-          <caret line="297" column="38" lean-forward="false" selection-start-line="297" selection-start-column="38" selection-end-line="297" selection-end-column="38" />
+        <state relative-caret-position="362">
+          <caret line="150" column="90" lean-forward="false" selection-start-line="150" selection-start-column="90" selection-end-line="150" selection-end-column="90" />
+          <caret line="152" column="90" lean-forward="false" selection-start-line="152" selection-start-column="90" selection-end-line="152" selection-end-column="90" />
+          <caret line="154" column="92" lean-forward="false" selection-start-line="154" selection-start-column="92" selection-end-line="154" selection-end-column="92" />
+          <caret line="156" column="90" lean-forward="false" selection-start-line="156" selection-start-column="90" selection-end-line="156" selection-end-column="90" />
+          <caret line="158" column="90" lean-forward="false" selection-start-line="158" selection-start-column="90" selection-end-line="158" selection-end-column="90" />
+          <caret line="160" column="90" lean-forward="false" selection-start-line="160" selection-start-column="90" selection-end-line="160" selection-end-column="90" />
+          <caret line="162" column="90" lean-forward="false" selection-start-line="162" selection-start-column="90" selection-end-line="162" selection-end-column="90" />
+          <caret line="164" column="90" lean-forward="false" selection-start-line="164" selection-start-column="90" selection-end-line="164" selection-end-column="90" />
+          <caret line="166" column="90" lean-forward="false" selection-start-line="166" selection-start-column="90" selection-end-line="166" selection-end-column="90" />
+          <caret line="168" column="90" lean-forward="false" selection-start-line="168" selection-start-column="90" selection-end-line="168" selection-end-column="90" />
+          <caret line="170" column="90" lean-forward="false" selection-start-line="170" selection-start-column="90" selection-end-line="170" selection-end-column="90" />
+          <caret line="172" column="90" lean-forward="false" selection-start-line="172" selection-start-column="90" selection-end-line="172" selection-end-column="90" />
+          <caret line="180" column="93" lean-forward="false" selection-start-line="180" selection-start-column="93" selection-end-line="180" selection-end-column="93" />
+          <folding>
+            <marker date="1498315077427" expanded="true" signature="1486:23044" ph="..." />
+            <marker date="1498315077427" expanded="true" signature="16684:16797" ph="..." />
+            <marker date="1498315077427" expanded="true" signature="16854:16920" ph="..." />
+            <marker date="1498315077427" expanded="true" signature="16948:17013" ph="..." />
+            <marker date="1498315077427" expanded="true" signature="17070:17139" ph="..." />
+            <marker date="1498315077427" expanded="true" signature="17199:17264" ph="..." />
+            <marker date="1498315077427" expanded="true" signature="17331:17408" ph="..." />
+            <marker date="1498315077427" expanded="true" signature="17476:17552" ph="..." />
+            <marker date="1498315077427" expanded="true" signature="17627:17705" ph="..." />
+            <marker date="1498315077427" expanded="true" signature="17782:17860" ph="..." />
+            <marker date="1498315077427" expanded="true" signature="17904:17992" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_atendimento/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app_atendimento/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4544">
+        <state relative-caret-position="385">
           <caret line="289" column="4" lean-forward="false" selection-start-line="289" selection-start-column="4" selection-end-line="289" selection-end-column="4" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app_receita/verifica_pagamento.py">
+    <entry file="file://$PROJECT_DIR$/templates/paginas_app_contrato/item_contrato_odonto.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="128">
-          <caret line="8" column="34" lean-forward="false" selection-start-line="8" selection-start-column="34" selection-end-line="8" selection-end-column="34" />
+        <state relative-caret-position="272">
+          <caret line="92" column="37" lean-forward="false" selection-start-line="92" selection-start-column="37" selection-end-line="92" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_contrato/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="273">
+          <caret line="56" column="60" lean-forward="true" selection-start-line="56" selection-start-column="60" selection-end-line="56" selection-end-column="60" />
           <folding>
-            <element signature="e#0#21#0" expanded="true" />
+            <element signature="e#0#25#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app_contrato/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="48" column="47" lean-forward="true" selection-start-line="48" selection-start-column="47" selection-end-line="48" selection-end-column="47" />
+        <state relative-caret-position="256">
+          <caret line="23" column="0" lean-forward="true" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/paginas_app_contrato/lista_contrato_odonto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="149">
+          <caret line="74" column="63" lean-forward="true" selection-start-line="74" selection-start-column="63" selection-end-line="74" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_receita/verifica_pagamento.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="16" column="62" lean-forward="false" selection-start-line="16" selection-start-column="62" selection-end-line="16" selection-end-column="62" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -3,6 +3,7 @@ from django.shortcuts import render
 from .forms import *
 from django.contrib import messages
 from django.core.paginator import *
+from app_receita.verifica_pagamento import *
 from django.contrib.auth.decorators import login_required
 
 @login_required(login_url='/login/')
@@ -53,7 +54,7 @@ def detalha_contrato_odonto(request, nr_item):
         item = Contrato_odonto.objects.get(pk=nr_item)
     except Contrato_odonto.DoesNotExist:
         raise Http404('Sem Registro!')
-    return render(request, "paginas_app_contrato/item_contrato_odonto.html", {'item': item})
+    return render(request, "paginas_app_contrato/item_contrato_odonto.html", {'item': item, 'situacao':getNomeOdonto(nr_item)})
 
 @login_required(login_url='/login/')
 def InsereContratoNutri(request):
