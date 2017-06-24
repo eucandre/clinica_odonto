@@ -27,6 +27,7 @@ class Contrato_nutricionista(models.Model):
 
     propose = models.ForeignKey(OrcamentoPlanoNutri)
     professional = models.ForeignKey(Profissionais)
+    date_today = models.DateField(auto_now=True)
     time_contract = models.DateField(blank=True, help_text='Data para finalizar o tratamento')
     type_plane = models.CharField(max_length=150, choices=TYPE_PLANE)
     plane_value = models.FloatField()
@@ -37,13 +38,14 @@ class Contrato_nutricionista(models.Model):
     user = models.ForeignKey(User)
     active = models.BooleanField(blank=True)
     def __unicode__(self):
-        return self.name_client.__unicode__()
+        return self.propose.__unicode__()
 
 
 class Contrato_psicologo(models.Model):
 
     propose = models.ForeignKey(OrcamentoPlanoPsico)
     professional = models.ForeignKey(Profissionais)
+    date_today = models.DateField(auto_now=True)
     time_contract = models.DateField(blank=True, help_text='Data para finalizar o tratamento')
     type_plane = models.CharField(max_length=150, choices=TYPE_PLANE)
     plane_value = models.FloatField()
@@ -55,4 +57,4 @@ class Contrato_psicologo(models.Model):
     active = models.BooleanField(blank=True)
 
     def __unicode__(self):
-        return self.name_client.__unicode__()
+        return self.propose.__unicode__()
