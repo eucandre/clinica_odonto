@@ -40,7 +40,7 @@ def edita_usuario(request, nr):
         form = UserChangeForm(request.POST, request.FILES, instance = item)
         if form.is_valid(): # se o formulario for valido
             form.save() # cria um novo usuario a partir dos dados enviados
-            return HttpResponseRedirect("/") # redireciona para a tela de login
+            return HttpResponseRedirect("/usuarios/") # redireciona para a tela de login
     else:
             # mostra novamente o formulario de cadastro com os erros do formulario atual
             form = UserChangeForm(instance = item)

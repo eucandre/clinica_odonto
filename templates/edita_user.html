@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block conteudo %}
-    <form method="get" action="">
+    <form method="post" action="">
         {% csrf_token %}
         <div class="form-control">
         {{ form.as_p }}
