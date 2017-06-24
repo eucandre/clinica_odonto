@@ -8,6 +8,7 @@ class Contrato_odonto(models.Model):
 
     propose = models.ForeignKey(OrcamentoPlanoOdontologico)
     professional = models.ForeignKey(Profissionais)
+    date_today = models.DateField(auto_now=True)
     time_contract = models.DateField(blank=True, help_text='Data para finalizar o tratamento')
     type_plane = models.CharField(max_length=150, choices=TYPE_PLANE)
     plane_value = models.FloatField()
@@ -17,8 +18,9 @@ class Contrato_odonto(models.Model):
     note = models.TextField()
     user = models.ForeignKey(User)
     active = models.BooleanField(blank=True)
+
     def __unicode__(self):
-        return self.name_client.__unicode__()
+        return self.propose.__unicode__()
 
 
 class Contrato_nutricionista(models.Model):
