@@ -7,4 +7,6 @@ admin.site.register(FacesDentes)
 admin.site.register(OrcamentoPlanoOdontologico)
 admin.site.register(OrcamentoPlanoNutri)
 admin.site.register(OrcamentoPlanoPsico)
+admin.site.register(RecebimentoPlano)
+admin.site.register(RecebimentoAvulso)
 

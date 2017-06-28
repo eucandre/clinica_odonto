@@ -69,7 +69,7 @@ class FormRecebimentoPlano(forms.ModelForm):
     amount_receivedB=forms.CharField(initial=0,label="Valor pago em boleto",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     amount_receiveCH=forms.CharField(initial=0,label="Valor pago em cheque",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     amount_receivePR=forms.CharField(initial=0,label="Valor pago sobra promissoria",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
-    type_of_payment = forms.ChoiceField(label='Modo de pagamento', choices=PAYMENT_MODEL,widget=forms.CheckboxSelectMultiple(attrs={'class': 'flat'}))
+    type_of_payment = forms.MultipleChoiceField(label='Modo de pagamento', choices=PAYMENT_MODEL,widget=forms.CheckboxSelectMultiple(attrs={'class': 'flat'}))
 
     class Meta:
         model = RecebimentoPlano

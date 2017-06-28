@@ -36,6 +36,12 @@ class Dentes(models.Model):
     def __unicode__(self):
         return self.number_tooth
 
+class Tipo_Recebimento(models.Model):
+
+    type_payment = models.CharField(max_length=150, choices=PAYMENT_MODEL)
+
+    def __unicode__(self):
+        return self.type_payment
 
 class FacesDentes(models.Model):
     face = models.CharField(max_length=20, choices=FACES_TOOTH)
@@ -109,7 +115,7 @@ class RecebimentoAvulso(models.Model):
     value_attendanceB = models.FloatField(blank=True)
     amount_receivePR = models.FloatField(blank=True)
     leftover_value = models.FloatField(blank=True)
-    type_of_payment = models.CharField(max_length=150, choices=PAYMENT_MODEL)
+    type_of_payment = models.ManyToManyField(Tipo_Recebimento)
     user = models.ForeignKey(User)
 
     def __unicode__(self):
@@ -130,7 +136,7 @@ class RecebimentoPlano(models.Model):
     amount_receiveCH = models.FloatField(blank=True)
     amount_receivePR = models.FloatField(blank=True)
     leftover_value = models.FloatField(blank=True)
-    type_of_payment = models.CharField(max_length=150, choices=PAYMENT_MODEL)
+    type_of_payment = models.ManyToManyField(Tipo_Recebimento)
     user = models.ForeignKey(User)
 
     def getMes(self):
