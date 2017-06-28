@@ -3,9 +3,12 @@ from app_base.models import *
 from datetime import *
 from django.contrib.auth.models import *
 
-PAYMENT_MODEL = ((u'CCredito', 'CCredito'), (u'CDebito', 'CDebito'),
-                 (u'Boleto', 'Boleto'), (u'Dinheiro', 'Dinheiro'),
-                 (u'Cheque', 'Cheque'), (u'Promissoria', 'Promissoria'),)
+PAYMENT_MODEL = ((u'CCredito', 'CCredito'),
+                 (u'CDebito', 'CDebito'),
+                 (u'Boleto', 'Boleto'),
+                 (u'Dinheiro', 'Dinheiro'),
+                 (u'Cheque', 'Cheque'),
+                 (u'Promissoria', 'Promissoria'))
 
 FACES_TOOTH = ((u'Mesial', 'Mesial'),
                (u'Distal', 'Distal'),
@@ -129,6 +132,10 @@ class RecebimentoPlano(models.Model):
     leftover_value = models.FloatField(blank=True)
     type_of_payment = models.CharField(max_length=150, choices=PAYMENT_MODEL)
     user = models.ForeignKey(User)
+
+    def getMes(self):
+        self.date_today = datetime.today().month
+        return self.date_payment
 
     def __unicode__(self):
         return self.name_client.__str__()

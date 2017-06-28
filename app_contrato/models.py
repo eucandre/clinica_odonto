@@ -25,6 +25,11 @@ class Contrato_odonto(models.Model):
     def value_tratment(self):
         return self.plane_value.__int__()
 
+    def format_date(self):
+        self.date_today = datetime.today().day
+        return self.date_today
+
+
 class Contrato_nutricionista(models.Model):
 
     propose = models.ForeignKey(OrcamentoPlanoNutri)

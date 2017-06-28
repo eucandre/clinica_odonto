@@ -2,6 +2,10 @@ from django import forms
 from app_base.models import *
 from app_receita.models import *
 
+PAYMENT_MODEL=((u'CCredito','CCredito'),(u'CDebito', 'CDebito'),
+               (u'Boleto', 'Boleto'), (u'Dinheiro', 'Dinheiro'),
+                (u'Cheque','Cheque'))
+
 
 class FormDentes(forms.ModelForm):
     number_tooth = forms.CharField(label="Numero do dente", max_length=150,widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
@@ -59,15 +63,15 @@ class FormRecebimentoPlano(forms.ModelForm):
     name_client=forms.ModelChoiceField(label="Nome do Cliente",queryset=Cliente.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
     payment_for_the_month = forms.DateField(label='Recebimento referente a data', widget=forms.DateInput(
         attrs={'class': 'form-control', "data-inputmask": "'mask': '99/99/9999'"}))
-    amount_receivedD=forms.CharField(label="Valor pago em dinheiro",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
-    amount_receivedCC=forms.CharField(label="Valor pago em cartao credito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
-    amount_receivedCD=forms.CharField(label="Valor pago em cartao debito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
-    amount_receivedB=forms.CharField(label="Valor pago em boleto",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
-    amount_receivedCH=forms.CharField(label="Valor pago em cheque",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
-    amount_receivedPR=forms.CharField(label="Valor pago sobra promissoria",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receivedD=forms.CharField(initial=0,label="Valor pago em dinheiro",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receivedCC=forms.CharField(initial=0,label="Valor pago em cartao credito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receivedCD=forms.CharField(initial=0,label="Valor pago em cartao debito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receivedB=forms.CharField(initial=0,label="Valor pago em boleto",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receiveCH=forms.CharField(initial=0,label="Valor pago em cheque",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receivePR=forms.CharField(initial=0,label="Valor pago sobra promissoria",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     type_of_payment = forms.ChoiceField(label='Modo de pagamento', choices=PAYMENT_MODEL,widget=forms.CheckboxSelectMultiple(attrs={'class': 'flat'}))
 
     class Meta:
         model = RecebimentoPlano
-        fields = ('name_client', 'amount_receivedD','payment_for_the_month','amount_receivedCC','amount_receivedCD','amount_receivedB','amount_receivedCH'
-                  ,'amount_receivedPR','type_of_payment')
+        fields = ('name_client', 'amount_receivedD','payment_for_the_month','amount_receivedCC','amount_receivedCD','amount_receivedB','amount_receiveCH'
+                  ,'amount_receivePR','type_of_payment')

@@ -4,16 +4,17 @@ from app_receita.models import *
 from datetime import date
 
 
-def getNomeOdonto(nr_id):
+def VerificaPagamento(nr_id):
     '''o parametro identifica o contrato do cliente.
     Este metodo vai buscar os dias em que o cliente esta em dias.'''
 
     obj_contrato_odonto = Contrato_odonto.objects.get(pk=nr_id)
     obj_recebimento_odonto = RecebimentoPlano.objects.get(pk=nr_id)
     hoje = date.today()
+    mes = date.month
+    atual = False
 
-    if obj_contrato_odonto.date_payment_per_month == hoje.day:
-        return 0
-
-    if obj_contrato_odonto.date_payment_per_month > hoje.day:
-        return hoje.day - int(obj_contrato_odonto.date_payment_per_month)
+    if obj_recebimento_odonto.getMes() == mes:
+        return atual==True
+    elif obj_recebimento_odonto.getMes() < mes:
+        return hoje - int(obj_contrato_odonto.date_payment_per_month)+30

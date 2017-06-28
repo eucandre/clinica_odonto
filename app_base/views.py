@@ -53,7 +53,7 @@ def inicia(request):
     """
     sum_jan, sum_fev, sum_marc, sum_abr, sum_mai, sum_jun, sum_jul, sum_ago, sum_set, sum_out, sum_nov, sum_dec = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
     sum_contrato_jan, sum_contrato_fev, sum_contrato_marc, sum_contrato_abr, sum_contrato_mai, sum_contrato_jun, sum_contrato_jul, sum_contrato_ago, sum_contrato_set, sum_contrato_out, sum_contrato_nov, sum_contrato_dec = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-    i=1
+    i = 1
 
     try:
         while i <= len(OrcamentoPlanoOdontologico.objects.all()):

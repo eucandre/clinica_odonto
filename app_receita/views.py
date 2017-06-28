@@ -4,7 +4,7 @@ from django.http import *
 from django.core.paginator import *
 from django.contrib.auth.decorators import login_required
 from django.core.exceptions import PermissionDenied
-
+from app_receita.verifica_pagamento import *
 @login_required(login_url='/login/')
 def lista_dentes(request):
     try:
@@ -290,4 +290,4 @@ def detalha_recebimento_plano(request, nr_item):
         item = RecebimentoPlano.objects.get(pk=nr_item)
     except RecebimentoPlano.DoesNotExist:
         raise Http404('Sem Registro!')
-    return render(request, "paginas_app_receita/item_recebimento_plano.html", {'item': item})
+    return render(request, "paginas_app_receita/item_recebimento_plano.html", {'item': item , 'situacao':VerificaPagamento(nr_item)})

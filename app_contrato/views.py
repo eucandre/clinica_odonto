@@ -23,9 +23,12 @@ def InsereContratoOdonto(request):
 
 @login_required(login_url='/login/')
 def lista_ContratoOdonto(request):
+
     lista_contrato_odonto = Contrato_odonto.objects.all()
+
     page = request.GET.get('page', 1)
     paginator = Paginator(lista_contrato_odonto, 10)
+
     try:
         p_contrato_odonto = paginator.page(page)
     except PageNotAnInteger:
@@ -54,7 +57,7 @@ def detalha_contrato_odonto(request, nr_item):
         item = Contrato_odonto.objects.get(pk=nr_item)
     except Contrato_odonto.DoesNotExist:
         raise Http404('Sem Registro!')
-    return render(request, "paginas_app_contrato/item_contrato_odonto.html", {'item': item, 'situacao':getNomeOdonto(nr_item)})
+    return render(request, "paginas_app_contrato/item_contrato_odonto.html", {'item': item})
 
 @login_required(login_url='/login/')
 def InsereContratoNutri(request):
