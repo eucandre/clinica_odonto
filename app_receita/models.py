@@ -36,12 +36,18 @@ class Dentes(models.Model):
     def __unicode__(self):
         return self.number_tooth
 
+    class Meta:
+        verbose_name_plural = "Dente"
+
 class Tipo_Recebimento(models.Model):
 
     type_payment = models.CharField(max_length=150, choices=PAYMENT_MODEL)
 
     def __unicode__(self):
         return self.type_payment
+
+    class Meta:
+        verbose_name_plural = "Tipo de Recebimento"
 
 class FacesDentes(models.Model):
     face = models.CharField(max_length=20, choices=FACES_TOOTH)
@@ -50,6 +56,8 @@ class FacesDentes(models.Model):
     def __unicode__(self):
         return self.face
 
+    class Meta:
+        verbose_name_plural = "Faces do Dente"
 
 class OrcamentoPlanoOdontologico(models.Model):
     name_client = models.ForeignKey(Cliente)
@@ -68,6 +76,8 @@ class OrcamentoPlanoOdontologico(models.Model):
         self.date_today = datetime.today().month
         return self.date_today
 
+    class Meta:
+        verbose_name_plural = "Orcamento Plano Odonto"
 
 class OrcamentoPlanoNutri(models.Model):
     name_client = models.ForeignKey(Cliente)
@@ -84,6 +94,8 @@ class OrcamentoPlanoNutri(models.Model):
         self.date_today = datetime.today().day
         return self.date_today
 
+    class Meta:
+        verbose_name_plural = "Orcamento Plano Nutricionista"
 
 class OrcamentoPlanoPsico(models.Model):
     name_client = models.ForeignKey(Cliente)
@@ -100,6 +112,8 @@ class OrcamentoPlanoPsico(models.Model):
         self.date_today = datetime.today().day
         return self.date_today
 
+    class Meta:
+        verbose_name_plural = "Orcamento Plano Psicologia"
 
 class RecebimentoAvulso(models.Model):
     """
@@ -122,26 +136,74 @@ class RecebimentoAvulso(models.Model):
         return self.name_client.__str__()
 
 
-class RecebimentoPlano(models.Model):
-    """
-        Na views ou no form elaborar uma funcao para determinar se serah cobrado jurus.
-    """
-    name_client = models.ForeignKey(Cliente)
-    date_payment = models.DateField(auto_now=True)
-    payment_for_the_month = models.DateField()
-    amount_receivedD = models.FloatField(blank=True)
-    amount_receivedCC = models.FloatField(blank=True)
-    amount_receivedCD = models.FloatField(blank=True)
-    amount_receivedB = models.FloatField(blank=True)
-    amount_receiveCH = models.FloatField(blank=True)
-    amount_receivePR = models.FloatField(blank=True)
-    leftover_value = models.FloatField(blank=True)
-    type_of_payment = models.ManyToManyField(Tipo_Recebimento)
-    user = models.ForeignKey(User)
+# class RecebimentoPlano(models.Model):
+#     """
+#         Na views ou no form elaborar uma funcao para determinar se serah cobrado jurus.
+#     """
+#     name_client = models.ForeignKey(Cliente)
+#     date_payment = models.DateField(auto_now=True)
+#     payment_for_the_month = models.DateField()
+#     amount_receivedD = models.FloatField(blank=True)
+#     amount_receivedCC = models.FloatField(blank=True)
+#     amount_receivedCD = models.FloatField(blank=True)
+#     amount_receivedB = models.FloatField(blank=True)
+#     amount_receiveCH = models.FloatField(blank=True)
+#     amount_receivePR = models.FloatField(blank=True)
+#     leftover_value = models.FloatField(blank=True)
+#     type_of_payment = models.ManyToManyField(Tipo_Recebimento)
+#     user = models.ForeignKey(User)
+#
+#     def getMes(self):
+#         self.date_today = datetime.today().month
+#         return self.date_payment
+#
+#     def __unicode__(self):
+#         return self.name_client.__str__()
 
-    def getMes(self):
-        self.date_today = datetime.today().month
-        return self.date_payment
-
-    def __unicode__(self):
-        return self.name_client.__str__()
+# class RecebimentoPlanoPsico(models.Model):
+#     """
+#         Na views ou no form elaborar uma funcao para determinar se serah cobrado jurus.
+#     """
+#     name_client = models.ForeignKey(Cliente)
+#     date_payment = models.DateField(auto_now=True)
+#     payment_for_the_month = models.DateField()
+#     amount_receivedD = models.FloatField(blank=True)
+#     amount_receivedCC = models.FloatField(blank=True)
+#     amount_receivedCD = models.FloatField(blank=True)
+#     amount_receivedB = models.FloatField(blank=True)
+#     amount_receiveCH = models.FloatField(blank=True)
+#     amount_receivePR = models.FloatField(blank=True)
+#     leftover_value = models.FloatField(blank=True)
+#     type_of_payment = models.ManyToManyField(Tipo_Recebimento)
+#     user = models.ForeignKey(User)
+#
+#     def getMes(self):
+#         self.date_today = datetime.today().month
+#         return self.date_payment
+#
+#     def __unicode__(self):
+#         return self.name_client.__str__()
+#
+# class RecebimentoPlanoNutri(models.Model):
+#     """
+#         Na views ou no form elaborar uma funcao para determinar se serah cobrado jurus.
+#     """
+#     name_client = models.ForeignKey(Cliente)
+#     date_payment = models.DateField(auto_now=True)
+#     payment_for_the_month = models.DateField()
+#     amount_receivedD = models.FloatField(blank=True)
+#     amount_receivedCC = models.FloatField(blank=True)
+#     amount_receivedCD = models.FloatField(blank=True)
+#     amount_receivedB = models.FloatField(blank=True)
+#     amount_receiveCH = models.FloatField(blank=True)
+#     amount_receivePR = models.FloatField(blank=True)
+#     leftover_value = models.FloatField(blank=True)
+#     type_of_payment = models.ManyToManyField(Tipo_Recebimento)
+#     user = models.ForeignKey(User)
+#
+#     def getMes(self):
+#         self.date_today = datetime.today().month
+#         return self.date_payment
+#
+#     def __unicode__(self):
+#         return self.name_client.__str__()

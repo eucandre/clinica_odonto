@@ -23,6 +23,7 @@ class Profissionais(models.Model):
 
     name = models.CharField(max_length=150, unique = True)
     professional_as = models.CharField(max_length=150, choices=TYPE_PROFESSIONAL)
+    salary = models.FloatField()
     sex = models.CharField(max_length=150, choices=SEXO)
     email = models.EmailField()
     phone = models.CharField(max_length=150)

@@ -9,7 +9,7 @@ def VerificaPagamento(nr_id):
     Este metodo vai buscar os dias em que o cliente esta em dias.'''
 
     obj_contrato_odonto = Contrato_odonto.objects.get(pk=nr_id)
-    obj_recebimento_odonto = RecebimentoPlano.objects.get(pk=nr_id)
+    obj_recebimento_odonto = RecebimentoPlanoOdonto.objects.get(pk=nr_id)
     hoje = date.today()
     mes = date.month
     atual = False

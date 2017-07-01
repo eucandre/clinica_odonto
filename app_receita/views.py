@@ -243,51 +243,51 @@ def InsereAtendimentoAvulso(request):
         form = FormRecebimentoAvulso()
     return render(request, 'paginas_app_receita/insere_atendimento_avulso.html', {'form': form})
 
-@login_required(login_url='/login/')
-def InsereRecebimentoPlano(request):
-    if request.method == 'POST':
-        form = FormRecebimentoPlano(request.POST)
-        if form.is_valid():
-            item =  form.save(commit=False)
-            item.user = request.user
-            item.save()
-            return render(request, 'salvo.html')
-    else:
-        form = FormRecebimentoPlano()
-    return render(request, 'paginas_app_receita/insere_recebimento_plano.html', {'form': form})
+# @login_required(login_url='/login/')
+# def InsereRecebimentoPlano(request):
+#     if request.method == 'POST':
+#         form = FormRecebimentoPlano(request.POST)
+#         if form.is_valid():
+#             item =  form.save(commit=False)
+#             item.user = request.user
+#             item.save()
+#             return render(request, 'salvo.html')
+#     else:
+#         form = FormRecebimentoPlano()
+#     return render(request, 'paginas_app_receita/insere_recebimento_plano.html', {'form': form})
 
-@login_required(login_url='/login/')
-def lista_recebimento_plano(request):
-    recebimento_plano = RecebimentoPlano.objects.all()
-    page = request.GET.get('page', 1)
-    paginator = Paginator(recebimento_plano, 10)
-    try:
-        p_recebimento_plano = paginator.page(page)
-    except PageNotAnInteger:
-        p_recebimento_plano = paginator.page(1)
-    except EmptyPage:
-        p_recebimento_plano = paginator.page(paginator.num_pages)
-    return render(request, "paginas_app_receita/lista_recebimento_plano.html", {"recebimento_plano": p_recebimento_plano})
-
-@login_required(login_url='/login/')
-def edita_recebimento_plano(request, nr_item):
-
-    item = RecebimentoPlano.objects.get(pk=nr_item)
-    if request.method == 'POST':
-        form = FormRecebimentoPlano(request.POST, request.FILES, instance=item)
-        if form.is_valid():
-            item = form.save(commit=False)
-            item.user = request.user
-            item.save()
-            return render(request, 'salvo.html', {'item': item})
-    else:
-        form = FormRecebimentoPlano(instance=item)
-    return render(request, 'paginas_app_receita/insere_recebimento_plano.html', {'form': form})
-
-@login_required(login_url='/login/')
-def detalha_recebimento_plano(request, nr_item):
-    try:
-        item = RecebimentoPlano.objects.get(pk=nr_item)
-    except RecebimentoPlano.DoesNotExist:
-        raise Http404('Sem Registro!')
-    return render(request, "paginas_app_receita/item_recebimento_plano.html", {'item': item , 'situacao':VerificaPagamento(nr_item)})
+# @login_required(login_url='/login/')
+# def lista_recebimento_plano(request):
+#     recebimento_plano = RecebimentoPlanoOdonto.objects.all()
+#     page = request.GET.get('page', 1)
+#     paginator = Paginator(recebimento_plano, 10)
+#     try:
+#         p_recebimento_plano = paginator.page(page)
+#     except PageNotAnInteger:
+#         p_recebimento_plano = paginator.page(1)
+#     except EmptyPage:
+#         p_recebimento_plano = paginator.page(paginator.num_pages)
+#     return render(request, "paginas_app_receita/lista_recebimento_plano.html", {"recebimento_plano": p_recebimento_plano})
+#
+# @login_required(login_url='/login/')
+# def edita_recebimento_plano(request, nr_item):
+#
+#     item = RecebimentoPlanoOdonto.objects.get(pk=nr_item)
+#     if request.method == 'POST':
+#         form = FormRecebimentoPlano(request.POST, request.FILES, instance=item)
+#         if form.is_valid():
+#             item = form.save(commit=False)
+#             item.user = request.user
+#             item.save()
+#             return render(request, 'salvo.html', {'item': item})
+#     else:
+#         form = FormRecebimentoPlano(instance=item)
+#     return render(request, 'paginas_app_receita/insere_recebimento_plano.html', {'form': form})
+#
+# @login_required(login_url='/login/')
+# def detalha_recebimento_plano(request, nr_item):
+#     try:
+#         item = RecebimentoPlanoOdonto.objects.get(pk=nr_item)
+#     except RecebimentoPlanoOdonto.DoesNotExist:
+#         raise Http404('Sem Registro!')
+#     return render(request, "paginas_app_receita/item_recebimento_plano.html", {'item': item , 'situacao':VerificaPagamento(nr_item)})

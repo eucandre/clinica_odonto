@@ -3,7 +3,7 @@ from app_atendimento.models import *
 from django.db import models
 
 class Perfil(models.Model):
-    name = models.ForeignKey(RecebimentoPlano)
+    name = models.ForeignKey(RecebimentoPlanoOdonto)
 
 
     def __unicode__(self):

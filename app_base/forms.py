@@ -7,6 +7,8 @@ class FormInsereProfissionais(forms.ModelForm):
 
     name =  forms.CharField(label='Nome',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     professional_as = forms.ChoiceField(choices=TYPE_PROFESSIONAL, widget=forms.RadioSelect(attrs={'class':'flat'}))
+    salary = forms.FloatField(label='Salario',
+                              widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
     sex =   forms.ChoiceField(label='Sexo',choices=SEXO,widget=forms.RadioSelect(attrs={'class':'flat'}))
     cep =   forms.CharField(label='CEP',max_length=7, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
     email = forms.EmailField(label='E-mail',widget=forms.TextInput(attrs={'class':'form-control'}))
@@ -18,7 +20,7 @@ class FormInsereProfissionais(forms.ModelForm):
 
     class Meta:
         model = Profissionais
-        fields = ('name', 'professional_as', 'sex', 'cep', 'email', 'phone', 'register', 'birth_day', 'note', 'active')
+        fields = ('name', 'professional_as', 'salary','sex', 'cep', 'email', 'phone', 'register', 'birth_day', 'note', 'active')
 
 class FormInsereFuncionario(forms.ModelForm):
     name =  forms.CharField(label='Nome',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))

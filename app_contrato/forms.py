@@ -55,3 +55,54 @@ class FormContratoPsico(forms.ModelForm):
         model= Contrato_psicologo
         fields = ('propose','professional','time_contract','type_plane','plane_value','date_payment_per_month',
                   'input_value','active','note')
+
+class FormRecebimentoPlano(forms.ModelForm):
+    name_client=forms.ModelChoiceField(label="Nome do Cliente",queryset=Contrato_odonto.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
+    payment_for_the_month = forms.DateField(label='Recebimento referente a data', widget=forms.DateInput(
+        attrs={'class': 'form-control', "data-inputmask": "'mask': '99/99/9999'"}))
+    amount_receivedD=forms.CharField(initial=0,label="Valor pago em dinheiro",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receivedCC=forms.CharField(initial=0,label="Valor pago em cartao credito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receivedCD=forms.CharField(initial=0,label="Valor pago em cartao debito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receivedB=forms.CharField(initial=0,label="Valor pago em boleto",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receiveCH=forms.CharField(initial=0,label="Valor pago em cheque",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receivePR=forms.CharField(initial=0,label="Valor pago sobra promissoria",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    type_of_payment = forms.MultipleChoiceField(label='Modo de pagamento', choices=PAYMENT_MODEL,widget=forms.CheckboxSelectMultiple(attrs={'class': 'flat'}))
+
+    class Meta:
+        model = RecebimentoPlanoOdonto
+        fields = ('name_client', 'amount_receivedD','payment_for_the_month','amount_receivedCC','amount_receivedCD','amount_receivedB','amount_receiveCH'
+                  ,'amount_receivePR','type_of_payment')
+
+class FormRecebimentoPlanoPsico(forms.ModelForm):
+    name_client=forms.ModelChoiceField(label="Nome do Cliente",queryset=Contrato_psicologo.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
+    payment_for_the_month = forms.DateField(label='Recebimento referente a data', widget=forms.DateInput(
+        attrs={'class': 'form-control', "data-inputmask": "'mask': '99/99/9999'"}))
+    amount_receivedD=forms.CharField(initial=0,label="Valor pago em dinheiro",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receivedCC=forms.CharField(initial=0,label="Valor pago em cartao credito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receivedCD=forms.CharField(initial=0,label="Valor pago em cartao debito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receivedB=forms.CharField(initial=0,label="Valor pago em boleto",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receiveCH=forms.CharField(initial=0,label="Valor pago em cheque",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receivePR=forms.CharField(initial=0,label="Valor pago sobra promissoria",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    type_of_payment = forms.MultipleChoiceField(label='Modo de pagamento', choices=PAYMENT_MODEL,widget=forms.CheckboxSelectMultiple(attrs={'class': 'flat'}))
+
+    class Meta:
+        model = RecebimentoPlanoPsico
+        fields = ('name_client', 'amount_receivedD','payment_for_the_month','amount_receivedCC','amount_receivedCD','amount_receivedB','amount_receiveCH'
+                  ,'amount_receivePR','type_of_payment')
+
+class FormRecebimentoPlanoNutri(forms.ModelForm):
+    name_client=forms.ModelChoiceField(label="Nome do Cliente",queryset=Contrato_nutricionista.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
+    payment_for_the_month = forms.DateField(label='Recebimento referente a data', widget=forms.DateInput(
+        attrs={'class': 'form-control', "data-inputmask": "'mask': '99/99/9999'"}))
+    amount_receivedD=forms.CharField(initial=0,label="Valor pago em dinheiro",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receivedCC=forms.CharField(initial=0,label="Valor pago em cartao credito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receivedCD=forms.CharField(initial=0,label="Valor pago em cartao debito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receivedB=forms.CharField(initial=0,label="Valor pago em boleto",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receiveCH=forms.CharField(initial=0,label="Valor pago em cheque",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    amount_receivePR=forms.CharField(initial=0,label="Valor pago sobra promissoria",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    type_of_payment = forms.MultipleChoiceField(label='Modo de pagamento', choices=PAYMENT_MODEL,widget=forms.CheckboxSelectMultiple(attrs={'class': 'flat'}))
+
+    class Meta:
+        model = RecebimentoPlanoNutri
+        fields = ('name_client', 'amount_receivedD','payment_for_the_month','amount_receivedCC','amount_receivedCD','amount_receivedB','amount_receiveCH'
+                  ,'amount_receivePR','type_of_payment')

@@ -305,7 +305,10 @@ def mapa_atendimento_odonto(request):
     atendiementos_odonto = agendamemto_plano_odonto.objects.all().filter(date_atendence=data_de_hoje)
     atendiementos_psico = agendamemto_plano_psico.objects.all().filter(date_atendence=data_de_hoje)
     atendiementos_nutri = agendamemto_plano_nutri.objects.all().filter(date_atendence=data_de_hoje)
-
+    atendimentos_odonto_amanha = agendamemto_plano_odonto.objects.all().filter(date_atendence=data_de_amanha)
+    atendimentos_nutri_amanha = agendamemto_plano_nutri.objects.all().filter(date_atendence=data_de_amanha)
+    atendimentos_psico_amanha = agendamemto_plano_psico.objects.all().filter(date_atendence=data_de_amanha)
     atendimentos= atendiementos_odonto, atendiementos_nutri, atendiementos_psico
-    return render(request,'mapa_atendiemnto.html',{'agenda_odonto':atendimentos})
+    atende_amanha= atendimentos_odonto_amanha,atendimentos_psico_amanha,atendimentos_nutri_amanha
+    return render(request,'mapa_atendiemnto.html',{'agenda_odonto':atendimentos, 'agenda_odonto_amanha':atende_amanha})
 
