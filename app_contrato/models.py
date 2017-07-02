@@ -44,9 +44,13 @@ class Contrato_nutricionista(models.Model):
     note = models.TextField()
     user = models.ForeignKey(User)
     active = models.BooleanField(blank=True)
+
     def __unicode__(self):
         return self.propose.__unicode__()
 
+    def format_date(self):
+        self.date_today = datetime.today().day
+        return self.date_today
 
 class Contrato_psicologo(models.Model):
 
@@ -62,6 +66,10 @@ class Contrato_psicologo(models.Model):
     note = models.TextField()
     user = models.ForeignKey(User)
     active = models.BooleanField(blank=True)
+
+    def format_date(self):
+        self.date_today = datetime.today().day
+        return self.date_today
 
     def __unicode__(self):
         return self.propose.__unicode__()
@@ -86,6 +94,12 @@ class RecebimentoPlanoOdonto(models.Model):
     def getMes(self):
         self.date_today = datetime.today().month
         return self.date_payment
+
+    def TotalPagoTratamento(self):
+        '''Este metodo retonara a porcentagem que representa do valor total e o que sobra para completar esse valor'''
+        valorOriginal= self.name_client.plane_value
+
+        return valorOriginal-self.leftover_value
 
     def __unicode__(self):
         return self.name_client.__str__()

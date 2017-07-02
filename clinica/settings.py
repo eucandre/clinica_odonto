@@ -41,7 +41,14 @@ INSTALLED_APPS = [
     'app_campanha',
     'app_perfis',
     'app_contas',
+    'tornado_websockets',
 ]
+
+TORNADO = {
+    'port': 1337,    # 8000 by default
+    'handlers': [],  # [] by default
+    'settings': {},  # {} by default
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -127,7 +134,7 @@ SHORT_DATE_FORMAT = 'd/m/Y'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.10/howto/static-files/
-# STATIC_ROOT = u'C:/clinica/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 # MEDIA_ROOT = u'C:/clinica/media'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

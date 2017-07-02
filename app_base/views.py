@@ -389,3 +389,11 @@ def detalha_cliente(request, nr_item):
         raise Http404('Sem Registro!')
     return render(request, "paginas_app_base/item_cliente.html", {'item': item})
 
+@login_required(login_url='/login/')
+def verifica_cortesia_odonto(request,nr_item):
+    try:
+        item = RecebimentoPlanoOdonto.objects.get(pk=nr_item)
+        if item.TotalPagoTratamento:
+            pass
+    except RecebimentoPlanoOdonto.DoesNotExist:
+        raise Http404('Sem Contratos para verificar!')

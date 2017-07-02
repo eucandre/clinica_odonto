@@ -117,6 +117,8 @@ urlpatterns = [
     url(r'^usuarios/$', lista_usuarios),
     url(r'^edita_usuarios/(?P<nr>\d+)/$', edita_usuario),
 
+    # url(r'^chat/', include('chatrooms.urls')),
+
     url(r'^campanha_venda/$', camapanha_venda),
     url(r'^cria_campanha/$', campanha),
 
