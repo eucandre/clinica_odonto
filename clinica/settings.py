@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'app_contrato',
     'app_atendimento',
     'app_campanha',
-    'app_perfis',
     'app_contas',
     'tornado_websockets',
 ]

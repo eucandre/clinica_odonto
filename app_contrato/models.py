@@ -18,6 +18,7 @@ class Contrato_odonto(models.Model):
     note = models.TextField()
     user = models.ForeignKey(User)
     active = models.BooleanField(blank=True)
+    cortesia = models.BooleanField(blank=True)
 
     def __unicode__(self):
         return self.propose.__unicode__()
@@ -96,7 +97,9 @@ class RecebimentoPlanoOdonto(models.Model):
         return self.date_payment
 
     def TotalPagoTratamento(self):
-        '''Este metodo retonara a porcentagem que representa do valor total e o que sobra para completar esse valor'''
+        '''Este metodo retonara a porcentagem que representa do valor total e o que sobra para completar esse valor
+            a formula eh (valorPago*100)/totalPlano =>80 
+        '''
         valorOriginal= self.name_client.plane_value
 
         return valorOriginal-self.leftover_value

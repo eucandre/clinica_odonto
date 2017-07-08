@@ -37,17 +37,17 @@ class FormInsereProduto(forms.ModelForm):
     class Meta:
         model = Produto
         fields = ('name', 'mark', 'provider', 'amount','value_per_unit_to_buy','purchase_date','date_vaidate','product_type')
+
 class FormInsereRetiraProduto(forms.ModelForm):
     product = forms.ModelChoiceField(label='Produto', queryset=Produto.objects.all(), widget=forms.Select(attrs={'class':'flat'}))
     date_for_withdrawal = forms.DateField(label='Data da retirada',widget=forms.DateInput(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
     time_for_withdrawal = forms.TimeField(label='Hora da retirada',widget=forms.TimeInput(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
     amount_withdrawal = forms.FloatField(label='Quantidade retirada',widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
-    responsible = forms.ModelChoiceField(label='Responsavel', queryset=Funcionario.objects.all(),widget=forms.Select(attrs={'class':'flat'}))
     amout_refresh = forms.CharField(label='Quantidade atualizada', widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
 
     class Meta:
         model = Retira_Produto
-        fields = '__all__'
+        fields = ('product','date_for_withdrawal','time_for_withdrawal','amount_withdrawal','amout_refresh')
 
 class FormInsereCompraProdutos(forms.ModelForm):
     product = forms.ModelChoiceField(label='Produto', queryset=Produto.objects.all(), widget=forms.Select(attrs={'class':'flat'}))
@@ -58,4 +58,11 @@ class FormInsereCompraProdutos(forms.ModelForm):
 
     class Meta:
         model = Compra_Produto
-        fields = '__all__'
+        fields = ('product','purchase_date_product','value_per_unit_to_buy','amout_purchased','date_vaidate')
+
+class FormMontante(forms.ModelForm):
+
+    montante = forms.CharField(label='Montante',widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
+    class Meta:
+        model = Montante
+        fields = ('montante',)

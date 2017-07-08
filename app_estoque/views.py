@@ -192,3 +192,25 @@ def detalha_compra_produtos(request,nr_item):
     except Compra_Produto.DoesNotExist:
         raise django.http.Http404('Sem Registro!')
     return render(request, "paginas_app_estoque/item_retira_produto.html", {'item': item})
+
+def monte():
+    obj_retirada = Retira_Produto.objects.get(pk=len(Retira_Produto.objects.all()))
+    obj_compra = Compra_Produto.objects.get(pk=len(Compra_Produto.objects.all()))
+    valorRetirado = int(obj_retirada.amount_withdrawal)
+    valorComprado= int(obj_compra.amout_purchased)
+    return valorComprado - valorRetirado
+
+@login_required(login_url='/login/')
+def atualizaMontante(request):
+
+    if request.method == 'POST':
+        form = FormMontante(request.POST)
+        if form.is_valid():
+            item = form.save(commit= False)
+            item.user = request.user
+            item.montante = monte()
+            item.save()
+            return render(request, 'salvo.html')
+    else:
+        form = FormMontante()
+    return render(request, 'paginas_app_estoque/montante.html', {'form':form})

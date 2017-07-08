@@ -393,7 +393,13 @@ def detalha_cliente(request, nr_item):
 def verifica_cortesia_odonto(request,nr_item):
     try:
         item = RecebimentoPlanoOdonto.objects.get(pk=nr_item)
-        if item.TotalPagoTratamento:
-            pass
+        contrato_item = Contrato_odonto.objects.get(pk=item.name_client.id)
+        cortesia = contrato_item.cortesia
+        if item.TotalPagoTratamento >= 80:
+            contrato_item.cortesia = True
+            contrato_item.save()
+            return render(request,"paginas_app_base/cortesia.html", {'cortesia':cortesia})
+        else:
+            return False
     except RecebimentoPlanoOdonto.DoesNotExist:
         raise Http404('Sem Contratos para verificar!')

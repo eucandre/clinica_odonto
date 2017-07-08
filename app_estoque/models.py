@@ -8,6 +8,7 @@ TYPE_PRODUCT = ((u'Limpeza','Limpeza'),(u'Escritorio','Escritorio')
 ,(u'Informatica','Informatica'),(u'Bucal profissional','Bucal profissional'),(u'Bucal venda','Bucal venda'))
 
 class Fornecedor(models.Model):
+
     name = models.CharField(max_length=150)
     type_product = models.CharField(max_length=150, choices=TYPE_PRODUCT)
     cnpj = models.CharField(max_length=30, unique=True)
@@ -52,7 +53,6 @@ class Retira_Produto(models.Model):
     product = models.ForeignKey(Produto)
     date_for_withdrawal = models.DateTimeField()
     amount_withdrawal = models.FloatField()
-    responsible = models.ForeignKey(Funcionario)
     amout_refresh = models.CharField(max_length=150)# Sera atualizada pelo formulario
     user = models.ForeignKey(User)
 
@@ -76,3 +76,14 @@ class Compra_Produto(models.Model):
 
     class Meta:
         verbose_name_plural = 'Compra produtos'
+
+class Montante(models.Model):
+
+    montante = models.CharField(max_length=150 )#esta variavel sera atualizada no forms
+    user = models.ForeignKey(User)
+
+    def save(self, force_insert=False, force_update=False, using=None,
+             update_fields=None):
+        if self.montante is None:
+            self.montante = 0
+

@@ -4,7 +4,6 @@ from django.contrib.auth import *
 from app_base.views import *
 from app_estoque.views import *
 from app_receita.views import *
-from app_perfis.views import *
 from app_atendimento.views import *
 from app_campanha.views import *
 from django.conf import settings
@@ -113,11 +112,8 @@ urlpatterns = [
     url(r'^edita_agendamento_plano_psico/(?P<nr_item>\d+)/$',edita_agendamento_plano_psico),
 
     url(r'^mapa_odonto/$', mapa_atendimento_odonto),
-    url(r'^registrar/$', registrar),
-    url(r'^usuarios/$', lista_usuarios),
-    url(r'^edita_usuarios/(?P<nr>\d+)/$', edita_usuario),
+    url(r'^montante/$', atualizaMontante),
 
-    # url(r'^chat/', include('chatrooms.urls')),
 
     url(r'^campanha_venda/$', camapanha_venda),
     url(r'^cria_campanha/$', campanha),
