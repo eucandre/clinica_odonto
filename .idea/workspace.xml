@@ -4,29 +4,7 @@
     <option name="SCOPE_TYPE" value="3" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="1fec82e5-1724-4330-a579-f2da07df0f87" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app_contrato/migrations/0002_contrato_odonto_cortesia.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/app_estoque/migrations/0002_auto_20170705_0059.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/paginas_app_base/cortesia.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/templates/paginas_app_estoque/montante.html" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app_perfis/admin.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app_perfis/apps.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app_perfis/migrations/0001_initial.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app_perfis/migrations/__init__.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app_perfis/models.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app_perfis/tests.py" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app_perfis/views.py" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/app_perfis/__init__.py" afterPath="$PROJECT_DIR$/app_estoque/auxiliar.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.clinica" afterPath="$PROJECT_DIR$/db.clinica" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_base/views.py" afterPath="$PROJECT_DIR$/app_base/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_contrato/models.py" afterPath="$PROJECT_DIR$/app_contrato/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_estoque/forms.py" afterPath="$PROJECT_DIR$/app_estoque/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_estoque/models.py" afterPath="$PROJECT_DIR$/app_estoque/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_estoque/views.py" afterPath="$PROJECT_DIR$/app_estoque/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clinica/settings.py" afterPath="$PROJECT_DIR$/clinica/settings.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/clinica/urls.py" afterPath="$PROJECT_DIR$/clinica/urls.py" />
-    </list>
+    <list default="true" id="1fec82e5-1724-4330-a579-f2da07df0f87" name="Default" comment="" />
     <ignored path="clinica.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path=".idea/dataSources.local.xml" />
@@ -750,13 +728,6 @@
       <option name="presentableId" value="Default" />
       <updated>1479613257887</updated>
     </task>
-    <task id="LOCAL-00049" summary="Criação de login &#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;">
-      <created>1488636758743</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1488636758743</updated>
-    </task>
     <task id="LOCAL-00050" summary="Criação de login &#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;">
       <created>1488639051136</created>
       <option name="number" value="00050" />
@@ -1093,7 +1064,14 @@
       <option name="project" value="LOCAL" />
       <updated>1499019426027</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="verifica modulos">
+      <created>1499486098978</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1499486098978</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1556,7 +1534,7 @@
         <state relative-caret-position="104">
           <caret line="190" column="16" lean-forward="false" selection-start-line="190" selection-start-column="16" selection-end-line="190" selection-end-column="16" />
           <folding>
-            <element signature="e#0#18#0" expanded="true" />
+            <element signature="e#0#18#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1566,7 +1544,7 @@
         <state relative-caret-position="504">
           <caret line="67" column="30" lean-forward="false" selection-start-line="67" selection-start-column="30" selection-end-line="67" selection-end-column="30" />
           <folding>
-            <element signature="e#0#24#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1576,7 +1554,7 @@
         <state relative-caret-position="232">
           <caret line="72" column="0" lean-forward="false" selection-start-line="72" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#39#0" expanded="false" />
           </folding>
         </state>
       </provider>
