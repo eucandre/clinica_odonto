@@ -6,6 +6,16 @@ from django.contrib.auth.decorators import login_required
 from django.core.exceptions import PermissionDenied
 from app_receita.verifica_pagamento import *
 
+# @login_required(login_url='/login/')
+# def InsereServicos(request):
+#     if request.method == 'POST':
+#         form = FormServicos(request.POST)
+#         if form.is_valid():
+#             form.save()
+#     else:
+#         form = FormServicos()
+#     return render()
+
 @login_required(login_url='/login/')
 def lista_dentes(request):
     try:

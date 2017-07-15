@@ -9,4 +9,5 @@ admin.site.register(OrcamentoPlanoNutri)
 admin.site.register(OrcamentoPlanoPsico)
 admin.site.register(Tipo_Recebimento)
 admin.site.register(RecebimentoAvulso)
+admin.site.register(Servicos)
 

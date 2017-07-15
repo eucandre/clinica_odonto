@@ -7,6 +7,11 @@ PAYMENT_MODEL=((u'CCredito','CCredito'),(u'CDebito', 'CDebito'),
                 (u'Cheque','Cheque'))
 
 
+class FormServicos(forms.BaseModelForm):
+    class Meta:
+        model = Servicos
+        fields = '__all__'
+
 class FormDentes(forms.ModelForm):
     number_tooth = forms.CharField(label="Numero do dente", max_length=150,widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
 

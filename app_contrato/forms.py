@@ -17,12 +17,14 @@ class FormContratoOdonto(forms.ModelForm):
     plane_value = forms.CharField(label="Valor do plano",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     date_payment_per_month = forms.ChoiceField(label='Dia de vencimento mensal',choices=DAY ,widget=forms.Select(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
     input_value = forms.CharField(label="Valor de entrada pago",max_length=150, initial=0, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12', 'placeholder':'R$'}))
+    image_register = forms.ImageField(widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12', 'placeholder':'R$'}))
     active = forms.BooleanField(label='Ativo na clinica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
     note = forms.CharField(label='Observacao',widget=forms.Textarea(attrs={"class":"form-control"}))
+
     class Meta:
         model= Contrato_odonto
         fields = ('propose','professional','time_contract','type_plane','plane_value','date_payment_per_month',
-                  'input_value','active','note')
+                  'input_value','image_register','active','note')
 
 class FormContratoNutri(forms.ModelForm):
 

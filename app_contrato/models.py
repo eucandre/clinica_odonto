@@ -33,6 +33,11 @@ class Contrato_odonto(models.Model):
     date_payment_per_month = models.CharField(max_length=2, help_text="O dia do vencimento para o mes.")
     input_value = models.FloatField(blank=True,
                                     help_text='Valor dado de entrada, pode deixar em branco caso fique sem a entrada!')
+    image_register = models.ImageField(
+        null=True,
+        blank=True,
+        upload_to='/imagem_contrato_odonto/',
+    )
     note = models.TextField()
     user = models.ForeignKey(User)
     active = models.BooleanField(blank=True)

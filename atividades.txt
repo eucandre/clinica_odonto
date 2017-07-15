@@ -9,3 +9,4 @@ Criar:
 feito:
     Análise de cortesia;
     Análise para permissão de cancelamento de contrato;
+    Inserir imagem bocal geral e atribuir o dente selecionado.
