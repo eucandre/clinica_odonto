@@ -5,23 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fec82e5-1724-4330-a579-f2da07df0f87" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/Makefile" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/db.clinica" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/diagram.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/make.bat" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_atendimento/models.py" afterPath="$PROJECT_DIR$/app_atendimento/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_base/models.py" afterPath="$PROJECT_DIR$/app_base/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_base/views.py" afterPath="$PROJECT_DIR$/app_base/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_campanha/models.py" afterPath="$PROJECT_DIR$/app_campanha/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_contrato/models.py" afterPath="$PROJECT_DIR$/app_contrato/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_contrato/views.py" afterPath="$PROJECT_DIR$/app_contrato/views.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_estoque/models.py" afterPath="$PROJECT_DIR$/app_estoque/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_receita/forms.py" afterPath="$PROJECT_DIR$/app_receita/forms.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_receita/models.py" afterPath="$PROJECT_DIR$/app_receita/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_receita/verifica_pagamento.py" afterPath="$PROJECT_DIR$/app_receita/verifica_pagamento.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_receita/views.py" afterPath="$PROJECT_DIR$/app_receita/views.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/atividades.txt" afterPath="$PROJECT_DIR$/atividades.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/paginas_app_contrato/insere_contrato_odonto.html" afterPath="$PROJECT_DIR$/templates/paginas_app_contrato/insere_contrato_odonto.html" />
     </list>
     <ignored path="clinica.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -85,14 +72,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app_contrato/models.py">
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app_contrato/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1184">
-              <caret line="77" column="48" lean-forward="false" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
+            <state relative-caret-position="368">
+              <caret line="26" column="47" lean-forward="false" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
               <folding>
-                <element signature="e#0#39#0" expanded="true" />
+                <element signature="e#0#24#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="atividades.txt" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/atividades.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="208">
+              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -100,10 +97,22 @@
       <file leaf-file-name="models.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app_receita/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="157" column="26" lean-forward="true" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
+            <state relative-caret-position="192">
+              <caret line="135" column="12" lean-forward="true" selection-start-line="135" selection-start-column="12" selection-end-line="135" selection-end-column="12" />
               <folding>
                 <element signature="e#0#39#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app_receita/forms.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="482">
+              <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+              <folding>
+                <element signature="e#0#24#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -151,9 +160,7 @@
         <option value="$PROJECT_DIR$/templates/paginas_app_contrato/lista_contrato_odonto.html" />
         <option value="$PROJECT_DIR$/app_receita/migrations/0001_initial.py" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/6fa56599-ade3-4603-acc0-29bf41586095/console.sql" />
-        <option value="$PROJECT_DIR$/app_receita/forms.py" />
         <option value="$PROJECT_DIR$/app_contrato/admin.py" />
-        <option value="$PROJECT_DIR$/app_contrato/forms.py" />
         <option value="$PROJECT_DIR$/templates/paginas_app_receita/lista_recebimento_plano_nutri.html" />
         <option value="$PROJECT_DIR$/templates/paginas_app_receita/insere_recebimento_plano_nutri.html" />
         <option value="$PROJECT_DIR$/templates/paginas_app_receita/item_recebimento_plano_nutri.html" />
@@ -164,7 +171,6 @@
         <option value="$PROJECT_DIR$/templates/paginas_app_contrato/item_contrato_nutri.html" />
         <option value="$PROJECT_DIR$/templates/paginas_app_contrato/lista_contrato_psico.html" />
         <option value="$PROJECT_DIR$/templates/paginas_app_contrato/item_contrato_psico.html" />
-        <option value="$PROJECT_DIR$/app_receita/admin.py" />
         <option value="$PROJECT_DIR$/app_atendimento/views.py" />
         <option value="$PROJECT_DIR$/app_atendimento/mapa_atendimento.py" />
         <option value="$PROJECT_DIR$/app_base/forms.py" />
@@ -187,13 +193,16 @@
         <option value="$PROJECT_DIR$/app_estoque/models.py" />
         <option value="$PROJECT_DIR$/app_atendimento/models.py" />
         <option value="$PROJECT_DIR$/app_receita/verifica_pagamento.py" />
-        <option value="$PROJECT_DIR$/app_receita/views.py" />
         <option value="$PROJECT_DIR$/app_base/views.py" />
         <option value="$PROJECT_DIR$/templates/paginas_app_contrato/insere_contrato_odonto.html" />
-        <option value="$PROJECT_DIR$/atividades.txt" />
         <option value="$PROJECT_DIR$/app_contrato/views.py" />
+        <option value="$PROJECT_DIR$/app_receita/views.py" />
+        <option value="$PROJECT_DIR$/app_receita/admin.py" />
         <option value="$PROJECT_DIR$/app_contrato/models.py" />
+        <option value="$PROJECT_DIR$/app_contrato/forms.py" />
+        <option value="$PROJECT_DIR$/atividades.txt" />
         <option value="$PROJECT_DIR$/app_receita/models.py" />
+        <option value="$PROJECT_DIR$/app_receita/forms.py" />
       </list>
     </option>
   </component>
@@ -231,6 +240,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -259,7 +269,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
     </panes>
   </component>
@@ -273,18 +282,19 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\Carlos\Desktop\clinica_odonto-master\templates" />
-      <recent name="C:\clinica\templates\paginas_app_campanha" />
-      <recent name="C:\clinica\templates\paginas_app_receita" />
-      <recent name="C:\clinica\templates\paginas_app_base" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\Carlos\Desktop\clinica_odonto-master\templates" />
       <recent name="C:\Users\Carlos\Desktop\clinica_odonto-master\media\apoio" />
       <recent name="C:\clinica\arquivos de apoio" />
       <recent name="C:\clinica\app_contrato\migrations" />
       <recent name="C:\clinica\media\bootstrap" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Carlos\Desktop\clinica_odonto-master\media" />
+      <recent name="C:\Users\Carlos\Desktop\clinica_odonto-master\templates" />
+      <recent name="C:\clinica\templates\paginas_app_campanha" />
+      <recent name="C:\clinica\templates\paginas_app_receita" />
+      <recent name="C:\clinica\templates\paginas_app_base" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -772,20 +782,6 @@
       <option name="presentableId" value="Default" />
       <updated>1479613257887</updated>
     </task>
-    <task id="LOCAL-00050" summary="Criação de login &#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;">
-      <created>1488639051136</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1488639051137</updated>
-    </task>
-    <task id="LOCAL-00051" summary="Criação do CRUD&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;">
-      <created>1488650496871</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1488650496871</updated>
-    </task>
     <task id="LOCAL-00052" summary="Criação do CRUD&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;">
       <created>1488843573799</created>
       <option name="number" value="00052" />
@@ -1115,7 +1111,21 @@
       <option name="project" value="LOCAL" />
       <updated>1499486098978</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="verifica modulos">
+      <created>1500082302482</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1500082302482</updated>
+    </task>
+    <task id="LOCAL-00100" summary="verifica modulos">
+      <created>1500090094350</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1500090094350</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1138,7 +1148,7 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32049307" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32930514" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32771823" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12881097" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18216464" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3037879" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.15558912" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1258,41 +1268,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app_receita/admin.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="9" column="26" lean-forward="false" selection-start-line="9" selection-start-column="26" selection-end-line="9" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/mapa_atendiemnto.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="99" column="0" lean-forward="true" selection-start-line="99" selection-start-column="0" selection-end-line="99" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_contrato/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_base/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="22" column="52" lean-forward="false" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/chat.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="72" column="54" lean-forward="false" selection-start-line="72" selection-start-column="54" selection-end-line="72" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/collapsible_chat_widget.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
@@ -1467,13 +1442,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app_receita/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="16">
-          <caret line="192" column="0" lean-forward="false" selection-start-line="192" selection-start-column="0" selection-end-line="192" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app_contrato/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="280">
@@ -1485,13 +1453,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="177">
           <caret line="397" column="35" lean-forward="true" selection-start-line="397" selection-start-column="35" selection-end-line="397" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/atividades.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="10" column="55" lean-forward="false" selection-start-line="10" selection-start-column="55" selection-end-line="10" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -1628,28 +1589,81 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app_atendimento/models.py">
+    <entry file="file://$PROJECT_DIR$/app_receita/admin.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2288">
-          <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
-          <folding />
+        <state relative-caret-position="176">
+          <caret line="11" column="28" lean-forward="false" selection-start-line="11" selection-start-column="28" selection-end-line="11" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_receita/apps.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_receita/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="17" column="0" lean-forward="true" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/paginas_app_receita/insere_orcamento_odonto.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-432">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app_contrato/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1184">
-          <caret line="77" column="48" lean-forward="false" selection-start-line="77" selection-start-column="48" selection-end-line="77" selection-end-column="48" />
+        <state relative-caret-position="560">
+          <caret line="35" column="18" lean-forward="false" selection-start-line="35" selection-start-column="4" selection-end-line="35" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_atendimento/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-544">
+          <caret line="26" column="29" lean-forward="false" selection-start-line="26" selection-start-column="29" selection-end-line="26" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_contrato/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="26" column="47" lean-forward="false" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="47" />
           <folding>
-            <element signature="e#0#39#0" expanded="true" />
+            <element signature="e#0#24#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/atividades.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_receita/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="73" column="0" lean-forward="true" selection-start-line="73" selection-start-column="0" selection-end-line="73" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#24#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app_receita/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="157" column="26" lean-forward="true" selection-start-line="157" selection-start-column="26" selection-end-line="157" selection-end-column="26" />
+        <state relative-caret-position="192">
+          <caret line="135" column="12" lean-forward="true" selection-start-line="135" selection-start-column="12" selection-end-line="135" selection-end-column="12" />
           <folding>
             <element signature="e#0#39#0" expanded="true" />
           </folding>

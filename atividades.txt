@@ -5,8 +5,9 @@ Criar:
 	controlar a participação dos lideres na empresa (a dona e gerentes devem sempre atender quando requisitados);
 	Regras para a cortesia;
     Adicionar imagens aos relatórios
+    Inserir imagem bocal geral e atribuir o dente selecionado.
+    Editar os templates de formulários ;
 
 feito:
     Análise de cortesia;
     Análise para permissão de cancelamento de contrato;
-    Inserir imagem bocal geral e atribuir o dente selecionado.
