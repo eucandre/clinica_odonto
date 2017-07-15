@@ -4,3 +4,8 @@ Criar:
 	controle de ponto, este depende de equipamento externo;
 	controlar a participação dos lideres na empresa (a dona e gerentes devem sempre atender quando requisitados);
 	Regras para a cortesia;
+    Adicionar imagens aos relatórios
+
+feito:
+    Análise de cortesia;
+    Análise para permissão de cancelamento de contrato;

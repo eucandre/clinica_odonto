@@ -391,6 +391,9 @@ def detalha_cliente(request, nr_item):
 
 @login_required(login_url='/login/')
 def verifica_cortesia_odonto(request,nr_item):
+    '''
+        A funcao esta correta!
+    '''
     try:
         item = RecebimentoPlanoOdonto.objects.get(pk=nr_item)
         contrato_item = Contrato_odonto.objects.get(pk=item.name_client.id)

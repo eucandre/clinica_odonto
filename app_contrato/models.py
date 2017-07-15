@@ -3,6 +3,23 @@ from app_base.models import *
 from app_receita.models import *
 from django.contrib.auth.models import *
 
+TIPO_PLANO = ((u'Odonto', 'Odonto'), (u'Nutri', 'Nutri'), (u'Psico', 'Psico'),(u'Full', 'Full'))
+
+
+class Contrato_Empresa(models.Model):
+    name_employe = models.CharField(max_length=150)
+    type_plane = models.CharField(max_length=6, choices=TIPO_PLANO)
+    cnpj = models.CharField(max_length=21)
+    value_contract = models.FloatField(blank=True)#Este campo eh para ser preenchido caso a empresa pague todos os plano, caso nao fica para cada associado.
+    discont_in_plane_associates = models.FloatField(help_text='Preecha esse campo para o desconto para associados', blank=True) #desconto para os assiciados casso tenha.ou desconto no plano
+    note = models.TextField()
+
+    def __unicode__(self):
+        return self.name_employe
+
+    class Meta:
+        verbose_name_plural = 'Contrato Empresa'
+
 
 class Contrato_odonto(models.Model):
 
@@ -12,6 +29,7 @@ class Contrato_odonto(models.Model):
     time_contract = models.DateField(blank=True, help_text='Data para finalizar o tratamento')
     type_plane = models.CharField(max_length=150, choices=TYPE_PLANE)
     plane_value = models.FloatField()
+    value_per_mounth = models.FloatField()
     date_payment_per_month = models.CharField(max_length=2, help_text="O dia do vencimento para o mes.")
     input_value = models.FloatField(blank=True,
                                     help_text='Valor dado de entrada, pode deixar em branco caso fique sem a entrada!')
@@ -101,8 +119,8 @@ class RecebimentoPlanoOdonto(models.Model):
             a formula eh (valorPago*100)/totalPlano =>80 
         '''
         valorOriginal= self.name_client.plane_value
-
-        return valorOriginal-self.leftover_value
+        valorPago = valorOriginal-self.leftover_value
+        return (valorPago*100)/valorOriginal
 
     def __unicode__(self):
         return self.name_client.__str__()
@@ -154,3 +172,4 @@ class RecebimentoPlanoNutri(models.Model):
 
     def __unicode__(self):
         return self.name_client.__str__()
+

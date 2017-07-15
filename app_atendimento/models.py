@@ -14,7 +14,9 @@ EVOLUCAO = ((u'Bom', 'Bom'),
 '''
 
 class relatorio_exame_odonto(models.Model):
-
+    '''
+        relatorio para clientes sem contrato
+    '''
     name_client = models.ForeignKey(Cliente)
     professional = models.ForeignKey(Profissionais)
     tooths = models.ManyToManyField(Dentes)
@@ -31,7 +33,9 @@ class relatorio_exame_odonto(models.Model):
         verbose_name_plural = 'Relatorio de Exame Odonto'
 
 class relatorio_exame_psico(models.Model):
-
+    '''
+            relatorio para clientes sem contrato
+        '''
     name_client = models.ForeignKey(Cliente)
     professional = models.ForeignKey(Profissionais)
     date_atendence = models.DateField()
@@ -46,7 +50,9 @@ class relatorio_exame_psico(models.Model):
         verbose_name_plural = 'Relatorio de Exame Psico'
 
 class relatorio_exame_nutri(models.Model):
-
+    '''
+            relatorio para clientes sem contrato
+        '''
     name_client = models.ForeignKey(Cliente)
     professional = models.ForeignKey(Profissionais)
     date_atendence = models.DateField()
@@ -67,7 +73,7 @@ class agendamemto_plano_odonto(models.Model):
     professional = models.ForeignKey(Profissionais)
     date_atendence = models.DateField()
     user = models.ForeignKey(User)
-    active = models.BooleanField()
+    active = models.BooleanField(blank=True)
     note = models.TextField()
 
     def __unicode__(self):
@@ -89,7 +95,7 @@ class agendamemto_plano_nutri(models.Model):
     professional = models.ForeignKey(Profissionais)
     date_atendence = models.DateTimeField()
     user = models.ForeignKey(User)
-    active = models.BooleanField()
+    active = models.BooleanField(blank=True)
     note = models.TextField()
 
     def __unicode__(self):
@@ -105,7 +111,7 @@ class agendamemto_plano_psico(models.Model):
     professional = models.ForeignKey(Profissionais)
     date_atendence = models.DateTimeField()
     user = models.ForeignKey(User)
-    active = models.BooleanField()
+    active = models.BooleanField(blank=True)
     note = models.TextField()
 
     def __unicode__(self):
@@ -121,7 +127,7 @@ class agendamento_simples(models.Model):
     professional = models.ForeignKey(Profissionais)
     date_atendence = models.DateTimeField()
     user = models.ForeignKey(User)
-    active = models.BooleanField()
+    active = models.BooleanField(blank=True)
     note = models.TextField()
 
     def __unicode__(self):
@@ -179,7 +185,6 @@ class relatorio_exame_psico_continuado(models.Model):
     '''
 
     name_client = models.ForeignKey(Contrato_psicologo)
-
     evulution = models.CharField(max_length=7, choices=EVOLUCAO, help_text='Classifica a evolucao do tratamento do '
                                                                            'paciente')
     date_atendence = models.DateField()

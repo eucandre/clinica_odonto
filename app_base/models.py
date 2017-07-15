@@ -31,7 +31,7 @@ class Profissionais(models.Model):
     cep = models.CharField(max_length=9)
     birth_day = models.DateField()
     note = models.TextField()
-    active = models.BooleanField()
+    active = models.BooleanField(blank=True)
     user = models.ForeignKey(User)
 
     def __unicode__(self):
@@ -57,7 +57,7 @@ class Funcionario(models.Model):
     birth_day = models.DateField()
     note = models.TextField()
     salary = models.FloatField()
-    active = models.BooleanField()
+    active = models.BooleanField(blank=True)
     user = models.ForeignKey(User)
 
     def __unicode__(self):
@@ -82,7 +82,7 @@ class Cliente(models.Model):
     cpf = models.CharField(max_length=11, unique=True)
     birth_day = models.DateField()
     Note = models.TextField(blank=True)
-    active = models.BooleanField()
+    active = models.BooleanField(blank=True)
     user = models.ForeignKey(User)
 
     def __unicode__(self):

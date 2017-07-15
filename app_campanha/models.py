@@ -12,7 +12,7 @@ class campanha(models.Model):
     reward1 = models.CharField(max_length=150, blank=True)
     reward2 = models.CharField(max_length=150, blank=True)
     reward3 = models.CharField(max_length=150, blank=True)
-    active = models.BooleanField()
+    active = models.BooleanField(blank=True)
     note = models.TextField()
     user = models.ForeignKey(User)
 

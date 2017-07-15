@@ -51,6 +51,9 @@
     <form action="." method="post">
         {% csrf_token %}
         {{ form.errors }}
+        {% if valor_pago < 100 %}
+            <h3>O cliente pagou até {{ valor_pago }}% do total do contrato.</h3>
+        {% endif %}
         {{ form.as_p }}
         <div class="pull-right">
             <button type="submit" class="btn btn-success">ENVIAR</button>

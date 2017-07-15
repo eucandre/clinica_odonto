@@ -21,7 +21,7 @@ class Fornecedor(models.Model):
     site = models.CharField(max_length=150, blank=True)
     state_registration = models.CharField(max_length=150)
     note = models.TextField()
-    active = models.BooleanField()
+    active = models.BooleanField(blank=True)
     user = models.ForeignKey(User)
 
     def __unicode__(self):
@@ -39,7 +39,7 @@ class Produto( models.Model):
     purchase_date = models.DateField()
     date_vaidate = models.DateField()
     product_type =models.CharField(max_length=150, choices=TYPE_PRODUCT)
-    active = models.BooleanField()
+    active = models.BooleanField(blank=True)
     user = models.ForeignKey(User)
 
     def __unicode__(self):

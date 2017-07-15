@@ -28,6 +28,18 @@ TOOTH = (
     (u'31', '31'),(u'32', '32'), (u'33', '33'), (u'34', '34'), (u'35', '35'), (u'36', '36'), (u'37', '37'),
     (u'38', '38'),(u'39', '39'),)
 
+class Servicos(models.Model):
+
+    name =models.CharField(max_length=150)
+    cost = models.FloatField()
+    odonto = models.BooleanField(blank=True)
+    nutri = models.BooleanField(blank=True)
+    pscico = models.BooleanField(blank=True)
+    professional = models.ManyToManyField(Profissionais, blank=True)
+
+    def __unicode__(self):
+        return self.name
+
 
 class Dentes(models.Model):
     number_tooth = models.CharField(max_length=150, choices=TOOTH)
@@ -60,12 +72,15 @@ class FacesDentes(models.Model):
         verbose_name_plural = "Faces do Dente"
 
 class OrcamentoPlanoOdontologico(models.Model):
+
     name_client = models.ForeignKey(Cliente)
     tooths = models.ManyToManyField(Dentes)
     faces_tooths = models.ManyToManyField(FacesDentes)
     date_today = models.DateField(auto_now=True)
     date_to_end_tratment = models.DateField()
+    services = models.ManyToManyField(Servicos)
     value_tratment = models.FloatField()
+    note = models.TextField(blank=True)
     active = models.BooleanField(blank=True)
     user = models.ForeignKey(User)
 
@@ -80,10 +95,13 @@ class OrcamentoPlanoOdontologico(models.Model):
         verbose_name_plural = "Orcamento Plano Odonto"
 
 class OrcamentoPlanoNutri(models.Model):
+
     name_client = models.ForeignKey(Cliente)
     date_today = models.DateField(auto_now=True)
     date_to_end_tratment = models.DateField()
+    services = models.ManyToManyField(Servicos)
     value_tratment = models.FloatField()
+    note = models.TextField(blank=True)
     active = models.BooleanField(blank=True)
     user = models.ForeignKey(User)
 
@@ -101,7 +119,9 @@ class OrcamentoPlanoPsico(models.Model):
     name_client = models.ForeignKey(Cliente)
     date_today = models.DateField(auto_now=True)
     date_to_end_tratment = models.DateField()
+    services = models.ManyToManyField(Servicos)
     value_tratment = models.FloatField()
+    note = models.TextField(blank=True)
     active = models.BooleanField(blank=True)
     user = models.ForeignKey(User)
 
@@ -122,6 +142,8 @@ class RecebimentoAvulso(models.Model):
     name_client = models.ForeignKey(Cliente)
     date_attendance = models.DateField()
     payment_for_the_month = models.DateField()
+    services = models.ManyToManyField(Servicos)
+    value_tratment = models.FloatField()
     professional_attendance = models.ForeignKey(Profissionais)
     value_attendanceD = models.FloatField(blank=True)
     value_attendanceCC = models.FloatField(blank=True)
@@ -129,81 +151,9 @@ class RecebimentoAvulso(models.Model):
     value_attendanceB = models.FloatField(blank=True)
     amount_receivePR = models.FloatField(blank=True)
     leftover_value = models.FloatField(blank=True)
+    note = models.TextField(blank=True)
     type_of_payment = models.ManyToManyField(Tipo_Recebimento)
     user = models.ForeignKey(User)
 
     def __unicode__(self):
         return self.name_client.__str__()
-
-
-# class RecebimentoPlano(models.Model):
-#     """
-#         Na views ou no form elaborar uma funcao para determinar se serah cobrado jurus.
-#     """
-#     name_client = models.ForeignKey(Cliente)
-#     date_payment = models.DateField(auto_now=True)
-#     payment_for_the_month = models.DateField()
-#     amount_receivedD = models.FloatField(blank=True)
-#     amount_receivedCC = models.FloatField(blank=True)
-#     amount_receivedCD = models.FloatField(blank=True)
-#     amount_receivedB = models.FloatField(blank=True)
-#     amount_receiveCH = models.FloatField(blank=True)
-#     amount_receivePR = models.FloatField(blank=True)
-#     leftover_value = models.FloatField(blank=True)
-#     type_of_payment = models.ManyToManyField(Tipo_Recebimento)
-#     user = models.ForeignKey(User)
-#
-#     def getMes(self):
-#         self.date_today = datetime.today().month
-#         return self.date_payment
-#
-#     def __unicode__(self):
-#         return self.name_client.__str__()
-
-# class RecebimentoPlanoPsico(models.Model):
-#     """
-#         Na views ou no form elaborar uma funcao para determinar se serah cobrado jurus.
-#     """
-#     name_client = models.ForeignKey(Cliente)
-#     date_payment = models.DateField(auto_now=True)
-#     payment_for_the_month = models.DateField()
-#     amount_receivedD = models.FloatField(blank=True)
-#     amount_receivedCC = models.FloatField(blank=True)
-#     amount_receivedCD = models.FloatField(blank=True)
-#     amount_receivedB = models.FloatField(blank=True)
-#     amount_receiveCH = models.FloatField(blank=True)
-#     amount_receivePR = models.FloatField(blank=True)
-#     leftover_value = models.FloatField(blank=True)
-#     type_of_payment = models.ManyToManyField(Tipo_Recebimento)
-#     user = models.ForeignKey(User)
-#
-#     def getMes(self):
-#         self.date_today = datetime.today().month
-#         return self.date_payment
-#
-#     def __unicode__(self):
-#         return self.name_client.__str__()
-#
-# class RecebimentoPlanoNutri(models.Model):
-#     """
-#         Na views ou no form elaborar uma funcao para determinar se serah cobrado jurus.
-#     """
-#     name_client = models.ForeignKey(Cliente)
-#     date_payment = models.DateField(auto_now=True)
-#     payment_for_the_month = models.DateField()
-#     amount_receivedD = models.FloatField(blank=True)
-#     amount_receivedCC = models.FloatField(blank=True)
-#     amount_receivedCD = models.FloatField(blank=True)
-#     amount_receivedB = models.FloatField(blank=True)
-#     amount_receiveCH = models.FloatField(blank=True)
-#     amount_receivePR = models.FloatField(blank=True)
-#     leftover_value = models.FloatField(blank=True)
-#     type_of_payment = models.ManyToManyField(Tipo_Recebimento)
-#     user = models.ForeignKey(User)
-#
-#     def getMes(self):
-#         self.date_today = datetime.today().month
-#         return self.date_payment
-#
-#     def __unicode__(self):
-#         return self.name_client.__str__()

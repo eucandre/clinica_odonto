@@ -18,3 +18,7 @@ def VerificaPagamento(nr_id):
         return atual==True
     elif obj_recebimento_odonto.getMes() < mes:
         return hoje - int(obj_contrato_odonto.date_payment_per_month)+30
+
+# def condition_to_tratment_cancel(value_contract):
+#     if value_contract
+#         return
