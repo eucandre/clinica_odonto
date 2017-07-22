@@ -47,10 +47,10 @@
     </li>
 
 {% endblock %}
-    {% block nome_formulario %}
+    {% block conteudo %}
         <h2>Contrato para Tratamento Psicológico</h2>
     {% endblock %}
-    {% block formulario %}
+    {% block corpo_completementar %}
     <form action="." method="post">
         {% csrf_token %}
         {{ form.errors }}
