@@ -40,14 +40,9 @@ INSTALLED_APPS = [
     'app_atendimento',
     'app_campanha',
     'app_contas',
-    'tornado_websockets',
+
 ]
 
-TORNADO = {
-    'port': 1337,    # 8000 by default
-    'handlers': [],  # [] by default
-    'settings': {},  # {} by default
-}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

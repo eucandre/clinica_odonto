@@ -2,6 +2,7 @@ from django import forms
 from .models import *
 import datetime
 from django.forms.extras.widgets import SelectDateWidget
+from django.contrib.admin.widgets import AdminDateWidget
 
 DAY = ((u'1','1'),(u'2','2'),(u'3','3'),(u'4','4'),(u'5','5'),(u'6','6'),(u'7','7'),(u'8','8'),(u'9','9'),(u'10','10'),
        (u'11','11'),(u'12','12'),(u'13','13'),(u'14', '14'),(u'15','15'),(u'16','16'),
@@ -12,12 +13,12 @@ class FormContratoOdonto(forms.ModelForm):
 
     propose = forms.ModelChoiceField(label="Proposta de orcamento", queryset=OrcamentoPlanoOdontologico.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
     professional = forms.ModelChoiceField(label="Nome do Profissional responsavel pelo tratamento",queryset=Profissionais.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
-    time_contract =forms.DateField(label='Data de encerramento do tratamento' ,widget=forms.SelectDateWidget(attrs={'class':'add-on input-group-addon daterangepicker xdisplay picker_1 single opensright show-calendar', "data-inputmask":"'mask': '99/99/9999'"}))
+    time_contract =forms.DateField(label='Data de encerramento do tratamento' ,widget=forms.DateTimeInput(attrs={'type':'datetime-local','class':'form-control' }))
     type_plane = forms.ChoiceField(label='Tipo de vinculo',choices=TYPE_PLANE, widget=forms.Select(attrs={'class':'form-control'}))
     plane_value = forms.CharField(label="Valor do plano",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     date_payment_per_month = forms.ChoiceField(label='Dia de vencimento mensal',choices=DAY ,widget=forms.Select(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
     input_value = forms.CharField(label="Valor de entrada pago",max_length=150, initial=0, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12', 'placeholder':'R$'}))
-    image_register = forms.ImageField(widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12', 'placeholder':'R$'}))
+    image_register = forms.ImageField(widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12', 'placeholder':'Imagem'}))
     active = forms.BooleanField(label='Ativo na clinica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
     note = forms.CharField(label='Observacao',widget=forms.Textarea(attrs={"class":"form-control"}))
 

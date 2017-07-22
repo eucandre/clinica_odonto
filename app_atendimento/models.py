@@ -85,6 +85,9 @@ class agendamemto_plano_odonto(models.Model):
     def get_date_atendence(self):        
       return self.date_atendence.__str__()
 
+    def mascara_data(self):
+        return self.date_atendence.strftime('%d')[:1]+"0's"
+
     class Meta:
         verbose_name_plural = 'Agendamento para planos odonto'
 

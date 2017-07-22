@@ -6,8 +6,11 @@ Criar:
 	Regras para a cortesia;
     Adicionar imagens aos relatórios
     Inserir imagem bocal geral e atribuir o dente selecionado.
-    Editar os templates de formulários ;
+    Editar os templates de formulários ;####
 
 feito:
     Análise de cortesia;
     Análise para permissão de cancelamento de contrato;
+    Inicio da configuração do sphinx
+
+

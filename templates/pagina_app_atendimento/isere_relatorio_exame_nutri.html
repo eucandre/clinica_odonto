@@ -50,8 +50,10 @@
     {% block conteudo %}
     <form action="." method="post">
         {% csrf_token %}
-        {{ form.errors }}
-        {{ form.as_p }}
+        <div class="form-contol">
+            {{ form.errors }}
+            {{ form.as_p }}
+            </div>
         <button type="submit" class="btn btn-success">ENVIAR</button>
         <button type="reset" class="btn btn-danger">CANCELAR</button>
     </form>

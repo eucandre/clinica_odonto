@@ -1,7 +1,9 @@
 from django import forms
 from .models import *
-# -*- coding: utf 8 -*-
+from input_mask.widgets import InputMask
+
 AGENDAMENTO=((u'Atendimento clinico', 'Atendimento clinico'),(u'Exame clinico','Exame clinico'))
+
 
 class Form_relatorio_exame_odonto(forms.ModelForm):
     name_client = forms.ModelChoiceField(queryset=Cliente.objects.all(),
@@ -11,6 +13,7 @@ class Form_relatorio_exame_odonto(forms.ModelForm):
     tooths = forms.ModelMultipleChoiceField(queryset=Dentes.objects.all())
     faces_tooths = forms.ModelMultipleChoiceField(queryset=FacesDentes.objects.all())
     date_atendence = forms.DateField(widget=forms.TextInput(attrs={'class':'form-control'}))
+
     note = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control'}))
 
     class Meta:
