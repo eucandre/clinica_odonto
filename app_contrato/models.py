@@ -7,11 +7,15 @@ TIPO_PLANO = ((u'Odonto', 'Odonto'), (u'Nutri', 'Nutri'), (u'Psico', 'Psico'),(u
 
 
 class Contrato_Empresa(models.Model):
+
     name_employe = models.CharField(max_length=150)
+    social_name = models.CharField(max_length=150)
     type_plane = models.CharField(max_length=6, choices=TIPO_PLANO)
     cnpj = models.CharField(max_length=21)
     value_contract = models.FloatField(blank=True)#Este campo eh para ser preenchido caso a empresa pague todos os plano, caso nao fica para cada associado.
     discont_in_plane_associates = models.FloatField(help_text='Preecha esse campo para o desconto para associados', blank=True) #desconto para os assiciados casso tenha.ou desconto no plano
+    contract_date = models.DateField(auto_now=True,unique_for_date=True)
+    active = models.BooleanField(blank=True)
     note = models.TextField()
 
     def __unicode__(self):
@@ -19,6 +23,30 @@ class Contrato_Empresa(models.Model):
 
     class Meta:
         verbose_name_plural = 'Contrato Empresa'
+
+class Contrato_Filiado_A_Empresa(models.Model):
+
+    name = models.CharField(max_length=150, unique=True)
+    associate = models.ForeignKey(Contrato_Empresa)
+    registration = models.CharField(max_length=150, blank=True, unique=True)
+    type_plane = models.CharField(max_length=150, choices=TYPE_PLANE, blank=True)
+    date_today = models.DateField(auto_now=True,unique_for_date=True)
+    date_payment_per_month = models.CharField(blank=True,max_length=2, help_text="O dia do vencimento para o mes.")
+    active = models.BooleanField(blank=True)
+
+    image_register = models.ImageField(
+        null=True,
+        blank=True,
+        upload_to='/imagem_contrato_odonto/',
+    )
+    note = models.TextField()
+    user = models.ForeignKey(User)
+
+    def __unicode__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = 'Contrato de filiacao a empresa'
 
 
 class Contrato_odonto(models.Model):

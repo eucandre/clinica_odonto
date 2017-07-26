@@ -310,3 +310,102 @@ def InsereRecebimentoPlanoPsico(request):
     else:
         form = FormRecebimentoPlanoPsico()
     return render(request, 'paginas_app_receita/insere_recebimento_plano_Psico.html', {'form': form})
+
+@login_required(login_url='/login/')
+def InsereContratoEmpresa(request):
+    if request.method =='POST':
+        form = FormContratoEmpresa(request.POST)
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.user = request.user
+            item.save()
+            return render(request, 'salvo.html')
+    else:
+        form =FormContratoEmpresa()
+    return render(request, 'paginas_app_contrato/contrato_empresa.html',{'form':form})
+
+@login_required(login_url='/login/')
+def EditaContratoEmpresa(request, nr_item):
+
+    item = Contrato_Empresa.objects.get(pk=nr_item)
+    if request.method =='POST':
+        form = FormContratoEmpresa(request.POST, request.FILES, instance=item)
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.user = request.user
+            item.save()
+            return render(request, 'salvo.html')
+    else:
+        form =FormContratoEmpresa(instance=item)
+    return render(request, 'paginas_app_contrato/contrato_empresa.html',{'form':form})
+
+@login_required(login_url='/login/')
+def detalha_Contrato_Empresa(request, nr_item):
+    try:
+        item = Contrato_Empresa.objects.get(pk=nr_item)
+    except Contrato_Empresa.DoesNotExist:
+        raise Http404('Sem Registro!')
+    return render(request, "paginas_app_contrato/item_contrato_empresa.html", {'item': item })
+
+@login_required(login_url='/login/')
+def lista_contrtos_empresa(request):
+    contrtos_empresa = Contrato_Empresa.objects.all()
+    page = request.GET.get('page', 1)
+    paginator = Paginator(contrtos_empresa, 10)
+    try:
+        p_contrtos_empresa = paginator.page(page)
+    except PageNotAnInteger:
+        p_contrtos_empresa = paginator.page(1)
+    except EmptyPage:
+        p_contrtos_empresa = paginator.page(paginator.num_pages)
+    return render(request, "paginas_app_contrato/lista_contrtos_empresa.html", {"contrtos_empresa": p_contrtos_empresa})
+
+@login_required(login_url='/login/')
+def InsereContratoFiliadosEmpresa(request):
+    if request.method =='POST':
+        form = FormContratoFiliadoEmpresa(request.POST)
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.user = request.user
+            item.save()
+            return render(request, 'salvo.html')
+    else:
+        form =FormContratoFiliadoEmpresa()
+    return render(request, 'paginas_app_contrato/contrato_empresa.html',{'form':form})
+
+@login_required(login_url='/login/')
+def EditaContratoFiliadoEmpresa(request, nr_item):
+
+    item = Contrato_Filiado_A_Empresa.objects.get(pk=nr_item)
+    if request.method =='POST':
+        form = FormContratoFiliadoEmpresa(request.POST, request.FILES, instance=item)
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.user = request.user
+            item.save()
+            return render(request, 'salvo.html')
+    else:
+        form =FormContratoFiliadoEmpresa(instance=item)
+    return render(request, 'paginas_app_contrato/contrato_filiado_empresa.html',{'form':form})
+
+@login_required(login_url='/login/')
+def detalha_Contrato_Filiado_Empresa(request, nr_item):
+    try:
+        item = Contrato_Filiado_A_Empresa.objects.get(pk=nr_item)
+    except Contrato_Filiado_A_Empresa.DoesNotExist:
+        raise Http404('Sem Registro!')
+    return render(request, "paginas_app_contrato/item_contrato_filiado_empresa.html", {'item': item })
+
+@login_required(login_url='/login/')
+def lista_contrtos_Filiado_empresa(request):
+    contrtos_filiafo_empresa = Contrato_Filiado_A_Empresa.objects.all()
+    page = request.GET.get('page', 1)
+    paginator = Paginator(contrtos_filiafo_empresa, 10)
+    try:
+        p_contrtos_filiafo_empresa = paginator.page(page)
+    except PageNotAnInteger:
+        p_contrtos_filiafo_empresa = paginator.page(1)
+    except EmptyPage:
+        p_contrtos_filiafo_empresa = paginator.page(paginator.num_pages)
+    return render(request, "paginas_app_contrato/lista_contrtos_filiafo_empresa.html", {"contrtos_filiafo_empresa": p_contrtos_filiafo_empresa})
+

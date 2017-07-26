@@ -61,8 +61,7 @@ class FormContratoPsico(forms.ModelForm):
 
 class FormRecebimentoPlano(forms.ModelForm):
     name_client=forms.ModelChoiceField(label="Nome do Cliente",queryset=Contrato_odonto.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
-    payment_for_the_month = forms.DateField(label='Recebimento referente a data', widget=forms.DateInput(
-        attrs={'class': 'form-control', "data-inputmask": "'mask': '99/99/9999'"}))
+    payment_for_the_month = forms.DateField(label='Recebimento referente a data', widget=forms.DateInput(attrs={'type':'datetime-local','class':'form-control'}))
     amount_receivedD=forms.CharField(initial=0,label="Valor pago em dinheiro",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     amount_receivedCC=forms.CharField(initial=0,label="Valor pago em cartao credito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     amount_receivedCD=forms.CharField(initial=0,label="Valor pago em cartao debito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
@@ -79,7 +78,7 @@ class FormRecebimentoPlano(forms.ModelForm):
 class FormRecebimentoPlanoPsico(forms.ModelForm):
     name_client=forms.ModelChoiceField(label="Nome do Cliente",queryset=Contrato_psicologo.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
     payment_for_the_month = forms.DateField(label='Recebimento referente a data', widget=forms.DateInput(
-        attrs={'class': 'form-control', "data-inputmask": "'mask': '99/99/9999'"}))
+        attrs={'type': 'datetime-local', 'class': 'form-control'}))
     amount_receivedD=forms.CharField(initial=0,label="Valor pago em dinheiro",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     amount_receivedCC=forms.CharField(initial=0,label="Valor pago em cartao credito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     amount_receivedCD=forms.CharField(initial=0,label="Valor pago em cartao debito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
@@ -94,9 +93,9 @@ class FormRecebimentoPlanoPsico(forms.ModelForm):
                   ,'amount_receivePR','type_of_payment')
 
 class FormRecebimentoPlanoNutri(forms.ModelForm):
-    name_client=forms.ModelChoiceField(label="Nome do Cliente",queryset=Contrato_nutricionista.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
+    name_client = forms.ModelChoiceField(label="Nome do Cliente",queryset=Contrato_nutricionista.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
     payment_for_the_month = forms.DateField(label='Recebimento referente a data', widget=forms.DateInput(
-        attrs={'class': 'form-control', "data-inputmask": "'mask': '99/99/9999'"}))
+        attrs={'type': 'datetime-local', 'class': 'form-control'}))
     amount_receivedD=forms.CharField(initial=0,label="Valor pago em dinheiro",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     amount_receivedCC=forms.CharField(initial=0,label="Valor pago em cartao credito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     amount_receivedCD=forms.CharField(initial=0,label="Valor pago em cartao debito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
@@ -109,3 +108,44 @@ class FormRecebimentoPlanoNutri(forms.ModelForm):
         model = RecebimentoPlanoNutri
         fields = ('name_client', 'amount_receivedD','payment_for_the_month','amount_receivedCC','amount_receivedCD','amount_receivedB','amount_receiveCH'
                   ,'amount_receivePR','type_of_payment')
+
+class FormContratoEmpresa(forms.ModelForm):
+
+    name_employe = forms.CharField(max_length=150, label="Nome da Empresa", widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+
+    social_name = forms.CharField(max_length=150, label="Razao Social",
+                                   widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
+    type_plane = forms.ChoiceField(label='Tipo de vinculo', choices=TYPE_PLANE,
+                                   widget=forms.Select(attrs={'class': 'form-control'}))
+    cnpj = forms.CharField(max_length=150, label="CNPJ da Empresa",
+                                   widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
+    value_contract =forms.CharField(max_length=150, label="Valor do Contrato",
+                                   widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
+    discont_in_plane_associates = forms.CharField(max_length=150, label="Desconto atribuido para o contrato",
+                                   widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
+    contract_date = forms.DateField( label="Data de Assinatura do Contrato",
+                                   widget=forms.DateInput(attrs={'type': 'datetime-local', 'class': 'form-control'}))
+    active = forms.BooleanField(label='Ativo na clinica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
+    note = forms.CharField(label='Observacao', widget=forms.Textarea(attrs={"class": "form-control"}))
+
+    class Meta:
+        model = Contrato_Empresa
+        fields = ('name_employe','social_name','type_plane','cnpj','value_contract','discont_in_plane_associates','contract_date',
+                  'active','note')
+
+class FormContratoFiliadoEmpresa(forms.ModelForm):
+
+    name= forms.CharField(max_length=150, label="Nome do Filiado", widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    assciate = forms.ModelChoiceField(label="Empressa assissiada",queryset=Contrato_nutricionista.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
+    registration =forms.CharField(max_length=150, label="Matricula na empresa do Filiado", widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
+    type_plane = forms.ChoiceField(label='Tipo de vinculo', choices=TYPE_PLANE,
+                                   widget=forms.Select(attrs={'class': 'form-control'}))
+    date_payment_per_month = forms.ChoiceField(label='Dia de vencimento mensal', choices=DAY, widget=forms.Select(
+        attrs={'class': 'form-control'}))
+    active = forms.BooleanField(label='Ativo na clinica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
+    image_register = forms.FileField()
+    note = forms.CharField(label='Observacao', widget=forms.Textarea(attrs={"class": "form-control"}))
+    class Meta:
+        model = Contrato_Filiado_A_Empresa
+        fields = ('name','associate','registration', 'type_plane', 'date_today',
+                                                                   'date_payment_per_month','active','image_register','note')

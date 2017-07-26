@@ -4,6 +4,7 @@ from app_receita.models import *
 from app_contrato.models import *
 from django.contrib.auth.models import *
 
+
 AGENDAMENTO=((u'Atendimento clinico', 'Atendimento clinico'),(u'Exame clinico','Exame clinico'))
 EVOLUCAO = ((u'Bom', 'Bom'),
             (u'Ruim', "Ruim"),
@@ -136,6 +137,20 @@ class agendamento_simples(models.Model):
     class Meta:
         verbose_name_plural = 'Agendamento simples'
 
+class agendamento_plano_filiado(models.Model):
+    name_client= models.ForeignKey(Contrato_Filiado_A_Empresa)
+    atendence = models.CharField(choices=AGENDAMENTO, max_length=150)
+    professional = models.ForeignKey(Profissionais)
+    date_atendence = models.DateTimeField()
+    user = models.ForeignKey(User)
+    active = models.BooleanField(blank=True)
+    note = models.TextField()
+
+    def __unicode__(self):
+        return self.name_client.__str__()
+
+    class Meta:
+        verbose_name_plural = 'Agendamento de Afiliados de convenios com empresas'
 
 class relatorio_exame_odonto_continuado(models.Model):
     '''

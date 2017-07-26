@@ -44,9 +44,6 @@ def inicia(request):
     permissao_profissional = request.user.has_perm('app_base.add_Profissionais')
     permissao_funcionario = request.user.has_perm('app_base.add_Funcionario')
     permissao_cliente = request.user.has_perm('app_base.add_Cliente')
-
-
-
     """
         A tarefa desta funcao eh montar o dashboard do sistema, trazer os dados e montar o grafico tambem.
         Estas sao as vairaveis desta funcao : orcament_odonto,value_orcament,sum,total_tratments ,date_initial_orcament, today
@@ -148,29 +145,29 @@ def inicia(request):
     try:
         while i <= (len(Contrato_odonto.objects.all())):
             if Contrato_odonto.objects.get(pk=i).format_date() == 1:
-                sum_contrato_jan = sum_contrato_jan + Contrato_odonto.objects.get(pk=i).value_tratment
+                sum_contrato_jan = sum_contrato_jan + Contrato_odonto.objects.get(pk=i).plane_value
             elif Contrato_odonto.objects.get(pk=i).format_date() == 2:
-                sum_contrato_fev = sum_contrato_fev + Contrato_odonto.objects.get(pk=i).value_tratment
+                sum_contrato_fev = sum_contrato_fev + Contrato_odonto.objects.get(pk=i).plane_value
             elif Contrato_odonto.objects.get(pk=i).format_date() == 3:
-                sum_contrato_marc = sum_contrato_marc + Contrato_odonto.objects.get(pk=i).value_tratment
+                sum_contrato_marc = sum_contrato_marc + Contrato_odonto.objects.get(pk=i).plane_value
             elif Contrato_odonto.objects.get(pk=i).format_date() == 4:
-                sum_contrato_abr = sum_contrato_abr + Contrato_odonto.objects.get(pk=i).value_tratment
+                sum_contrato_abr = sum_contrato_abr + Contrato_odonto.objects.get(pk=i).plane_value
             elif Contrato_odonto.objects.get(pk=i).format_date() == 5:
-                sum_contrato_mai = sum_contrato_mai + Contrato_odonto.objects.get(pk=i).value_tratment
+                sum_contrato_mai = sum_contrato_mai + Contrato_odonto.objects.get(pk=i).plane_value
             elif Contrato_odonto.objects.get(pk=i).format_date() == 6:
-                sum_contrato_jun = sum_contrato_jun + Contrato_odonto.objects.get(pk=i).value_tratment
+                sum_contrato_jun = sum_contrato_jun + Contrato_odonto.objects.get(pk=i).plane_value
             elif Contrato_odonto.objects.get(pk=i).format_date() == 7:
-                sum_contrato_jul = sum_contrato_jul + Contrato_odonto.objects.get(pk=i).value_tratment
+                sum_contrato_jul = sum_contrato_jul + Contrato_odonto.objects.get(pk=i).plane_value
             elif Contrato_odonto.objects.get(pk=i).format_date() == 8:
-                sum_contrato_ago = sum_contrato_ago + Contrato_odonto.objects.get(pk=i).value_tratment
+                sum_contrato_ago = sum_contrato_ago + Contrato_odonto.objects.get(pk=i).plane_value
             elif Contrato_odonto.objects.get(pk=i).format_date() == 9:
-                sum_contrato_set = sum_contrato_set + Contrato_odonto.objects.get(pk=i).value_tratment
+                sum_contrato_set = sum_contrato_set + Contrato_odonto.objects.get(pk=i).plane_value
             elif Contrato_odonto.objects.get(pk=i).format_date() == 10:
-                sum_contrato_out = sum_contrato_out + Contrato_odonto.objects.get(pk=i).value_tratment
+                sum_contrato_out = sum_contrato_out + Contrato_odonto.objects.get(pk=i).plane_value
             elif Contrato_odonto.objects.get(pk=i).format_date() == 11:
-                sum_contrato_nov = sum_contrato_nov + Contrato_odonto.objects.get(pk=i).value_tratment
+                sum_contrato_nov = sum_contrato_nov + Contrato_odonto.objects.get(pk=i).plane_value
             elif Contrato_odonto.objects.get(pk=i).format_date() == 12:
-                sum_contrato_dec = sum_contrato_dec + Contrato_odonto.objects.get(pk=i).value_tratment
+                sum_contrato_dec = sum_contrato_dec + Contrato_odonto.objects.get(pk=i).plane_value
             i += 1
     except Contrato_odonto.DoesNotExist:
         raise Http404()
