@@ -28,6 +28,7 @@ class Contrato_Filiado_A_Empresa(models.Model):
 
     name = models.CharField(max_length=150, unique=True)
     associate = models.ForeignKey(Contrato_Empresa)
+    professional = models.ForeignKey(Profissionais)
     registration = models.CharField(max_length=150, blank=True, unique=True)
     type_plane = models.CharField(max_length=150, choices=TYPE_PLANE, blank=True)
     date_today = models.DateField(auto_now=True,unique_for_date=True)

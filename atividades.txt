@@ -1,12 +1,13 @@
 Criar:
 	contas a pagar;
 	contas a receber;
-	controle de ponto, este depende de equipamento externo;
-	controlar a participação dos lideres na empresa (a dona e gerentes devem sempre atender quando requisitados);
-	Regras para a cortesia;
-    Adicionar imagens aos relatórios
+	controle de ponto, este depende de equipamento externo;(Criar loggin com reconhecimento de imagem)
+    Criar Chat;
+    Adicionar imagens aos RELATÓRIOS;
     Inserir imagem bocal geral e atribuir o dente selecionado.
-    Editar os templates de formulários ;####
+    Editar os templates de formulários ;(Fica para uma proxima etapa, a de acabamento!)
+    Arrumar os forms da app_atendimento (amanhã 26/07)
+    Acrescentar imagens para os relatorios de odonto (amahã 26/07)
 
 feito:
     Análise de cortesia;

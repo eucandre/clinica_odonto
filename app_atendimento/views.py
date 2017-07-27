@@ -312,3 +312,148 @@ def mapa_atendimento_odonto(request):
     atende_amanha= atendimentos_odonto_amanha,atendimentos_psico_amanha,atendimentos_nutri_amanha
     return render(request,'mapa_atendiemnto.html',{'agenda_odonto':atendimentos, 'agenda_odonto_amanha':atende_amanha})
 
+@login_required(login_url='/login/')
+def insere_relatorio_exame_plano_odonto(request):
+    if request.method == 'POST':
+        form = FormRelatorioExamePlanoOdonto(request.POST)
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.user = request.user
+            item.save()
+            return render(request, 'salvo.html', {'item': item})
+    else:
+        form = FormRelatorioExamePlanoOdonto()
+        return render(request, 'pagina_app_atendimento/insere_relatorio_exame_plano_odonto.html', {'form': form})
+
+@login_required(login_url='/login/')
+def lista_relatorio_exame_plano_odonto(request):
+    lista_exame_plano_odonto_continuado = relatorio_exame_odonto_continuado.objects.all()
+    page = request.GET.get('page', 1)
+    paginator = Paginator(lista_exame_plano_odonto_continuado, 10)
+    try:
+        p_relatorio_exame_odonto = paginator.page(page)
+    except PageNotAnInteger:
+        p_relatorio_exame_odonto = paginator.page(1)
+    except EmptyPage:
+        p_relatorio_exame_odonto = paginator.page(paginator.num_pages)
+    return render(request, 'pagina_app_atendimento/lista_exame_plano_odonto_continuado.html', {'p_agendamento': p_relatorio_exame_odonto})
+
+@login_required(login_url='/login/')
+def edita_realtorio_exame_odonto_continuado(request, nr_item):
+    item = relatorio_exame_odonto_continuado.objects.get(pk=nr_item)
+    if request.method == 'POST':
+        form = FormRelatorioExamePlanoOdonto(request.POST, request.FILES, instance=item)
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.user = request.user
+            item.save()
+            return render(request, 'salvo.html', {'item': item})
+    else:
+        form = FormRelatorioExamePlanoOdonto(instance=item)
+        return render(request, 'pagina_app_atendimento/insere_relatorio_exame_plano_odonto.html', {'form': form})
+
+@login_required(login_url='/login/')
+def detalha_relatorio_exame_odonto_continuado(request, nr_item):
+    try:
+        item = relatorio_exame_odonto_continuado.objects.get(pk=nr_item)
+    except relatorio_exame_odonto_continuado.DoesNotExist:
+        raise Http404('Sem Registro!')
+    return render(request, "pagina_app_atendimento/item_relatorio_exame_plano_odonto.html", {'item': item})
+
+
+@login_required(login_url='/login/')
+def insere_relatorio_exame_plano_nutri(request):
+    if request.method == 'POST':
+        form = FormRelatorioExamePlanoNutri(request.POST)
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.user = request.user
+            item.save()
+            return render(request, 'salvo.html', {'item': item})
+    else:
+        form = FormRelatorioExamePlanoNutri()
+        return render(request, 'pagina_app_atendimento/insere_relatorio_exame_plano_nutri.html', {'form': form})
+
+@login_required(login_url='/login/')
+def lista_relatorio_exame_plano_nutri(request):
+    lista_exame_plano_nutri_continuado = relatorio_exame_nutri_continuado.objects.all()
+    page = request.GET.get('page', 1)
+    paginator = Paginator(lista_exame_plano_nutri_continuado, 10)
+    try:
+        p_relatorio_exame_plano_nutri = paginator.page(page)
+    except PageNotAnInteger:
+        p_relatorio_exame_plano_nutri = paginator.page(1)
+    except EmptyPage:
+        p_relatorio_exame_plano_nutri = paginator.page(paginator.num_pages)
+    return render(request, 'pagina_app_atendimento/lista_exame_plano_odonto_continuado.html', {'p_agendamento': p_relatorio_exame_plano_nutri})
+
+@login_required(login_url='/login/')
+def edita_realtorio_exame_nutri_continuado(request, nr_item):
+    item = relatorio_exame_nutri_continuado.objects.get(pk=nr_item)
+    if request.method == 'POST':
+        form = FormRelatorioExamePlanoNutri(request.POST, request.FILES, instance=item)
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.user = request.user
+            item.save()
+            return render(request, 'salvo.html', {'item': item})
+    else:
+        form = FormRelatorioExamePlanoNutri(instance=item)
+        return render(request, 'pagina_app_atendimento/insere_relatorio_exame_plano_nutri.html', {'form': form})
+
+@login_required(login_url='/login/')
+def detalha_relatorio_exame_nutri_continuado(request, nr_item):
+    try:
+        item = relatorio_exame_nutri_continuado.objects.get(pk=nr_item)
+    except relatorio_exame_nutri_continuado.DoesNotExist:
+        raise Http404('Sem Registro!')
+    return render(request, "pagina_app_atendimento/item_relatorio_exame_plano_odonto.html", {'item': item})
+
+@login_required(login_url='/login/')
+def insere_relatorio_exame_plano_psico(request):
+    if request.method == 'POST':
+        form = FormRelatorioExamePlanoPsico(request.POST)
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.user = request.user
+            item.save()
+            return render(request, 'salvo.html', {'item': item})
+    else:
+        form = FormRelatorioExamePlanoPsico()
+        return render(request, 'pagina_app_atendimento/insere_relatorio_exame_plano_nutri.html', {'form': form})
+
+@login_required(login_url='/login/')
+def lista_relatorio_exame_plano_psico(request):
+    lista_exame_plano_psico_continuado = relatorio_exame_psico_continuado.objects.all()
+    page = request.GET.get('page', 1)
+    paginator = Paginator(lista_exame_plano_psico_continuado, 10)
+    try:
+        p_relatorio_exame_plano_psico = paginator.page(page)
+    except PageNotAnInteger:
+        p_relatorio_exame_plano_psico = paginator.page(1)
+    except EmptyPage:
+        p_relatorio_exame_plano_psico = paginator.page(paginator.num_pages)
+    return render(request, 'pagina_app_atendimento/lista_exame_plano_psico_continuado.html', {'p_agendamento': p_relatorio_exame_plano_psico})
+
+@login_required(login_url='/login/')
+def edita_realtorio_exame_psico_continuado(request, nr_item):
+    item = relatorio_exame_psico_continuado.objects.get(pk=nr_item)
+    if request.method == 'POST':
+        form = FormRelatorioExamePlanoPsico(request.POST, request.FILES, instance=item)
+        if form.is_valid():
+            item = form.save(commit=False)
+            item.user = request.user
+            item.save()
+            return render(request, 'salvo.html', {'item': item})
+    else:
+        form = FormRelatorioExamePlanoPsico(instance=item)
+        return render(request, 'pagina_app_atendimento/insere_relatorio_exame_plano_psico.html', {'form': form})
+
+@login_required(login_url='/login/')
+def detalha_relatorio_exame_psico_continuado(request, nr_item):
+    try:
+        item = relatorio_exame_psico_continuado.objects.get(pk=nr_item)
+    except relatorio_exame_psico_continuado.DoesNotExist:
+        raise Http404('Sem Registro!')
+    return render(request, "pagina_app_atendimento/item_relatorio_exame_plano_psico.html", {'item': item})
+

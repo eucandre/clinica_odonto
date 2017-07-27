@@ -3,6 +3,10 @@ from .models import *
 from input_mask.widgets import InputMask
 
 AGENDAMENTO=((u'Atendimento clinico', 'Atendimento clinico'),(u'Exame clinico','Exame clinico'))
+EVOLUCAO = ((u'Bom', 'Bom'),
+            (u'Ruim', "Ruim"),
+            (u'Regular', 'Regular'),
+            (u'Otimo', 'Otimo'))
 
 
 class Form_relatorio_exame_odonto(forms.ModelForm):
@@ -92,3 +96,43 @@ class FormAgendamentoPlanoPsico(forms.ModelForm):
     class Meta:
         model = agendamemto_plano_psico
         fields = ('name_client', 'atendence', 'professional', 'date_atendence', 'active', 'note')
+
+class FormRelatorioExamePlanoOdonto(forms.ModelForm):
+
+    name_client = forms.ModelChoiceField(queryset=Contrato_odonto.objects.all(),
+                                         widget=forms.Select(attrs={'class': 'form-control'}))
+    tooths = forms.ModelMultipleChoiceField(queryset=Dentes.objects.all())
+    faces_tooths = forms.ModelMultipleChoiceField(queryset=FacesDentes.objects.all())
+    evolution = forms.ChoiceField(choices=EVOLUCAO)
+    date_atendence= forms.DateField()
+    image_register = forms.FileField()
+    note = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}))
+
+    class Meta:
+        model = relatorio_exame_odonto_continuado
+        fields = ('name_client','tooths','faces_tooths','evulution','date_atendence','image_register','note')
+
+class FormRelatorioExamePlanoNutri(forms.ModelForm):
+    name_client = forms.ModelChoiceField(queryset=Contrato_nutricionista.objects.all(),
+                                         widget=forms.Select(attrs={'class': 'form-control'}))
+    evolution = forms.ChoiceField(choices=EVOLUCAO)
+    date_atendence = forms.DateField()
+    image_register = forms.FileField()
+    note = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}))
+
+    class Meta:
+        model = relatorio_exame_nutri_continuado
+        fields = ('name_client', 'tooths', 'faces_tooths', 'evulution', 'date_atendence', 'note')
+
+
+class FormRelatorioExamePlanoPsico(forms.ModelForm):
+    name_client = forms.ModelChoiceField(queryset=Contrato_psicologo.objects.all(),
+                                         widget=forms.Select(attrs={'class': 'form-control'}))
+    evolution = forms.ChoiceField(choices=EVOLUCAO)
+    date_atendence = forms.DateField()
+    image_register = forms.FileField()
+    note = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}))
+
+    class Meta:
+        model = relatorio_exame_psico_continuado
+        fields = ('name_client', 'tooths', 'faces_tooths', 'evulution', 'date_atendence', 'note')

@@ -138,9 +138,9 @@ class agendamento_simples(models.Model):
         verbose_name_plural = 'Agendamento simples'
 
 class agendamento_plano_filiado(models.Model):
+
     name_client= models.ForeignKey(Contrato_Filiado_A_Empresa)
     atendence = models.CharField(choices=AGENDAMENTO, max_length=150)
-    professional = models.ForeignKey(Profissionais)
     date_atendence = models.DateTimeField()
     user = models.ForeignKey(User)
     active = models.BooleanField(blank=True)
@@ -164,6 +164,11 @@ class relatorio_exame_odonto_continuado(models.Model):
                                                                            'paciente')
     date_atendence = models.DateField()
     date_now = models.DateField(auto_now=True)
+    image_register = models.ImageField(
+        null=True,
+        blank=True,
+        upload_to='/imagem_contrato_odonto/',
+    )
     user = models.ForeignKey(User)
     note = models.TextField()
 
