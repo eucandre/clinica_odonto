@@ -1,6 +1,4 @@
 from __future__ import unicode_literals
-# from mongoengine import *
-# connect('campanha_clinica')
 from django.db import models
 from app_base.models import *
 

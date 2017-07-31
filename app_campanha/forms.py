@@ -6,7 +6,7 @@ from app_base.models import *
 class FormCampanha(forms.ModelForm):
 
     name = forms.CharField(label='Nome da campanha',max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
-    date_end = forms.CharField(label='Data para o fim da campanha',max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
+    date_end = forms.CharField(label='Data para o fim da campanha',max_length=150, widget=forms.TextInput(attrs={'type':'date','class':'well form-controll active'}))
     reward = forms.CharField(label='Recompensa',max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
     reward1 = forms.CharField(label='Recompensa 1',max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
     reward2 = forms.CharField(label='Recompensa 2',max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))

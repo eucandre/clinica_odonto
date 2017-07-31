@@ -50,7 +50,8 @@
     {% block conteudo %}
     <form action="." method="post">
         {% csrf_token %}
-        {{ form.errors }}
+    <div class="btn-danger">
+        {{ form.errors }}</div>
         {% if valor_pago < 100 %}
             <h3>O cliente pagou até {{ valor_pago }}% do total do contrato.</h3>
         {% endif %}

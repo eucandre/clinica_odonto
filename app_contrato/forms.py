@@ -13,12 +13,14 @@ class FormContratoOdonto(forms.ModelForm):
 
     propose = forms.ModelChoiceField(label="Proposta de orcamento", queryset=OrcamentoPlanoOdontologico.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
     professional = forms.ModelChoiceField(label="Nome do Profissional responsavel pelo tratamento",queryset=Profissionais.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
-    time_contract =forms.DateField(label='Data de encerramento do tratamento' ,widget=forms.DateTimeInput(attrs={'type':'datetime-local','class':'form-control' }))
+    time_contract =forms.DateField(label='Data de encerramento do tratamento' ,widget=forms.DateInput(attrs={'type':'date','class':'well' }))
     type_plane = forms.ChoiceField(label='Tipo de vinculo',choices=TYPE_PLANE, widget=forms.Select(attrs={'class':'form-control'}))
     plane_value = forms.CharField(label="Valor do plano",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     date_payment_per_month = forms.ChoiceField(label='Dia de vencimento mensal',choices=DAY ,widget=forms.Select(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
     input_value = forms.CharField(label="Valor de entrada pago",max_length=150, initial=0, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12', 'placeholder':'R$'}))
-    image_register = forms.FileField()
+    image_register = forms.FileField(
+        label='Selecione uma imagem',
+    )
     active = forms.BooleanField(label='Ativo na clinica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
     note = forms.CharField(label='Observacao',widget=forms.Textarea(attrs={"class":"form-control"}))
 
@@ -130,7 +132,7 @@ class FormContratoEmpresa(forms.ModelForm):
 
     class Meta:
         model = Contrato_Empresa
-        fields = ('name_employe','social_name','type_plane','cnpj','value_contract','discont_in_plane_associates','contract_date',
+        fields = ('name_employe','social_name','type_plane','cnpj','value_contract','discont_in_plane_associates',
                   'active','note')
 
 class FormContratoFiliadoEmpresa(forms.ModelForm):
@@ -147,5 +149,4 @@ class FormContratoFiliadoEmpresa(forms.ModelForm):
     note = forms.CharField(label='Observacao', widget=forms.Textarea(attrs={"class": "form-control"}))
     class Meta:
         model = Contrato_Filiado_A_Empresa
-        fields = ('name','associate','registration', 'type_plane', 'date_today',
-                                                                   'date_payment_per_month','active','image_register','note')
+        fields = ('name','associate','registration', 'type_plane','date_payment_per_month','active','image_register','note')

@@ -24,7 +24,7 @@ class FormInsereProfissionais(forms.ModelForm):
 
 class FormInsereFuncionario(forms.ModelForm):
     name =  forms.CharField(label='Nome',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
-    date_entry = forms.DateField(label='Data de entrada',widget=forms.DateInput(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
+    date_entry = forms.DateField(label='Data de entrada',widget=forms.DateInput(attrs={'type':'date', 'class':'form-control'}))
     sex =   forms.ChoiceField(label='Sexo',choices=SEXO,widget=forms.RadioSelect(attrs={'class':'flat'}))
     function = forms.ChoiceField(label='Funcao',choices = FUNCTION,widget=forms.RadioSelect(attrs={'class':'flat'}))
     email = forms.EmailField(label='E-mail',widget=forms.TextInput(attrs={'class':'form-control'}))
@@ -47,14 +47,14 @@ class FormInsereFuncionario(forms.ModelForm):
 class FormInsereCliente(forms.ModelForm):
     name = forms.CharField(label='Nome',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     sex = forms.ChoiceField(label='Sexo',choices=SEXO,widget=forms.RadioSelect(attrs={'class':'flat'}))
-    date_register = forms.DateField(label='Data de registro',widget=forms.DateInput(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
+    date_register = forms.DateField(label='Data de registro',widget=forms.DateInput(attrs={'type':'date','class':'well form-controll active'}))
     profession = forms.CharField(label='Profissao', max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     email = forms.EmailField(label='E-mail', widget=forms.EmailInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     phone = forms.CharField(label='Telefone',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     cep = forms.CharField(max_length=9, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
     rg = forms.CharField(max_length=25,  widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
     cpf = forms.CharField(max_length=11, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
-    birth_day = forms.DateField(label='Data de Nascimento',widget=forms.DateInput(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
+    birth_day = forms.DateField(label='Data de Nascimento',widget=forms.DateInput(attrs={'type':'date','class':'well form-controll active'}))
     street = forms.CharField(label='Rua',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     district = forms.CharField(label='Bairro',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     city = forms.CharField(label='Cidade',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))

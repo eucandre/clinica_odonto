@@ -58,7 +58,7 @@
                     <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                     </li>
                     <li class="dropdown ">
-                      <a href="/edita_contrato_odonto/{{ i.id }}" class="dropdown-toggle" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                      <a href="/edita_agendamento_plano_nutri/{{ i.id }}" class="dropdown-toggle" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
                     </li>
                     <li><a class="close-link"><i class="fa fa-close"></i></a>
                     </li>
@@ -68,7 +68,7 @@
             <div class="x_content">
               <div class="widget_summary">
                 <li>
-                  <a href="/item_contrato_odonto/{{ i.id }}">
+                  <a href="/item_agendamento_plano_nutri/{{ i.id }}">
                     <h3>{{ i.name_client }}</h3> * Vínculo com {{ i.type_plane }}, Dia do vencimento mensal <span class="btn success">{{ i.date_payment_per_month }}</span>
                   </a>
                   {% if i.active %}
@@ -85,7 +85,7 @@
             </div>
             {% empty %}
                 <div class="row fontawesome-icon-list">
-                    <div class="fa-hover col-md-12 col-sm-12 col-xs-12"><a href="/insere_agendamento_plano_odonto/"><i class="fa fa-info-circle"></i> Sem Registro</a></div>
+                    <div class="fa-hover col-md-12 col-sm-12 col-xs-12"><a href="/insere_agendamento_plano_nutri/"><i class="fa fa-info-circle"></i> Sem Registro</a></div>
             {% endfor %}
           </div>
       </ul>

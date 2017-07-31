@@ -13,6 +13,7 @@ def InsereContratoOdonto(request):
         if form.is_valid():
             item =  form.save(commit=False)
             item.user = request.user
+            item = Contrato_odonto(image_register= request.FILES['image_register'])
             item.save()
             messages.info(request, 'Salvo com sucesso!')
             return render(request,'salvo.html',{})

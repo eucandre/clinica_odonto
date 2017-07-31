@@ -122,7 +122,7 @@ class FormRelatorioExamePlanoNutri(forms.ModelForm):
 
     class Meta:
         model = relatorio_exame_nutri_continuado
-        fields = ('name_client', 'tooths', 'faces_tooths', 'evulution', 'date_atendence', 'note')
+        fields = ('name_client', 'evulution', 'date_atendence', 'note')
 
 
 class FormRelatorioExamePlanoPsico(forms.ModelForm):
@@ -135,4 +135,4 @@ class FormRelatorioExamePlanoPsico(forms.ModelForm):
 
     class Meta:
         model = relatorio_exame_psico_continuado
-        fields = ('name_client', 'tooths', 'faces_tooths', 'evulution', 'date_atendence', 'note')
+        fields = ('name_client', 'evulution', 'date_atendence', 'note')

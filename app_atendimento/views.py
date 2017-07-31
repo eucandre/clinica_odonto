@@ -385,7 +385,7 @@ def lista_relatorio_exame_plano_nutri(request):
         p_relatorio_exame_plano_nutri = paginator.page(1)
     except EmptyPage:
         p_relatorio_exame_plano_nutri = paginator.page(paginator.num_pages)
-    return render(request, 'pagina_app_atendimento/lista_exame_plano_odonto_continuado.html', {'p_agendamento': p_relatorio_exame_plano_nutri})
+    return render(request, 'pagina_app_atendimento/lista_exame_plano_nutri_continuado.html', {'p_agendamento': p_relatorio_exame_plano_nutri})
 
 @login_required(login_url='/login/')
 def edita_realtorio_exame_nutri_continuado(request, nr_item):

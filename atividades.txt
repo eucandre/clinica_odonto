@@ -6,12 +6,15 @@ Criar:
     Adicionar imagens aos RELATÓRIOS;
     Inserir imagem bocal geral e atribuir o dente selecionado.
     Editar os templates de formulários ;(Fica para uma proxima etapa, a de acabamento!)
-    Arrumar os forms da app_atendimento (amanhã 26/07)
+    Configurar APP_CAMPANHA
+    Consertar o tratamento de imagens
+    Editar o form do contrato para condicional da cortezia
+
     Acrescentar imagens para os relatorios de odonto (amahã 26/07)
 
 feito:
     Análise de cortesia;
     Análise para permissão de cancelamento de contrato;
     Inicio da configuração do sphinx
-
+    Arrumar os forms da app_atendimento (amanhã 26/07)ANALISADOS OS LINKS E EDITADOS
 
