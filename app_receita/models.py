@@ -71,7 +71,7 @@ class FacesDentes(models.Model):
     class Meta:
         verbose_name_plural = "Faces do Dente"
 
-class OrcamentoPlanoOdontologico(models.Model):
+class Orcamento_Plano_Odonto(models.Model):
 
     name_client = models.ForeignKey(Cliente)
     tooths = models.ManyToManyField(Dentes)
@@ -130,6 +130,10 @@ class OrcamentoPlanoPsico(models.Model):
 
     def format_date(self):
         self.date_today = datetime.today().day
+        return self.date_today
+
+    def format_months(self):
+        self.date_today = datetime.today().month
         return self.date_today
 
     class Meta:

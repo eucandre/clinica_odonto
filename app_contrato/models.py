@@ -52,7 +52,7 @@ class Contrato_Filiado_A_Empresa(models.Model):
 
 class Contrato_odonto(models.Model):
 
-    propose = models.ForeignKey(OrcamentoPlanoOdontologico)
+    propose = models.ForeignKey(Orcamento_Plano_Odonto)
     professional = models.ForeignKey(Profissionais)
     date_today = models.DateField(auto_now=True)
     time_contract = models.DateField(blank=True, help_text='Data para finalizar o tratamento')
@@ -62,7 +62,7 @@ class Contrato_odonto(models.Model):
     date_payment_per_month = models.CharField(max_length=2, help_text="O dia do vencimento para o mes.")
     input_value = models.FloatField(blank=True,
                                     help_text='Valor dado de entrada, pode deixar em branco caso fique sem a entrada!')
-    image_register = models.FileField(upload_to='documents/%Y/%m/%d')
+    image_register = models.ImageField(upload_to='documents/contratos/%Y/%m/%d',blank=True)
     note = models.TextField()
     user = models.ForeignKey(User)
     active = models.BooleanField(blank=True)
@@ -78,6 +78,9 @@ class Contrato_odonto(models.Model):
         self.date_today = datetime.today().day
         return self.date_today
 
+    def format_monts(self):
+        self.date_today=datetime.today().month
+        return self.date_today
 
 class Contrato_nutricionista(models.Model):
 

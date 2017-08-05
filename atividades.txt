@@ -11,6 +11,7 @@ Criar:
     Editar o form do contrato para condicional da cortezia
 
     Acrescentar imagens para os relatorios de odonto (amahã 26/07)
+    Colocar no dashboard a relação dos funcionarios e suas freequencias.
 
 feito:
     Análise de cortesia;
@@ -18,3 +19,454 @@ feito:
     Inicio da configuração do sphinx
     Arrumar os forms da app_atendimento (amanhã 26/07)ANALISADOS OS LINKS E EDITADOS
 
+
+
+   def inicia(request):
+    permissao_profissional = request.user.has_perm('app_base.add_Profissionais')
+    permissao_funcionario = request.user.has_perm('app_base.add_Funcionario')
+    permissao_cliente = request.user.has_perm('app_base.add_Cliente')
+    """
+        A tarefa desta funcao eh montar o dashboard do sistema, trazer os dados e montar o grafico tambem.
+        Estas sao as vairaveis desta funcao : orcament_odonto,value_orcament,sum,total_tratments ,date_initial_orcament, today
+    """
+    sum_jan, sum_fev, sum_marc, sum_abr, sum_mai, sum_jun, sum_jul, sum_ago, sum_set, sum_out, sum_nov, sum_dec = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    sum_contrato_jan, sum_contrato_fev, sum_contrato_marc, sum_contrato_abr, sum_contrato_mai, sum_contrato_jun, sum_contrato_jul, sum_contrato_ago, sum_contrato_set, sum_contrato_out, sum_contrato_nov, sum_contrato_dec = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    i = 1
+
+    try:
+        while i <= len(Orcamento_Plano_Odonto.objects.all()):
+            if Orcamento_Plano_Odonto.objects.get(pk=i).format_date()==1:
+                sum_jan = sum_jan+Orcamento_Plano_Odonto.objects.get(pk=i).value_tratment
+            elif Orcamento_Plano_Odonto.objects.get(pk=i).format_date()==2:
+                sum_fev = sum_fev+Orcamento_Plano_Odonto.objects.get(pk=i).value_tratment
+            elif Orcamento_Plano_Odonto.objects.get(pk=i).format_date() == 3:
+                sum_marc = sum_marc+Orcamento_Plano_Odonto.objects.get(pk=i).value_tratment
+            elif Orcamento_Plano_Odonto.objects.get(pk=i).format_date() == 4:
+                sum_abr = sum_abr+Orcamento_Plano_Odonto.objects.get(pk=i).value_tratment
+            elif Orcamento_Plano_Odonto.objects.get(pk=i).format_date() == 5:
+                sum_mai = sum_mai+Orcamento_Plano_Odonto.objects.get(pk=i).value_tratment
+            elif Orcamento_Plano_Odonto.objects.get(pk=i).format_date() == 6:
+                sum_jun = sum_jun+Orcamento_Plano_Odonto.objects.get(pk=i).value_tratment
+            elif Orcamento_Plano_Odonto.objects.get(pk=i).format_date() == 7:
+                sum_jul = sum_jul+Orcamento_Plano_Odonto.objects.get(pk=i).value_tratment
+            elif Orcamento_Plano_Odonto.objects.get(pk=i).format_date() == 8:
+                sum_ago = sum_ago+Orcamento_Plano_Odonto.objects.get(pk=i).value_tratment
+            elif Orcamento_Plano_Odonto.objects.get(pk=i).format_date() == 8:
+                sum_ago = sum_set+Orcamento_Plano_Odonto.objects.get(pk=i).value_tratment
+            elif Orcamento_Plano_Odonto.objects.get(pk=i).format_date() == 8:
+                sum_ago = sum_out+Orcamento_Plano_Odonto.objects.get(pk=i).value_tratment
+            elif Orcamento_Plano_Odonto.objects.get(pk=i).format_date() == 8:
+                sum_ago = sum_nov+Orcamento_Plano_Odonto.objects.get(pk=i).value_tratment
+            elif Orcamento_Plano_Odonto.objects.get(pk=i).format_date() == 8:
+                sum_ago = sum_dec+Orcamento_Plano_Odonto.objects.get(pk=i).value_tratment
+            i+=1
+    except Orcamento_Plano_Odonto.DoesNotExist:
+        raise Http404()
+
+    try:
+        while i <= (len(OrcamentoPlanoNutri.objects.all())):
+            if OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 1:
+                sum_jan = sum_jan + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 2:
+                sum_fev = sum_fev + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 3:
+                sum_marc = sum_marc + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 4:
+                sum_abr = sum_abr + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 5:
+                sum_mai = sum_mai + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 6:
+                sum_jun = sum_jun + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 7:
+                sum_jul = sum_jul + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 8:
+                sum_ago = sum_ago + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 9:
+                sum_set = sum_set + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 10:
+                sum_out = sum_out + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 11:
+                sum_nov = sum_nov + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 12:
+                sum_dec = sum_dec + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
+            i += 1
+    except OrcamentoPlanoNutri.DoesNotExist:
+        raise Http404()
+
+    try:
+        while i <= (len(OrcamentoPlanoPsico.objects.all())):
+            if OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 1:
+                sum_jan = sum_jan + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 2:
+                sum_fev = sum_fev + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 3:
+                sum_marc = sum_marc + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 4:
+                sum_abr = sum_abr + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 5:
+                sum_mai = sum_mai + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 6:
+                sum_jun = sum_jun + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 7:
+                sum_jul = sum_jul + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 8:
+                sum_ago = sum_ago + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 9:
+                sum_set = sum_set + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 10:
+                sum_out = sum_out + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 11:
+                sum_nov = sum_nov + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
+            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 12:
+                sum_dec = sum_dec + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
+            i += 1
+    except OrcamentoPlanoPsico.DoesNotExist:
+        raise Http404()
+
+    try:
+        while i <= (len(Contrato_odonto.objects.all())):
+            if Contrato_odonto.objects.get(pk=i).format_date() == 1:
+                sum_contrato_jan = sum_contrato_jan + Contrato_odonto.objects.get(pk=i).plane_value
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 2:
+                sum_contrato_fev = sum_contrato_fev + Contrato_odonto.objects.get(pk=i).plane_value
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 3:
+                sum_contrato_marc = sum_contrato_marc + Contrato_odonto.objects.get(pk=i).plane_value
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 4:
+                sum_contrato_abr = sum_contrato_abr + Contrato_odonto.objects.get(pk=i).plane_value
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 5:
+                sum_contrato_mai = sum_contrato_mai + Contrato_odonto.objects.get(pk=i).plane_value
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 6:
+                sum_contrato_jun = sum_contrato_jun + Contrato_odonto.objects.get(pk=i).plane_value
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 7:
+                sum_contrato_jul = sum_contrato_jul + Contrato_odonto.objects.get(pk=i).plane_value
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 8:
+                sum_contrato_ago = sum_contrato_ago + Contrato_odonto.objects.get(pk=i).plane_value
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 9:
+                sum_contrato_set = sum_contrato_set + Contrato_odonto.objects.get(pk=i).plane_value
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 10:
+                sum_contrato_out = sum_contrato_out + Contrato_odonto.objects.get(pk=i).plane_value
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 11:
+                sum_contrato_nov = sum_contrato_nov + Contrato_odonto.objects.get(pk=i).plane_value
+            elif Contrato_odonto.objects.get(pk=i).format_date() == 12:
+                sum_contrato_dec = sum_contrato_dec + Contrato_odonto.objects.get(pk=i).plane_value
+            i += 1
+    except Contrato_odonto.DoesNotExist:
+        raise Http404()
+
+    try:
+        while i <= (len(Contrato_psicologo.objects.all())):
+            if Contrato_psicologo.objects.get(pk=i).format_date() == 1:
+                sum_contrato_jan = sum_contrato_jan + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 2:
+                sum_contrato_fev = sum_contrato_fev + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 3:
+                sum_contrato_marc = sum_contrato_marc + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 4:
+                sum_contrato_abr = sum_contrato_abr + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 5:
+                sum_contrato_mai = sum_contrato_mai + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 6:
+                sum_contrato_jun = sum_contrato_jun + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 7:
+                sum_contrato_jul = sum_contrato_jul + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 8:
+                sum_contrato_ago = sum_contrato_ago + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 9:
+                sum_contrato_set = sum_contrato_set + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 10:
+                sum_contrato_out = sum_contrato_out + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 11:
+                sum_contrato_nov = sum_contrato_nov + Contrato_psicologo.objects.get(pk=i).value_tratment
+            elif Contrato_psicologo.objects.get(pk=i).format_date() == 12:
+                sum_contrato_dec = sum_contrato_dec + Contrato_psicologo.objects.get(pk=i).value_tratment
+            i += 1
+    except Contrato_psicologo.DoesNotExist:
+        raise Http404()
+
+    try:
+        while i <= (len(Contrato_nutricionista.objects.all())):
+            if Contrato_nutricionista.objects.get(pk=i).format_date() == 1:
+                sum_contrato_jan = sum_contrato_jan + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 2:
+                sum_contrato_fev = sum_contrato_fev + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 3:
+                sum_contrato_marc = sum_contrato_marc + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 4:
+                sum_contrato_abr = sum_contrato_abr + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 5:
+                sum_contrato_mai = sum_contrato_mai + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 6:
+                sum_contrato_jun = sum_contrato_jun + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 7:
+                sum_contrato_jul = sum_contrato_jul + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 8:
+                sum_contrato_ago = sum_contrato_ago + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 9:
+                sum_contrato_set = sum_contrato_set + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 10:
+                sum_contrato_out = sum_contrato_out + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 11:
+                sum_contrato_nov = sum_contrato_nov + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 12:
+                sum_contrato_dec = sum_contrato_dec + Contrato_nutricionista.objects.get(pk=i).value_tratment
+            i += 1
+    except Contrato_nutricionista.DoesNotExist:
+        raise Http404()
+
+    total_orcamentos = sum_jan+ sum_fev+ sum_marc+ sum_abr+ sum_mai+ sum_jun+ sum_jul+ sum_ago+ sum_set+ sum_out+ sum_nov+ sum_dec
+
+    total_contratos = sum_contrato_jan+ sum_contrato_fev+ sum_contrato_marc+ sum_contrato_abr+ sum_contrato_mai+ sum_contrato_jun+ sum_contrato_jul+ sum_contrato_ago+ sum_contrato_set+ sum_contrato_out+ sum_contrato_nov+ sum_contrato_dec
+
+    if permissao_funcionario == False and permissao_profissional == True:
+        data_de_hoje = date.today()
+        pagamentos_planos = RecebimentoPlanoOdonto.objects.all().filter(getMes =data_de_hoje.month)
+
+        return render(request, 'index_gerencia.html', {'recebimentos_plano':pagamentos_planos})
+
+    if permissao_profissional == False:
+        data_de_hoje = date.today()
+        agendamentos_odonto = agendamemto_plano_odonto.objects.all().filter(date_atendence=data_de_hoje)
+
+        return render(request,"index_atendente.html", {'agenda_odonto':agendamentos_odonto})
+    else:
+        return render(request, "index.html",{'orcamento_jan':sum_jan,'valor':total_orcamentos, 'valor_contratos':total_contratos,
+        'orcamento_fevereiro':sum_fev, 'orcamento_marco':sum_marc, 'orcamento_abril':sum_abr,
+                                         'orcamento_maio':sum_mai, 'orcamento_junho':sum_jun,
+                                         'orcamento_jul':sum_jul,'orcamento_agosto':sum_ago,'orcamento_setembro':sum_set,
+                                         'orcamento_outubro':sum_out,'orcamento_novembro':sum_nov, 'orcamento_dezembro':sum_dec,
+                                          'contrato_jan':sum_contrato_jan, 'contrato_fev':sum_contrato_fev, 'contrato_mar':sum_contrato_marc,
+                                          'contrato_abril':sum_contrato_abr, 'contrato_maio':sum_contrato_mai, 'contrato_jun':sum_contrato_jun,
+                                          'contrato_julho':sum_contrato_jul, 'contrato_agosto':sum_contrato_ago, 'contrato_setembro':sum_contrato_set,
+                                          'contrato_outubro':sum_contrato_out, 'contrato_novembro':sum_contrato_nov, 'contrato_dezembro':sum_contrato_dec,
+                                         'permissao_cliente':permissao_cliente, 'permissao_funcionario':permissao_funcionario,
+                                         'permissao_profissional':permissao_profissional})
+
+
+
+{% extends 'base.html' %}
+
+{% block titulo %}Início{% endblock %}
+    {% block menu_atendente %}
+        <li><a href="/insere_profissional/">Insere Profissional</a>
+        </li>
+        <li><a href="/insere_funcionario/">Insere Funcionário</a>
+        </li>
+        <li><a href="/insere_cliente/">Insere Cliente</a>
+        </li>
+        <li><a href="/cria_campanha/">Insere Campanha</a>
+        </li>
+        <li><a href="/insere_fornecedor/">Insere Fornecedor</a>
+        </li>
+        <li><a href="/insere_produto/">Insere Produto</a>
+        </li>
+        <li><a href="/insere_compra_produtos/">Insere Compra Produtos</a>
+        </li>
+        <li><a href="/insere_retirada_produtos/">Insere Retirada de Produtos</a>
+        </li>
+        <li><a href="/insere_dentes/">Insere Dentes</a>
+        </li>
+        <li><a href="/insere_orcamento_odonto/">Insere Orçamento Odonto</a>
+        </li>
+        <li><a href="/insere_orcamento_psico/">Insere Orçamento Psico</a>
+        </li>
+        <li><a href="/insere_orcamento_nutri/">Insere Orçamento Nutri</a>
+        </li>
+        <li><a href="/insere_recebimento_plano/">Insere Recebimento Plano</a>
+        </li>
+        <li><a href="/insere_atendiemento_avulso/">Insere Atendimento Independente</a>
+        </li>
+        <li><a href="/insere_contrato_odonto/">Insere Contrato Odonto</a>
+        </li>
+        <li><a href="/insere_contrato_psico/">Insere Contrato Psico</a>
+        </li>
+        <li><a href="/insere_contrato_nutri/">Insere Contrato Nutri</a>
+        </li>
+        <li><a href="/insere_relatorio_exame_odonto/">Insere Relatório de Exame Odonto</a>
+        </li>
+        <li><a href="/insere_relatorio_exame_psico/">Insere Relatório de Exame Psico</a>
+        </li>
+        <li><a href="/insere_relatorio_exame_nutri/">Insere Relatório de Exame Nutri</a>
+        </li>
+        <li><a href="/insere_agendamento_plano_odonto/">Insere Agendamento Plano Odonto</a>
+        </li>
+        <li><a href="/insere_agendamento_plano_nutri/">Insere Agendamento Plano Nutri</a>
+        </li>
+        <li><a href="/insere_agendamento_plano_psico/">Insere Agendamento Plano Psico</a>
+        </li>
+    {% endblock %}
+
+{% block conteudo %}
+    <div class="col-md-3" style="color: limegreen">
+        <div class="x_panel">
+            <i class="fa fa-bullseye fa-2x" aria-hidden="true"> Oportunidade </i><br/>
+            <span>R$ {{ valor }}</span>
+        </div>
+    </div>
+    <div class="col-md-3" style="color: #1479B8">
+        <div class="x_panel">
+            <i class="fa fa-money fa-2x" aria-hidden="true"> Conversão </i><br/>
+            <span class="col-sm-5">R$ {{ valor_contratos }}</span><span class="col-sm-5">  %</span>
+            <!--falta colocar as variaveis-->
+        </div>
+    </div>
+    <div class="col-md-3" style="color: #a92222">
+        <div class="x_panel">
+            <i class="fa fa-clock-o fa-2x" aria-hidden="true"> Ocupação </i><br/>
+            <span>  %</span>
+            <!--falta colocar as variaveis-->
+        </div>
+    </div>
+    <div class="col-md-3" style="color: orange">
+        <div class="x_panel">
+            <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"> NPS </i><br/>
+            <span>  %</span>
+            <!--falta colocar as variaveis-->
+        </div>
+    </div>
+
+{% endblock %}
+    {% block corpo_completementar %}
+    <div class="x-panel">
+        <h2>Oportunidade por Conversão</h2>
+
+        {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><div class="col-sm-3 col-md-3 col-lg-3"><div class="fa fa-info-circle" style="color: limegreen" ></div> {{ message }}</div></li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+
+        <canvas id="canvas_bar" height="247" width="494" style="width: 494px; height: 247px;"></canvas>
+    </div>
+    <script>
+
+        var randomScalingFactor = function () {
+            return Math.round(Math.random() * 100)
+        };
+
+        var barChartData = {
+            labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
+            datasets: [
+                {
+                    fillColor: "#26B99A", //rgba(220,220,220,0.5)
+                    strokeColor: "#26B99A", //rgba(220,220,220,0.8)
+                    highlightFill: "#36CAAB", //rgba(220,220,220,0.75)
+                    highlightStroke: "#36CAAB", //rgba(220,220,220,1)
+                    data: [{{ orcamento_jan }}, {{ orcamento_fevereiro }}, {{ orcamento_marco }},{{ orcamento_abril }},
+                        {{ orcamento_maio }}, {{ orcamento_junho }}, {{ orcamento_jul }}, {{ orcamento_agosto }},
+                        {{ orcamento_setembro }}, {{ orcamento_outubro }}, {{ orcamento_novembro }},
+                        {{ orcamento_dezembro }}]
+            },
+                {
+                    fillColor: "#03586A", //rgba(151,187,205,0.5)
+                    strokeColor: "#03586A", //rgba(151,187,205,0.8)
+                    highlightFill: "#066477", //rgba(151,187,205,0.75)
+                    highlightStroke: "#066477", //rgba(151,187,205,1)
+                    data: [{{ contrato_jan }}, {{ contrato_fev }}, {{ contrato_mar }}, {{ contrato_abril }}, {{ contrato_maio }}, {{ contrato_jun }},
+                        {{ contrato_julho }}, {{ contrato_agosto }}, {{ contrato_setembro }}, {{ contrato_outubro }}, {{ contrato_novembro }},
+                        {{ contrato_dezembro }}]
+            }
+        ]
+        };
+
+        $(document).ready(function () {
+            new Chart($("#canvas_bar").get(0).getContext("2d")).Bar(barChartData, {
+                tooltipFillColor: "rgba(51, 51, 51, 0.55)",
+                responsive: true,
+                barDatasetSpacing: 6,
+                barValueSpacing: 5
+            });
+        });
+
+
+        var lineChartData = {
+            labels: ["January", "February", "March", "April", "May", "June", "July"],
+            datasets: [
+                {
+                    label: "My First dataset",
+                    fillColor: "rgba(38, 185, 154, 0.31)", //rgba(220,220,220,0.2)
+                    strokeColor: "rgba(38, 185, 154, 0.7)", //rgba(220,220,220,1)
+                    pointColor: "rgba(38, 185, 154, 0.7)", //rgba(220,220,220,1)
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [31, 74, 6, 39, 20, 85, 7]
+            },
+                {
+                    label: "My Second dataset",
+                    fillColor: "rgba(3, 88, 106, 0.3)", //rgba(151,187,205,0.2)
+                    strokeColor: "rgba(3, 88, 106, 0.70)", //rgba(151,187,205,1)
+                    pointColor: "rgba(3, 88, 106, 0.70)", //rgba(151,187,205,1)
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    data: [82, 23, 66, 9, 99, 4, 2]
+            }
+        ]
+
+        };
+
+
+        var sharePiePolorDoughnutData = [
+            {
+                value: 120,
+                color: "#455C73",
+                highlight: "#34495E",
+                label: "Dark Grey"
+        },
+            {
+                value: 50,
+                color: "#9B59B6",
+                highlight: "#B370CF",
+                label: "Purple Color"
+        },
+            {
+                value: 150,
+                color: "#BDC3C7",
+                highlight: "#CFD4D8",
+                label: "Gray Color"
+        },
+            {
+                value: 180,
+                color: "#26B99A",
+                highlight: "#36CAAB",
+                label: "Green Color"
+        },
+            {
+                value: 100,
+                color: "#3498DB",
+                highlight: "#49A9EA",
+                label: "Blue Color"
+        }
+
+    ];
+
+
+        var radarChartData = {
+            labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+            datasets: [
+                {
+                    label: "My First dataset",
+                    fillColor: "rgba(3, 88, 106, 0.2)",
+                    strokeColor: "rgba(3, 88, 106, 0.80)",
+                    pointColor: "rgba(3, 88, 106, 0.80)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(220,220,220,1)",
+                    data: [65, 59, 90, 81, 56, 55, 40]
+            },
+                {
+                    label: "My Second dataset",
+                    fillColor: "rgba(38, 185, 154, 0.2)",
+                    strokeColor: "rgba(38, 185, 154, 0.85)",
+                    pointColor: "rgba(38, 185, 154, 0.85)",
+                    pointStrokeColor: "#fff",
+                    pointHighlightFill: "#fff",
+                    pointHighlightStroke: "rgba(151,187,205,1)",
+                    data: [28, 48, 40, 19, 96, 27, 100]
+            }
+        ]
+        };
+    </script>
+{% endblock %}

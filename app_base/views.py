@@ -41,224 +41,89 @@ def lista_clientes(request):
 
 @login_required(login_url='/login/')
 def inicia(request):
-    permissao_profissional = request.user.has_perm('app_base.add_Profissionais')
-    permissao_funcionario = request.user.has_perm('app_base.add_Funcionario')
-    permissao_cliente = request.user.has_perm('app_base.add_Cliente')
-    """
-        A tarefa desta funcao eh montar o dashboard do sistema, trazer os dados e montar o grafico tambem.
-        Estas sao as vairaveis desta funcao : orcament_odonto,value_orcament,sum,total_tratments ,date_initial_orcament, today
-    """
-    sum_jan, sum_fev, sum_marc, sum_abr, sum_mai, sum_jun, sum_jul, sum_ago, sum_set, sum_out, sum_nov, sum_dec = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-    sum_contrato_jan, sum_contrato_fev, sum_contrato_marc, sum_contrato_abr, sum_contrato_mai, sum_contrato_jun, sum_contrato_jul, sum_contrato_ago, sum_contrato_set, sum_contrato_out, sum_contrato_nov, sum_contrato_dec = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-    i = 1
+    # variaveis gerais aqui declaradas
+    clientes = Cliente.objects.all()
+    contratos_odonto = Contrato_odonto.objects.all()
+    contratos_nutri = Contrato_nutricionista.objects.all()
+    objeto_contrato_odonto = Contrato_odonto
 
+    #variaveis da funcao atual
+    tamanho_clientes = len(clientes)
+    tamanho_contrato_odonto = len(contratos_odonto)
+
+
+    i=1
+
+    soma_jan, soma_fev, soma_mar, soma_abr, soma_mai, soma_jun, soma_jul, soma_ago, soma_set, soma_out, soma_nov, soma_dez = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+    hoje=''
     try:
-        while i <= len(OrcamentoPlanoOdontologico.objects.all()):
-            if OrcamentoPlanoOdontologico.objects.get(pk=i).format_date()==1:
-                sum_jan = sum_jan+OrcamentoPlanoOdontologico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoOdontologico.objects.get(pk=i).format_date()==2:
-                sum_fev = sum_fev+OrcamentoPlanoOdontologico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoOdontologico.objects.get(pk=i).format_date() == 3:
-                sum_marc = sum_marc+OrcamentoPlanoOdontologico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoOdontologico.objects.get(pk=i).format_date() == 4:
-                sum_abr = sum_abr+OrcamentoPlanoOdontologico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoOdontologico.objects.get(pk=i).format_date() == 5:
-                sum_mai = sum_mai+OrcamentoPlanoOdontologico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoOdontologico.objects.get(pk=i).format_date() == 6:
-                sum_jun = sum_jun+OrcamentoPlanoOdontologico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoOdontologico.objects.get(pk=i).format_date() == 7:
-                sum_jul = sum_jul+OrcamentoPlanoOdontologico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoOdontologico.objects.get(pk=i).format_date() == 8:
-                sum_ago = sum_ago+OrcamentoPlanoOdontologico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoOdontologico.objects.get(pk=i).format_date() == 8:
-                sum_ago = sum_set+OrcamentoPlanoOdontologico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoOdontologico.objects.get(pk=i).format_date() == 8:
-                sum_ago = sum_out+OrcamentoPlanoOdontologico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoOdontologico.objects.get(pk=i).format_date() == 8:
-                sum_ago = sum_nov+OrcamentoPlanoOdontologico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoOdontologico.objects.get(pk=i).format_date() == 8:
-                sum_ago = sum_dec+OrcamentoPlanoOdontologico.objects.get(pk=i).value_tratment
-            i+=1
-    except OrcamentoPlanoOdontologico.DoesNotExist:
-        raise Http404()
+        while i <= tamanho_contrato_odonto:
 
-    try:
-        while i <= (len(OrcamentoPlanoNutri.objects.all())):
-            if OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 1:
-                sum_jan = sum_jan + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 2:
-                sum_fev = sum_fev + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 3:
-                sum_marc = sum_marc + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 4:
-                sum_abr = sum_abr + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 5:
-                sum_mai = sum_mai + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 6:
-                sum_jun = sum_jun + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 7:
-                sum_jul = sum_jul + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 8:
-                sum_ago = sum_ago + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 9:
-                sum_set = sum_set + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 10:
-                sum_out = sum_out + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 11:
-                sum_nov = sum_nov + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoNutri.objects.get(pk=i).format_date() == 12:
-                sum_dec = sum_dec + OrcamentoPlanoNutri.objects.get(pk=i).value_tratment
-            i += 1
-    except OrcamentoPlanoNutri.DoesNotExist:
-        raise Http404()
+            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 1:
+                soma_jan = soma_jan+objeto_contrato_odonto.objects.get(pk=i).plane_value
+                hoje = objeto_contrato_odonto.objects.get(pk=i).date_today
 
-    try:
-        while i <= (len(OrcamentoPlanoPsico.objects.all())):
-            if OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 1:
-                sum_jan = sum_jan + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 2:
-                sum_fev = sum_fev + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 3:
-                sum_marc = sum_marc + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 4:
-                sum_abr = sum_abr + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 5:
-                sum_mai = sum_mai + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 6:
-                sum_jun = sum_jun + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 7:
-                sum_jul = sum_jul + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 8:
-                sum_ago = sum_ago + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 9:
-                sum_set = sum_set + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 10:
-                sum_out = sum_out + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 11:
-                sum_nov = sum_nov + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
-            elif OrcamentoPlanoPsico.objects.get(pk=i).format_date() == 12:
-                sum_dec = sum_dec + OrcamentoPlanoPsico.objects.get(pk=i).value_tratment
-            i += 1
-    except OrcamentoPlanoPsico.DoesNotExist:
-        raise Http404()
+            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 2:
+                soma_fev = soma_fev+objeto_contrato_odonto.objects.get(pk=i).plane_value
 
-    try:
-        while i <= (len(Contrato_odonto.objects.all())):
-            if Contrato_odonto.objects.get(pk=i).format_date() == 1:
-                sum_contrato_jan = sum_contrato_jan + Contrato_odonto.objects.get(pk=i).plane_value
-            elif Contrato_odonto.objects.get(pk=i).format_date() == 2:
-                sum_contrato_fev = sum_contrato_fev + Contrato_odonto.objects.get(pk=i).plane_value
-            elif Contrato_odonto.objects.get(pk=i).format_date() == 3:
-                sum_contrato_marc = sum_contrato_marc + Contrato_odonto.objects.get(pk=i).plane_value
-            elif Contrato_odonto.objects.get(pk=i).format_date() == 4:
-                sum_contrato_abr = sum_contrato_abr + Contrato_odonto.objects.get(pk=i).plane_value
-            elif Contrato_odonto.objects.get(pk=i).format_date() == 5:
-                sum_contrato_mai = sum_contrato_mai + Contrato_odonto.objects.get(pk=i).plane_value
-            elif Contrato_odonto.objects.get(pk=i).format_date() == 6:
-                sum_contrato_jun = sum_contrato_jun + Contrato_odonto.objects.get(pk=i).plane_value
-            elif Contrato_odonto.objects.get(pk=i).format_date() == 7:
-                sum_contrato_jul = sum_contrato_jul + Contrato_odonto.objects.get(pk=i).plane_value
-            elif Contrato_odonto.objects.get(pk=i).format_date() == 8:
-                sum_contrato_ago = sum_contrato_ago + Contrato_odonto.objects.get(pk=i).plane_value
-            elif Contrato_odonto.objects.get(pk=i).format_date() == 9:
-                sum_contrato_set = sum_contrato_set + Contrato_odonto.objects.get(pk=i).plane_value
-            elif Contrato_odonto.objects.get(pk=i).format_date() == 10:
-                sum_contrato_out = sum_contrato_out + Contrato_odonto.objects.get(pk=i).plane_value
-            elif Contrato_odonto.objects.get(pk=i).format_date() == 11:
-                sum_contrato_nov = sum_contrato_nov + Contrato_odonto.objects.get(pk=i).plane_value
-            elif Contrato_odonto.objects.get(pk=i).format_date() == 12:
-                sum_contrato_dec = sum_contrato_dec + Contrato_odonto.objects.get(pk=i).plane_value
-            i += 1
-    except Contrato_odonto.DoesNotExist:
-        raise Http404()
 
-    try:
-        while i <= (len(Contrato_psicologo.objects.all())):
-            if Contrato_psicologo.objects.get(pk=i).format_date() == 1:
-                sum_contrato_jan = sum_contrato_jan + Contrato_psicologo.objects.get(pk=i).value_tratment
-            elif Contrato_psicologo.objects.get(pk=i).format_date() == 2:
-                sum_contrato_fev = sum_contrato_fev + Contrato_psicologo.objects.get(pk=i).value_tratment
-            elif Contrato_psicologo.objects.get(pk=i).format_date() == 3:
-                sum_contrato_marc = sum_contrato_marc + Contrato_psicologo.objects.get(pk=i).value_tratment
-            elif Contrato_psicologo.objects.get(pk=i).format_date() == 4:
-                sum_contrato_abr = sum_contrato_abr + Contrato_psicologo.objects.get(pk=i).value_tratment
-            elif Contrato_psicologo.objects.get(pk=i).format_date() == 5:
-                sum_contrato_mai = sum_contrato_mai + Contrato_psicologo.objects.get(pk=i).value_tratment
-            elif Contrato_psicologo.objects.get(pk=i).format_date() == 6:
-                sum_contrato_jun = sum_contrato_jun + Contrato_psicologo.objects.get(pk=i).value_tratment
-            elif Contrato_psicologo.objects.get(pk=i).format_date() == 7:
-                sum_contrato_jul = sum_contrato_jul + Contrato_psicologo.objects.get(pk=i).value_tratment
-            elif Contrato_psicologo.objects.get(pk=i).format_date() == 8:
-                sum_contrato_ago = sum_contrato_ago + Contrato_psicologo.objects.get(pk=i).value_tratment
-            elif Contrato_psicologo.objects.get(pk=i).format_date() == 9:
-                sum_contrato_set = sum_contrato_set + Contrato_psicologo.objects.get(pk=i).value_tratment
-            elif Contrato_psicologo.objects.get(pk=i).format_date() == 10:
-                sum_contrato_out = sum_contrato_out + Contrato_psicologo.objects.get(pk=i).value_tratment
-            elif Contrato_psicologo.objects.get(pk=i).format_date() == 11:
-                sum_contrato_nov = sum_contrato_nov + Contrato_psicologo.objects.get(pk=i).value_tratment
-            elif Contrato_psicologo.objects.get(pk=i).format_date() == 12:
-                sum_contrato_dec = sum_contrato_dec + Contrato_psicologo.objects.get(pk=i).value_tratment
-            i += 1
-    except Contrato_psicologo.DoesNotExist:
-        raise Http404()
+            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 3:
+                soma_mar = soma_mar+objeto_contrato_odonto.objects.get(pk=i).plane_value
 
-    try:
-        while i <= (len(Contrato_nutricionista.objects.all())):
-            if Contrato_nutricionista.objects.get(pk=i).format_date() == 1:
-                sum_contrato_jan = sum_contrato_jan + Contrato_nutricionista.objects.get(pk=i).value_tratment
-            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 2:
-                sum_contrato_fev = sum_contrato_fev + Contrato_nutricionista.objects.get(pk=i).value_tratment
-            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 3:
-                sum_contrato_marc = sum_contrato_marc + Contrato_nutricionista.objects.get(pk=i).value_tratment
-            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 4:
-                sum_contrato_abr = sum_contrato_abr + Contrato_nutricionista.objects.get(pk=i).value_tratment
-            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 5:
-                sum_contrato_mai = sum_contrato_mai + Contrato_nutricionista.objects.get(pk=i).value_tratment
-            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 6:
-                sum_contrato_jun = sum_contrato_jun + Contrato_nutricionista.objects.get(pk=i).value_tratment
-            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 7:
-                sum_contrato_jul = sum_contrato_jul + Contrato_nutricionista.objects.get(pk=i).value_tratment
-            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 8:
-                sum_contrato_ago = sum_contrato_ago + Contrato_nutricionista.objects.get(pk=i).value_tratment
-            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 9:
-                sum_contrato_set = sum_contrato_set + Contrato_nutricionista.objects.get(pk=i).value_tratment
-            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 10:
-                sum_contrato_out = sum_contrato_out + Contrato_nutricionista.objects.get(pk=i).value_tratment
-            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 11:
-                sum_contrato_nov = sum_contrato_nov + Contrato_nutricionista.objects.get(pk=i).value_tratment
-            elif Contrato_nutricionista.objects.get(pk=i).format_date() == 12:
-                sum_contrato_dec = sum_contrato_dec + Contrato_nutricionista.objects.get(pk=i).value_tratment
-            i += 1
-    except Contrato_nutricionista.DoesNotExist:
-        raise Http404()
 
-    total_orcamentos = sum_jan+ sum_fev+ sum_marc+ sum_abr+ sum_mai+ sum_jun+ sum_jul+ sum_ago+ sum_set+ sum_out+ sum_nov+ sum_dec
+            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 4:
+                soma_abr = soma_abr+objeto_contrato_odonto.objects.get(pk=i).plane_value
 
-    total_contratos = sum_contrato_jan+ sum_contrato_fev+ sum_contrato_marc+ sum_contrato_abr+ sum_contrato_mai+ sum_contrato_jun+ sum_contrato_jul+ sum_contrato_ago+ sum_contrato_set+ sum_contrato_out+ sum_contrato_nov+ sum_contrato_dec
 
-    if permissao_funcionario == False and permissao_profissional == True:
-        data_de_hoje = date.today()
-        pagamentos_planos = RecebimentoPlanoOdonto.objects.all().filter(getMes =data_de_hoje.month)
+            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 5:
+                soma_mai = soma_mai+objeto_contrato_odonto.objects.get(pk=i).plane_value
 
-        return render(request, 'index_gerencia.html', {'recebimentos_plano':pagamentos_planos})
 
-    if permissao_profissional == False:
-        data_de_hoje = date.today()
-        agendamentos_odonto = agendamemto_plano_odonto.objects.all().filter(date_atendence=data_de_hoje)
+            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 6:
+                soma_jun = soma_jun+objeto_contrato_odonto.objects.get(pk=i).plane_value
 
-        return render(request,"index_atendente.html", {'agenda_odonto':agendamentos_odonto})
-    else:
-        return render(request, "index.html",{'orcamento_jan':sum_jan,'valor':total_orcamentos, 'valor_contratos':total_contratos,
-        'orcamento_fevereiro':sum_fev, 'orcamento_marco':sum_marc, 'orcamento_abril':sum_abr,
-                                         'orcamento_maio':sum_mai, 'orcamento_junho':sum_jun,
-                                         'orcamento_jul':sum_jul,'orcamento_agosto':sum_ago,'orcamento_setembro':sum_set,
-                                         'orcamento_outubro':sum_out,'orcamento_novembro':sum_nov, 'orcamento_dezembro':sum_dec,
-                                          'contrato_jan':sum_contrato_jan, 'contrato_fev':sum_contrato_fev, 'contrato_mar':sum_contrato_marc,
-                                          'contrato_abril':sum_contrato_abr, 'contrato_maio':sum_contrato_mai, 'contrato_jun':sum_contrato_jun,
-                                          'contrato_julho':sum_contrato_jul, 'contrato_agosto':sum_contrato_ago, 'contrato_setembro':sum_contrato_set,
-                                          'contrato_outubro':sum_contrato_out, 'contrato_novembro':sum_contrato_nov, 'contrato_dezembro':sum_contrato_dec,
-                                         'permissao_cliente':permissao_cliente, 'permissao_funcionario':permissao_funcionario,
-                                         'permissao_profissional':permissao_profissional})
+
+            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 7:
+                soma_jul = soma_jul+objeto_contrato_odonto.objects.get(pk=i).plane_value
+
+
+            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 8:
+                soma_ago = soma_ago+objeto_contrato_odonto.objects.get(pk=i).plane_value
+
+
+            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 9:
+                soma_set = soma_set+objeto_contrato_odonto.objects.get(pk=i).plane_value
+
+
+            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 10:
+                soma_out = soma_out+objeto_contrato_odonto.objects.get(pk=i).plane_value
+
+
+            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 11:
+                soma_nov = soma_nov+objeto_contrato_odonto.objects.get(pk=i).plane_value
+
+
+            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 12:
+                soma_dez = soma_dez+objeto_contrato_odonto.objects.get(pk=i).plane_value
+
+            i = i + 1
+
+        return render(request, "index.html", {'soma_janeiro_contratos': soma_jan,
+                                          'soma_fevereiro_contratos':soma_fev,
+                                          'soma_marco_contratos':soma_mar,
+                                          'soma_abril_contratos':soma_abr,
+                                          'soma_maio_contratos':soma_mai,
+                                          'soma_junho_contratos':soma_jun,
+                                          'soma_julho_contratos':soma_jul,
+                                          'soma_agosto_contratos':soma_ago,
+                                          'soma_setembro_contratos':soma_set,
+                                          'soma_outrubro_contratos':soma_out,
+                                          'soma_novembro_contratos':soma_nov,
+                                          'soma_dezembro_contratos':soma_dez,
+                                              'hoje':hoje})
+
+    except objeto_contrato_odonto.DoesNotExist:
+        raise Http404('Sem Contratos Registrados no momento')
 
 @login_required(login_url='/login/')
 def insere_profissional(request):

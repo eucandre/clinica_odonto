@@ -11,13 +11,11 @@ def InsereContratoOdonto(request):
     if request.method == 'POST':
         form = FormContratoOdonto(request.POST)
         if form.is_valid():
-            item =  form.save(commit=False)
+            item = form.save(commit=False)
             item.user = request.user
-            item = Contrato_odonto(image_register= request.FILES['image_register'])
             item.save()
             messages.info(request, 'Salvo com sucesso!')
             return render(request,'salvo.html',{})
-
     else:
         form = FormContratoOdonto()
     return render(request, 'paginas_app_contrato/insere_contrato_odonto.html', {'form':form})
@@ -40,7 +38,7 @@ def lista_ContratoOdonto(request):
 
 @login_required(login_url='/login/')
 def edita_contrato_odonto(request, nr_item):
-    itemr = RecebimentoPlanoOdonto.objects.get(pk=nr_item)
+    # itemr = RecebimentoPlanoOdonto.objects.get(pk=nr_item)
     item = Contrato_odonto.objects.get(pk=nr_item)
     if request.method == 'POST':
         form = FormContratoOdonto(request.POST, request.FILES, instance=item)
@@ -51,7 +49,7 @@ def edita_contrato_odonto(request, nr_item):
             return render(request, 'salvo.html', {'item': item})
     else:
         form = FormContratoOdonto(instance=item)
-    return render(request, 'paginas_app_contrato/insere_contrato_odonto.html', {'form': form, 'valor_pago':itemr.TotalPagoTratamento})
+    return render(request, 'paginas_app_contrato/insere_contrato_odonto.html', {'form': form,})# 'valor_pago':itemr.TotalPagoTratamento})
 
 @login_required(login_url='/login/')
 def detalha_contrato_odonto(request, nr_item):

@@ -1,104 +1,192 @@
 {% extends 'base.html' %}
 
 {% block titulo %}Início{% endblock %}
-    {% block menu_atendente %}
-        <li><a href="/insere_profissional/">Insere Profissional</a>
-        </li>
-        <li><a href="/insere_funcionario/">Insere Funcionário</a>
-        </li>
-        <li><a href="/insere_cliente/">Insere Cliente</a>
-        </li>
-        <li><a href="/cria_campanha/">Insere Campanha</a>
-        </li>
-        <li><a href="/insere_fornecedor/">Insere Fornecedor</a>
-        </li>
-        <li><a href="/insere_produto/">Insere Produto</a>
-        </li>
-        <li><a href="/insere_compra_produtos/">Insere Compra Produtos</a>
-        </li>
-        <li><a href="/insere_retirada_produtos/">Insere Retirada de Produtos</a>
-        </li>
-        <li><a href="/insere_dentes/">Insere Dentes</a>
-        </li>
-        <li><a href="/insere_orcamento_odonto/">Insere Orçamento Odonto</a>
-        </li>
-        <li><a href="/insere_orcamento_psico/">Insere Orçamento Psico</a>
-        </li>
-        <li><a href="/insere_orcamento_nutri/">Insere Orçamento Nutri</a>
-        </li>
-        <li><a href="/insere_recebimento_plano/">Insere Recebimento Plano</a>
-        </li>
-        <li><a href="/insere_atendiemento_avulso/">Insere Atendimento Independente</a>
-        </li>
-        <li><a href="/insere_contrato_odonto/">Insere Contrato Odonto</a>
-        </li>
-        <li><a href="/insere_contrato_psico/">Insere Contrato Psico</a>
-        </li>
-        <li><a href="/insere_contrato_nutri/">Insere Contrato Nutri</a>
-        </li>
-        <li><a href="/insere_relatorio_exame_odonto/">Insere Relatório de Exame Odonto</a>
-        </li>
-        <li><a href="/insere_relatorio_exame_psico/">Insere Relatório de Exame Psico</a>
-        </li>
-        <li><a href="/insere_relatorio_exame_nutri/">Insere Relatório de Exame Nutri</a>
-        </li>
-        <li><a href="/insere_agendamento_plano_odonto/">Insere Agendamento Plano Odonto</a>
-        </li>
-        <li><a href="/insere_agendamento_plano_nutri/">Insere Agendamento Plano Nutri</a>
-        </li>
-        <li><a href="/insere_agendamento_plano_psico/">Insere Agendamento Plano Psico</a>
-        </li>
-    {% endblock %}
+{% block menu_atendente %}
+    <li><a href="/insere_profissional/">Insere Profissional</a>
+    </li>
 
-{% block conteudo %}
-    <div class="col-md-3" style="color: limegreen">
-        <div class="x_panel">
-            <i class="fa fa-bullseye fa-2x" aria-hidden="true"> Oportunidade </i><br/>
-            <span>R$ {{ valor }}</span>
-        </div>
-    </div>
-    <div class="col-md-3" style="color: #1479B8">
-        <div class="x_panel">
-            <i class="fa fa-money fa-2x" aria-hidden="true"> Conversão </i><br/>
-            <span class="col-sm-5">R$ {{ valor_contratos }}</span><span class="col-sm-5">  %</span>
-            <!--falta colocar as variaveis-->
-        </div>
-    </div>
-    <div class="col-md-3" style="color: #a92222">
-        <div class="x_panel">
-            <i class="fa fa-clock-o fa-2x" aria-hidden="true"> Ocupação </i><br/>
-            <span>  %</span>
-            <!--falta colocar as variaveis-->
-        </div>
-    </div>
-    <div class="col-md-3" style="color: orange">
-        <div class="x_panel">
-            <i class="fa fa-thumbs-up fa-2x" aria-hidden="true"> NPS </i><br/>
-            <span>  %</span>
-            <!--falta colocar as variaveis-->
-        </div>
-    </div>
+    <li><a href="/insere_cliente/">Insere Cliente</a>
+    </li>
+    <li><a href="/cria_campanha/">Insere Campanha</a>
+    </li>
+    <li><a href="/insere_fornecedor/">Insere Fornecedor</a>
+    </li>
+    <li><a href="/insere_produto/">Insere Produto</a>
+    </li>
+    <li><a href="/insere_compra_produtos/">Insere Compra Produtos</a>
+    </li>
+    <li><a href="/insere_retirada_produtos/">Insere Retirada de Produtos</a>
+    </li>
 
+    <li><a href="/insere_orcamento_odonto/">Insere Orçamento Odonto</a>
+    </li>
+    <li><a href="/insere_orcamento_psico/">Insere Orçamento Psico</a>
+    </li>
+    <li><a href="/insere_orcamento_nutri/">Insere Orçamento Nutri</a>
+    </li>
+    <li><a href="/insere_recebimento_plano/">Insere Recebimento Plano</a>
+    </li>
+    <li><a href="/insere_atendiemento_avulso/">Insere Atendimento Independente</a>
+    </li>
+    <li><a href="/insere_contrato_odonto/">Insere Contrato Odonto</a>
+    </li>
+    <li><a href="/insere_contrato_psico/">Insere Contrato Psico</a>
+    </li>
+    <li><a href="/insere_contrato_nutri/">Insere Contrato Nutri</a>
+    </li>
+    <li><a href="/insere_relatorio_exame_odonto/">Insere Relatório de Exame Odonto</a>
+    </li>
+    <li><a href="/insere_relatorio_exame_psico/">Insere Relatório de Exame Psico</a>
+    </li>
+    <li><a href="/insere_relatorio_exame_nutri/">Insere Relatório de Exame Nutri</a>
+    </li>
+    <li><a href="/insere_agendamento_plano_odonto/">Insere Agendamento Plano Odonto</a>
+    </li>
+    <li><a href="/insere_agendamento_plano_nutri/">Insere Agendamento Plano Nutri</a>
+    </li>
+    <li><a href="/insere_agendamento_plano_psico/">Insere Agendamento Plano Psico</a>
+    </li>
 {% endblock %}
-    {% block corpo_completementar %}
-    <div class="x-panel">
-        <h2>Oportunidade por Conversão</h2>
-
-        {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                <li{% if message.tags %} class="{{ message.tags }}"{% endif %}><div class="col-sm-3 col-md-3 col-lg-3"><div class="fa fa-info-circle" style="color: limegreen" ></div> {{ message }}</div></li>
-                {% endfor %}
+{% block conteudo %}
+<div class="col-md-6 col-sm-6 col-xs-12">
+    <div class="x_panel">
+        <div class="x_title">
+            <h2>Grafico
+                <small style="color: #26B99A; font-weight: bold;">Total Contratos</small>
+                <small style=" font-weight: bold;">x</small>
+                <small style="color: #03586A; font-weight: bold;">Total Orçamentos</small>
+            </h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+{#                <li class="dropdown">#}
+{#                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>#}
+{#                    <ul class="dropdown-menu" role="menu">#}
+{#                        <li><a href="#" style="color: #26B99A">Total dos contratos</a>#}
+{#                        </li>#}
+{#                        <li><a href="#" style="color: #03586A">Total dos orçamentos</a>#}
+{#                        </li>#}
+{#                    </ul>#}
+{#                </li>#}
+                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                </li>
             </ul>
-        {% endif %}
-
-        <canvas id="canvas_bar" height="247" width="494" style="width: 494px; height: 247px;"></canvas>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+            <canvas id="canvas_bar" height="246" width="493" style="width: 493px; height: 246px;"></canvas>
+        </div>
     </div>
-    <script>
+</div>
 
+
+<div class="col-md-4 col-sm-6 col-xs-12">
+    <div class="x_panel fixed_height_320">
+        <div class="x_title">
+            <h2>Daily active users <small>Sessions</small></h2>
+            <ul class="nav navbar-right panel_toolbox">
+                <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-wrench"></i></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">Settings 1</a>
+                        </li>
+                        <li><a href="#">Settings 2</a>
+                        </li>
+                    </ul>
+                </li>
+                <li><a class="close-link"><i class="fa fa-close"></i></a>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+        </div>
+        <div class="x_content">
+
+            <table class="tile" style="width:100%">
+                <tbody><tr>
+                    <th style="width:37%;">
+                        <span>Top 5</span>
+                    </th>
+                    <th>
+                        <div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+                            <span class="hidden-small">Disbursement</span>
+                        </div>
+                        <div class="col-lg-5 col-md-5 col-sm-5 col-xs-5">
+                            <span class="hidden-small">Progress</span>
+                        </div>
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        <canvas id="canvas1" height="140" width="140" style="margin: 15px 10px 10px 0px; width: 140px; height: 140px;"></canvas>
+                    </td>
+                    <td>
+                        <table class="tile_info">
+                            <tbody><tr>
+                                <td>
+                                    <p><i class="fa fa-square blue"></i>IOS </p>
+                                </td>
+                                <td>30%</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><i class="fa fa-square green"></i>Android </p>
+                                </td>
+                                <td>10%</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><i class="fa fa-square purple"></i>Blackberry </p>
+                                </td>
+                                <td>20%</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><i class="fa fa-square aero"></i>Symbian </p>
+                                </td>
+                                <td>15%</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><i class="fa fa-square red"></i>Others </p>
+                                </td>
+                                <td>30%</td>
+                            </tr>
+                        </tbody></table>
+                    </td>
+                </tr>
+            </tbody></table>
+        </div>
+    </div>
+</div>
+<div class="animated flipInY col-lg-2 col-md-2 col-sm-6 col-xs-12">
+    <div class="tile-stats">
+        <div class="icon"><i class="fa fa-comments-o"></i>
+        </div>
+        <div class="count">179</div>
+
+        <h3>New Sign ups</h3>
+        <p>Lorem ipsum psdea itgum rixt.</p>
+    </div>
+</div>
+<div class="animated flipInY col-lg-2 col-md-2 col-sm-6 col-xs-12">
+    <div class="tile-stats">
+        <div class="icon"><i class="fa fa-check-square-o"></i>
+        </div>
+        <div class="count">179</div>
+
+        <h3>New Sign ups</h3>
+        <p>Lorem ipsum psdea itgum rixt.</p>
+    </div>
+</div>
+
+    <script>
         var randomScalingFactor = function () {
             return Math.round(Math.random() * 100)
         };
+
+
 
         var barChartData = {
             labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
@@ -108,19 +196,14 @@
                     strokeColor: "#26B99A", //rgba(220,220,220,0.8)
                     highlightFill: "#36CAAB", //rgba(220,220,220,0.75)
                     highlightStroke: "#36CAAB", //rgba(220,220,220,1)
-                    data: [{{ orcamento_jan }}, {{ orcamento_fevereiro }}, {{ orcamento_marco }},{{ orcamento_abril }},
-                        {{ orcamento_maio }}, {{ orcamento_junho }}, {{ orcamento_jul }}, {{ orcamento_agosto }},
-                        {{ orcamento_setembro }}, {{ orcamento_outubro }}, {{ orcamento_novembro }},
-                        {{ orcamento_dezembro }}]
+                    data: [{{ soma_janeiro_contratos }}, 30, 40, 28, 92, 50, 45, {{ soma_agosto_contratos }} ,23 ,3 ,67 ,98]
             },
                 {
                     fillColor: "#03586A", //rgba(151,187,205,0.5)
                     strokeColor: "#03586A", //rgba(151,187,205,0.8)
                     highlightFill: "#066477", //rgba(151,187,205,0.75)
                     highlightStroke: "#066477", //rgba(151,187,205,1)
-                    data: [{{ contrato_jan }}, {{ contrato_fev }}, {{ contrato_mar }}, {{ contrato_abril }}, {{ contrato_maio }}, {{ contrato_jun }},
-                        {{ contrato_julho }}, {{ contrato_agosto }}, {{ contrato_setembro }}, {{ contrato_outubro }}, {{ contrato_novembro }},
-                        {{ contrato_dezembro }}]
+                    data: [41, 56, 25, 48, 72, 34, 12, 10 ,18 ,9 ,33, 51]
             }
         ]
         };
@@ -134,94 +217,34 @@
             });
         });
 
+        $('document').ready(function () {
 
-        var lineChartData = {
-            labels: ["January", "February", "March", "April", "May", "June", "July"],
-            datasets: [
+            var doughnutData = [
                 {
-                    label: "My First dataset",
-                    fillColor: "rgba(38, 185, 154, 0.31)", //rgba(220,220,220,0.2)
-                    strokeColor: "rgba(38, 185, 154, 0.7)", //rgba(220,220,220,1)
-                    pointColor: "rgba(38, 185, 154, 0.7)", //rgba(220,220,220,1)
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [31, 74, 6, 39, 20, 85, 7]
-            },
+                    value: 30,
+                    color: "#455C73"
+                },
                 {
-                    label: "My Second dataset",
-                    fillColor: "rgba(3, 88, 106, 0.3)", //rgba(151,187,205,0.2)
-                    strokeColor: "rgba(3, 88, 106, 0.70)", //rgba(151,187,205,1)
-                    pointColor: "rgba(3, 88, 106, 0.70)", //rgba(151,187,205,1)
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(151,187,205,1)",
-                    data: [82, 23, 66, 9, 99, 4, 2]
-            }
-        ]
-
-        };
-
-
-        var sharePiePolorDoughnutData = [
-            {
-                value: 120,
-                color: "#455C73",
-                highlight: "#34495E",
-                label: "Dark Grey"
-        },
-            {
-                value: 50,
-                color: "#9B59B6",
-                highlight: "#B370CF",
-                label: "Purple Color"
-        },
-            {
-                value: 150,
-                color: "#BDC3C7",
-                highlight: "#CFD4D8",
-                label: "Gray Color"
-        },
-            {
-                value: 180,
-                color: "#26B99A",
-                highlight: "#36CAAB",
-                label: "Green Color"
-        },
-            {
-                value: 100,
-                color: "#3498DB",
-                highlight: "#49A9EA",
-                label: "Blue Color"
-        }
-
+                    value: 30,
+                    color: "#9B59B6"
+                },
+                {
+                    value: 60,
+                    color: "#BDC3C7"
+                },
+                {
+                    value: 100,
+                    color: "#26B99A"
+                },
+                {
+                    value: 120,
+                    color: "#3498DB"
+                }
     ];
+            var myDoughnut = new Chart(document.getElementById("canvas1").getContext("2d")).Doughnut(doughnutData);
+
+        })
 
 
-        var radarChartData = {
-            labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
-            datasets: [
-                {
-                    label: "My First dataset",
-                    fillColor: "rgba(3, 88, 106, 0.2)",
-                    strokeColor: "rgba(3, 88, 106, 0.80)",
-                    pointColor: "rgba(3, 88, 106, 0.80)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(220,220,220,1)",
-                    data: [65, 59, 90, 81, 56, 55, 40]
-            },
-                {
-                    label: "My Second dataset",
-                    fillColor: "rgba(38, 185, 154, 0.2)",
-                    strokeColor: "rgba(38, 185, 154, 0.85)",
-                    pointColor: "rgba(38, 185, 154, 0.85)",
-                    pointStrokeColor: "#fff",
-                    pointHighlightFill: "#fff",
-                    pointHighlightStroke: "rgba(151,187,205,1)",
-                    data: [28, 48, 40, 19, 96, 27, 100]
-            }
-        ]
-        };
     </script>
 {% endblock %}

@@ -11,23 +11,21 @@ DAY = ((u'1','1'),(u'2','2'),(u'3','3'),(u'4','4'),(u'5','5'),(u'6','6'),(u'7','
 
 class FormContratoOdonto(forms.ModelForm):
 
-    propose = forms.ModelChoiceField(label="Proposta de orcamento", queryset=OrcamentoPlanoOdontologico.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
+    propose = forms.ModelChoiceField(label="Proposta de orcamento", queryset=Orcamento_Plano_Odonto.objects.all(), widget=forms.Select(attrs={'class': 'form-control'}))
     professional = forms.ModelChoiceField(label="Nome do Profissional responsavel pelo tratamento",queryset=Profissionais.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
     time_contract =forms.DateField(label='Data de encerramento do tratamento' ,widget=forms.DateInput(attrs={'type':'date','class':'well' }))
     type_plane = forms.ChoiceField(label='Tipo de vinculo',choices=TYPE_PLANE, widget=forms.Select(attrs={'class':'form-control'}))
     plane_value = forms.CharField(label="Valor do plano",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     date_payment_per_month = forms.ChoiceField(label='Dia de vencimento mensal',choices=DAY ,widget=forms.Select(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
     input_value = forms.CharField(label="Valor de entrada pago",max_length=150, initial=0, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12', 'placeholder':'R$'}))
-    image_register = forms.FileField(
-        label='Selecione uma imagem',
-    )
     active = forms.BooleanField(label='Ativo na clinica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
     note = forms.CharField(label='Observacao',widget=forms.Textarea(attrs={"class":"form-control"}))
 
     class Meta:
         model= Contrato_odonto
         fields = ('propose','professional','time_contract','type_plane','plane_value','date_payment_per_month',
-                  'input_value','image_register','active','note')
+                  'input_value','image_register','active','note', 'cortesia','value_per_mounth')
+        widgets = {'url': forms.HiddenInput, }
 
 class FormContratoNutri(forms.ModelForm):
 

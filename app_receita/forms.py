@@ -28,7 +28,7 @@ class FormOrcamentoOdontologico(forms.ModelForm):
     value_tratment = forms.CharField(label="Valor do tratamento",max_length=150, widget=forms.TextInput(attrs={'class' : 'form-control col-md-7 col-xs-12'}))
     active = forms.BooleanField(label='Ativo na clinica?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
     class Meta:
-        model = OrcamentoPlanoOdontologico
+        model = Orcamento_Plano_Odonto
         fields = ('name_client', 'tooths', 'faces_tooths', 'services','date_to_end_tratment', 'value_tratment', 'active')
 
 class FormOrcamentoPlanoNutri(forms.ModelForm):

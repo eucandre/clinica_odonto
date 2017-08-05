@@ -64,7 +64,7 @@ def InsereDentes(request):
 
 @login_required(login_url='/login/')
 def lista_orcamentoOdonto(request):
-    orcamento_odonto = OrcamentoPlanoOdontologico.objects.all()
+    orcamento_odonto = Orcamento_Plano_Odonto.objects.all()
     page = request.GET.get('page', 1)
     paginator = Paginator(orcamento_odonto, 10)
     try:
@@ -77,7 +77,7 @@ def lista_orcamentoOdonto(request):
 
 @login_required(login_url='/login/')
 def edita_orcamentoodonto(request, nr_item):
-    item = OrcamentoPlanoOdontologico.objects.get(pk=nr_item)
+    item = Orcamento_Plano_Odonto.objects.get(pk=nr_item)
     if request.method == 'POST':
         form = FormOrcamentoOdontologico(request.POST, request.FILES, instance=item)
         if form.is_valid():
@@ -92,8 +92,8 @@ def edita_orcamentoodonto(request, nr_item):
 @login_required(login_url='/login/')
 def detalha_orcamentoodonto(request, nr_item):
     try:
-        item = OrcamentoPlanoOdontologico.objects.get(pk=nr_item)
-    except OrcamentoPlanoOdontologico.DoesNotExist:
+        item = Orcamento_Plano_Odonto.objects.get(pk=nr_item)
+    except Orcamento_Plano_Odonto.DoesNotExist:
         raise Http404('Sem Registro!')
     return render(request, "paginas_app_receita/item_orcamentoodonto.html", {'item': item})
 
