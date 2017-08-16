@@ -82,6 +82,8 @@ class Contrato_odonto(models.Model):
         self.date_today=datetime.today().month
         return self.date_today
 
+
+
 class Contrato_nutricionista(models.Model):
 
     propose = models.ForeignKey(OrcamentoPlanoNutri)

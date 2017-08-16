@@ -83,7 +83,7 @@
 <div class="col-md-4 col-sm-6 col-xs-12">
     <div class="x_panel fixed_height_320">
         <div class="x_title">
-            <h2>Daily active users <small>Sessions</small></h2>
+            <h2>Ocupação <small>Sessões</small></h2>
             <ul class="nav navbar-right panel_toolbox">
                 <li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a>
                 </li>
@@ -180,14 +180,10 @@
         <p>Lorem ipsum psdea itgum rixt.</p>
     </div>
 </div>
-
     <script>
         var randomScalingFactor = function () {
             return Math.round(Math.random() * 100)
         };
-
-
-
         var barChartData = {
             labels: ["Janeiro", "Fevereiro", "Março", "Abril", "Maio", "Junho", "Julho", "Agosto", "Setembro", "Outubro", "Novembro", "Dezembro"],
             datasets: [
@@ -196,8 +192,9 @@
                     strokeColor: "#26B99A", //rgba(220,220,220,0.8)
                     highlightFill: "#36CAAB", //rgba(220,220,220,0.75)
                     highlightStroke: "#36CAAB", //rgba(220,220,220,1)
-                    data: [{{ soma_janeiro_contratos }}, 30, 40, 28, 92, 50, 45, {{ soma_agosto_contratos }} ,23 ,3 ,67 ,98]
-            },
+                    data: [{{ Janeiro }}, {{ Fevereiro }}, {{ Marco }}, {{ Abril }}, {{ Maio }}, {{ Junho }}, {{ Julho }}, {{ Agosto }},
+                        {{ Setembro }}, {{ Outubro }}, {{ Novembro }}, {{ Dezembro }}]},
+
                 {
                     fillColor: "#03586A", //rgba(151,187,205,0.5)
                     strokeColor: "#03586A", //rgba(151,187,205,0.8)

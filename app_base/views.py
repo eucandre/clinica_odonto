@@ -41,89 +41,248 @@ def lista_clientes(request):
 
 @login_required(login_url='/login/')
 def inicia(request):
-    # variaveis gerais aqui declaradas
-    clientes = Cliente.objects.all()
-    contratos_odonto = Contrato_odonto.objects.all()
-    contratos_nutri = Contrato_nutricionista.objects.all()
-    objeto_contrato_odonto = Contrato_odonto
+    if Contrato_odonto.objects.all() or Orcamento_Plano_Odonto.objects.all():
 
-    #variaveis da funcao atual
-    tamanho_clientes = len(clientes)
-    tamanho_contrato_odonto = len(contratos_odonto)
+        jan = 0
+        fev = 0
+        mar = 0
+        abr = 0
+        mai = 0
+        jun = 0
+        jul = 0
+        ago = 0
+        set = 0
+        out = 0
+        nov = 0
+        dez = 0
 
+        janN = 0
+        fevN = 0
+        marN = 0
+        abrN = 0
+        maiN = 0
+        junN = 0
+        julN = 0
+        agoN = 0
+        setN = 0
+        outN = 0
+        novN = 0
+        dezN = 0
 
-    i=1
+        janP = 0
+        fevP = 0
+        marP = 0
+        abrP = 0
+        maiP = 0
+        junP = 0
+        julP = 0
+        agoP = 0
+        setP = 0
+        outP = 0
+        novP = 0
+        dezP = 0
 
-    soma_jan, soma_fev, soma_mar, soma_abr, soma_mai, soma_jun, soma_jul, soma_ago, soma_set, soma_out, soma_nov, soma_dez = 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
-    hoje=''
-    try:
-        while i <= tamanho_contrato_odonto:
+        janOrOdonto = 0
+        fevOrOdonto = 0
+        marOrOdonto = 0
+        abrOrOdonto = 0
+        maiOrOdonto = 0
+        junOrOdonto = 0
+        julOrOdonto = 0
+        agoOrOdonto = 0
+        setOrOdonto = 0
+        outOrOdonto = 0
+        novOrOdonto = 0
+        dezOrOdonto = 0
 
-            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 1:
-                soma_jan = soma_jan+objeto_contrato_odonto.objects.get(pk=i).plane_value
-                hoje = objeto_contrato_odonto.objects.get(pk=i).date_today
+        soma =0
+        i= 1
+        tamanho = len(Contrato_odonto.objects.all())
+        while i<=tamanho:
+            obje = Contrato_odonto.objects.get(pk=i)
+            if obje.format_monts()==1:
+                jan= soma+obje.value_tratment()
 
-            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 2:
-                soma_fev = soma_fev+objeto_contrato_odonto.objects.get(pk=i).plane_value
+            elif obje.format_monts()==2:
+                fev= soma+obje.value_tratment()
 
+            elif obje.format_monts()==3:
+                mar= soma+obje.value_tratment()
 
-            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 3:
-                soma_mar = soma_mar+objeto_contrato_odonto.objects.get(pk=i).plane_value
+            elif obje.format_monts()==4:
+                abr= soma+obje.value_tratment()
 
+            elif obje.format_monts()==5:
+                mai= soma+obje.value_tratment()
 
-            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 4:
-                soma_abr = soma_abr+objeto_contrato_odonto.objects.get(pk=i).plane_value
+            elif obje.format_monts()==6:
+                jun= soma+obje.value_tratment()
 
+            elif obje.format_monts()==7:
+                jul= soma+obje.value_tratment()
 
-            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 5:
-                soma_mai = soma_mai+objeto_contrato_odonto.objects.get(pk=i).plane_value
+            elif obje.format_monts()==8:
+                ago= soma+obje.value_tratment()
 
+            elif obje.format_monts()==9:
+                set= soma+obje.value_tratment()
 
-            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 6:
-                soma_jun = soma_jun+objeto_contrato_odonto.objects.get(pk=i).plane_value
+            elif obje.format_monts()==10:
+                out= soma+obje.value_tratment()
 
+            elif obje.format_monts()==11:
+                nov= soma+obje.value_tratment()
 
-            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 7:
-                soma_jul = soma_jul+objeto_contrato_odonto.objects.get(pk=i).plane_value
+            elif obje.format_monts()==12:
+                dez= soma+obje.value_tratment()
+            i=i+1
+    else:
+        tamanho = 0
+    if Contrato_nutricionista.objects.all():
 
+        soma = 0
+        n = 1
+        tamanhoN = len(Contrato_nutricionista.objects.all())
+        while n <= tamanhoN:
+            objn= Contrato_nutricionista.objects.get(pk=n)
+            if objn.format_monts()==1:
+                janN= soma+objn.value_tratment()
 
-            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 8:
-                soma_ago = soma_ago+objeto_contrato_odonto.objects.get(pk=i).plane_value
+            if objn.format_monts()==2:
+                fevN= soma+objn.value_tratment()
 
+            if objn.format_monts()==3:
+                marN= soma+objn.value_tratment()
 
-            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 9:
-                soma_set = soma_set+objeto_contrato_odonto.objects.get(pk=i).plane_value
+            if objn.format_monts()==4:
+                abrN= soma+objn.value_tratment()
 
+            if objn.format_monts()==5:
+                maiN= soma+objn.value_tratment()
 
-            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 10:
-                soma_out = soma_out+objeto_contrato_odonto.objects.get(pk=i).plane_value
+            if objn.format_monts()==6:
+                junN= soma+objn.value_tratment()
 
+            if objn.format_monts()==7:
+                julN= soma+objn.value_tratment()
 
-            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 11:
-                soma_nov = soma_nov+objeto_contrato_odonto.objects.get(pk=i).plane_value
+            if objn.format_monts()==8:
+                agoN= soma+objn.value_tratment()
 
+            if objn.format_monts()==9:
+                setN= soma+objn.value_tratment()
 
-            if objeto_contrato_odonto.objects.get(pk=i).format_monts()== 12:
-                soma_dez = soma_dez+objeto_contrato_odonto.objects.get(pk=i).plane_value
+            if objn.format_monts()==10:
+                outN= soma+objn.value_tratment()
 
-            i = i + 1
+            if objn.format_monts()==11:
+                novN= soma+objn.value_tratment()
 
-        return render(request, "index.html", {'soma_janeiro_contratos': soma_jan,
-                                          'soma_fevereiro_contratos':soma_fev,
-                                          'soma_marco_contratos':soma_mar,
-                                          'soma_abril_contratos':soma_abr,
-                                          'soma_maio_contratos':soma_mai,
-                                          'soma_junho_contratos':soma_jun,
-                                          'soma_julho_contratos':soma_jul,
-                                          'soma_agosto_contratos':soma_ago,
-                                          'soma_setembro_contratos':soma_set,
-                                          'soma_outrubro_contratos':soma_out,
-                                          'soma_novembro_contratos':soma_nov,
-                                          'soma_dezembro_contratos':soma_dez,
-                                              'hoje':hoje})
+            if objn.format_monts()==12:
+                dezN= soma+objn.value_tratment()
+    if Contrato_psicologo.objects.all():
+        soma= 0
+        k=1
+        tamanhoP = len(Contrato_nutricionista.objects.all())
+        while k <= tamanhoP:
+            objp = Contrato_nutricionista.objects.get(pk=k)
+            if objp.format_monts() == 1:
+                janP = soma + objp.value_tratment()
+                soma = janP
 
-    except objeto_contrato_odonto.DoesNotExist:
-        raise Http404('Sem Contratos Registrados no momento')
+            if objp.format_monts() == 2:
+                fevP = soma + objp.value_tratment()
+
+            if objp.format_monts() == 3:
+                marP = soma + objp.value_tratment()
+
+            if objp.format_monts() == 4:
+                abrP = soma + objp.value_tratment()
+
+            if objp.format_monts() == 5:
+                maiP = soma + objp.value_tratment()
+
+            if objp.format_monts() == 6:
+                junP = soma + objp.value_tratment()
+
+            if objp.format_monts() == 7:
+                julP = soma + objp.value_tratment()
+
+            if objp.format_monts() == 8:
+                agoP = soma + objp.value_tratment()
+
+            if objp.format_monts() == 9:
+                setP = soma + objp.value_tratment()
+
+            if objp.format_monts() == 10:
+                outP = soma + objp.value_tratment()
+
+            if objp.format_monts() == 11:
+                novP = soma + objp.value_tratment()
+
+            if objp.format_monts() == 12:
+                dezP = soma + objp.value_tratment()
+
+    if Orcamento_Plano_Odonto.objects.all():
+        soma = 0
+        y = 1
+        while y <= len(Orcamento_Plano_Odonto.objects.all()):
+            objord = Orcamento_Plano_Odonto.objects.get(pk=y)
+            if objord.format_date()== 1:
+                janOrOdonto = objord.plane_value()+soma
+                soma = janOrOdonto+soma
+            if objord.format_date() == 2:
+                fevOrOdonto = objord.plane_value()+soma
+                soma = fevOrOdonto+soma
+
+            if objord.format_date() == 3:
+                marOrOdonto = objord.plane_value()+soma
+                soma = marOrOdonto+soma
+
+            if objord.format_date() == 4:
+                abrOrOdonto = objord.plane_value()+soma
+                soma = abrOrOdonto+soma
+
+            if objord.format_date() == 5:
+                maiOrOdonto = objord.plane_value()+soma
+                soma = maiOrOdonto+soma
+
+            if objord.format_date() == 6:
+                junOrOdonto = objord.plane_value()+soma
+                soma = junOrOdonto+soma
+
+            if objord.format_date() == 7:
+                julOrOdonto = objord.plane_value()+soma
+                soma = julOrOdonto+soma
+
+            if objord.format_date() == 8:
+                agoOrOdonto = objord.plane_value()+soma
+                soma = agoOrOdonto+soma
+
+            if objord.format_date() == 9:
+                setOrOdonto = objord.plane_value()+soma
+                soma = setOrOdonto+soma
+
+            if objord.format_date() == 10:
+                outOrOdonto = objord.plane_value()+soma
+                soma = outOrOdonto+soma
+
+            if objord.format_date() == 11:
+                novOrOdonto = objord.plane_value()+soma
+                soma = novOrOdonto+soma
+
+            if objord.format_date() == 12:
+                devOrOdonto = objord.plane_value()+soma
+                soma = devOrOdonto+soma
+
+    return render(request, 'index.html',{'Janeiro':jan+janN+janP, 'Fevereiro':fev+fevN+fevP,
+                                         'Marco':mar+marN+marP, 'Abril':abr+abrN+abrP, 'Maio':mai+maiN+maiP,
+                                         'Junho':jun+junN+junP,'Julho':jul+julN+julP,'Agosto':ago+agoN+agoP, 'Setembro':set+setN+setP,
+                                         'Outubro':out+outN+outP, 'Novembro':nov+novN+novP, 'Dezembro':dez+dezN+dezP,
+                                         'orcamento_jan':janOrOdonto,'orcamento_fev':fevOrOdonto, 'orcamento_mar':marOrOdonto,
+                                         'orcamento_abr':abrOrOdonto, 'orcamento_mai':maiOrOdonto, 'orcamento_jun':junOrOdonto,
+                                         'orcamento_jul':julOrOdonto, 'orcamento_ago':agoOrOdonto, 'orcamento_set':setOrOdonto,
+                                         'orcamento_out':outOrOdonto, 'orcamento_nov':novOrOdonto, 'orcamento_dez':dezOrOdonto})
 
 @login_required(login_url='/login/')
 def insere_profissional(request):

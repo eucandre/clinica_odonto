@@ -91,6 +91,9 @@ class Orcamento_Plano_Odonto(models.Model):
         self.date_today = datetime.today().month
         return self.date_today
 
+    def plane_value(self):
+        return self.value_tratment.__int__()
+
     class Meta:
         verbose_name_plural = "Orcamento Plano Odonto"
 
