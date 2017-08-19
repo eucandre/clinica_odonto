@@ -125,31 +125,37 @@
                         <table class="tile_info">
                             <tbody><tr>
                                 <td>
-                                    <p><i class="fa fa-square blue"></i>IOS </p>
+                                    <p><i class="fa fa-square blue"></i>Segunda-Feira </p>
                                 </td>
                                 <td>30%</td>
                             </tr>
                             <tr>
                                 <td>
-                                    <p><i class="fa fa-square green"></i>Android </p>
+                                    <p><i class="fa fa-square green"></i>Terça-Feira</p>
                                 </td>
                                 <td>10%</td>
                             </tr>
                             <tr>
                                 <td>
-                                    <p><i class="fa fa-square purple"></i>Blackberry </p>
+                                    <p><i class="fa fa-square purple"></i>Quarta-Feira </p>
                                 </td>
                                 <td>20%</td>
                             </tr>
                             <tr>
                                 <td>
-                                    <p><i class="fa fa-square aero"></i>Symbian </p>
+                                    <p><i class="fa fa-square aero"></i>Quinta-Feira </p>
                                 </td>
                                 <td>15%</td>
                             </tr>
                             <tr>
                                 <td>
-                                    <p><i class="fa fa-square red"></i>Others </p>
+                                    <p><i class="fa fa-square red"></i>Sexta-Feira </p>
+                                </td>
+                                <td>30%</td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <p><i class="fa fa-square red"></i>Sabado </p>
                                 </td>
                                 <td>30%</td>
                             </tr>
@@ -162,22 +168,22 @@
 </div>
 <div class="animated flipInY col-lg-2 col-md-2 col-sm-6 col-xs-12">
     <div class="tile-stats">
-        <div class="icon"><i class="fa fa-comments-o"></i>
+        <div class="icon"><i class="fa fa-check-square-o"></i>
         </div>
-        <div class="count">179</div>
+        <div class="count"><small>R$ {{ contratos_odonto }}</small></div>
 
-        <h3>{{ agosto }}</h3>
-        <p>Lorem ipsum psdea itgum rixt.</p>
+        <h3>Contratos Novos</h3>
+        <p>{% now "M" %}</p>
     </div>
 </div>
 <div class="animated flipInY col-lg-2 col-md-2 col-sm-6 col-xs-12">
     <div class="tile-stats">
-        <div class="icon"><i class="fa fa-check-square-o"></i>
+        <div class="icon"><i class="fa fa-comments-o"></i>
         </div>
-        <div class="count">179</div>
+        <div class="count">{{ indicacoes }}</div>
 
-        <h3>New Sign ups</h3>
-        <p>Lorem ipsum psdea itgum rixt.</p>
+        <h3>Indicações</h3>
+        <p>Feitas pelos contratos firmados.</p>
     </div>
 </div>
     <script>
@@ -237,6 +243,10 @@
                 {
                     value: 120,
                     color: "#3498DB"
+                },
+                {
+                    value: 12,
+                    color: "#db391e"
                 }
     ];
             var myDoughnut = new Chart(document.getElementById("canvas1").getContext("2d")).Doughnut(doughnutData);

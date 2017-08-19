@@ -9,7 +9,8 @@ from django.core.exceptions import PermissionDenied
 from django import template
 from django.contrib.auth.models import Group
 from app_atendimento.models import *
-
+from datetime import date
+from app_base.models import *
 
 @login_required(login_url='/login/')
 def lista_profissionais(request):
@@ -47,6 +48,8 @@ def inicia(request):
     janOr, fevOr, marOr, abrOr, maiOr, junOr = 0, 0, 0, 0, 0, 0
     julOr, agoOr, setOr, outOr, novOr, dezOr = 0, 0, 0, 0, 0, 0
 
+    contrato_novo = 0
+    indicacoes = Cotatos_Clientes_indicacoes.objects.all()
 
     i = 1
     j = 1
@@ -55,39 +58,50 @@ def inicia(request):
         objCO = Contrato_odonto.objects.get(pk=i)
         if objCO.format_monts()==1:
             jan = objCO.value_tratment()
+            contrato_novo = contrato_novo + jan
 
         if objCO.format_monts()==2:
             fev = objCO.value_tratment()
+            contrato_novo = contrato_novo + fev
 
         if objCO.format_monts()==3:
             mar = objCO.value_tratment()
-
+            contrato_novo = contrato_novo + mar
         if objCO.format_monts()==4:
             abr = objCO.value_tratment()
+            contrato_novo = contrato_novo + abr
 
         if objCO.format_monts()==5:
             mai = objCO.value_tratment()
+            contrato_novo = contrato_novo + mai
 
         if objCO.format_monts()==6:
             jun = objCO.value_tratment()
-
+            contrato_novo = contrato_novo + jun
         if objCO.format_monts()==7:
             jul = objCO.value_tratment()
+            contrato_novo = contrato_novo +jul
 
         if objCO.format_monts()==8:
             ago = objCO.value_tratment()
+            contrato_novo = contrato_novo+ago
 
         if objCO.format_monts()==9:
             set = objCO.value_tratment()
+            contrato_novo = contrato_novo + set
 
         if objCO.format_monts()==10:
             out = objCO.value_tratment()
+            contrato_novo = contrato_novo + out
 
         if objCO.format_monts()==11:
             nov = objCO.value_tratment()
+            contrato_novo = contrato_novo + nov
 
         if objCO.format_monts()==12:
             dez = objCO.value_tratment()
+            contrato_novo = contrato_novo + dez
+
         i = i + 1
     while j <=len(Orcamento_Plano_Odonto.objects.all()):
         objOO = Orcamento_Plano_Odonto.objects.get(pk=j)
@@ -127,11 +141,16 @@ def inicia(request):
 
         if objOO.format_date()==12:
             dezOr = dezOr+objOO.plane_value()
+
         j = j + 1
+
+    hoje = datetime.today().month
+
     return render(request, 'index.html',{'Janeiro':jan,'Fevereiro':fev,'Marco':mar,'Abril':abr,'Maio':mai,'Junho':jun
         ,'Julho':jul,'Agosto':ago, 'Setembro':set, 'Outubro':out, 'Novembro':nov, 'Dezembro':dez,
                                          'janeiro':janOr,'fevereiro':fevOr,'marco':maiOr,'abril':abrOr,'maio':maiOr,'junho':junOr,'julho':julOr,
-                                        'agosto':agoOr,'setembro':setOr,'outubro':outOr,'novembro':novOr,'dezembro':dezOr, })
+                                        'agosto':agoOr,'setembro':setOr,'outubro':outOr,'novembro':novOr,'dezembro':dezOr,
+                                         'contratos_odonto':contrato_novo, 'hoje':hoje, 'indicacoes':len(indicacoes)})
 
 @login_required(login_url='/login/')
 def insere_profissional(request):

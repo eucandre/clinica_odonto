@@ -82,6 +82,8 @@ class Contrato_odonto(models.Model):
         self.date_today=datetime.today().month
         return self.date_today
 
+    def get_contract_day(self):
+        return self.date_today.__int__()
 
 
 class Contrato_nutricionista(models.Model):
