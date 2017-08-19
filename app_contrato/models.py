@@ -106,6 +106,9 @@ class Contrato_nutricionista(models.Model):
         self.date_today = datetime.today().day
         return self.date_today
 
+    def value_tratment(self):
+        return self.plane_value.__int__()
+
 class Contrato_psicologo(models.Model):
 
     propose = models.ForeignKey(OrcamentoPlanoPsico)
@@ -124,6 +127,9 @@ class Contrato_psicologo(models.Model):
     def format_date(self):
         self.date_today = datetime.today().day
         return self.date_today
+
+    def value_tratment(self):
+        return self.plane_value.__int__()
 
     def __unicode__(self):
         return self.propose.__unicode__()
