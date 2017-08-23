@@ -420,7 +420,7 @@ def insere_relatorio_exame_plano_psico(request):
             return render(request, 'salvo.html', {'item': item})
     else:
         form = FormRelatorioExamePlanoPsico()
-        return render(request, 'pagina_app_atendimento/insere_relatorio_exame_plano_nutri.html', {'form': form})
+        return render(request, 'pagina_app_atendimento/insere_relatorio_exame_plano_psico.html', {'form': form})
 
 @login_required(login_url='/login/')
 def lista_relatorio_exame_plano_psico(request):
