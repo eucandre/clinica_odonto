@@ -51,8 +51,36 @@
     <form action="." method="post">
         {% csrf_token %}
         {{ form.errors }}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">ENVIAR</button>
-        <button type="reset" class="btn btn-danger">CANCELAR</button>
+        <div class="col-sm-10 col-md-10 col-lg-10">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.name_client.label_tag }}
+                {{ form.name_client }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.atendence.label_tag }}
+                {{ form.atendence }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.date_atendence.label_tag }}
+                {{ form.date_atendence }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.professional.label_tag }}
+                {{ form.professional }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <br /><br />
+                {{ form.active.label_tag }}
+                {{ form.active }}
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                {{ form.note.label_tag }}
+                {{ form.note }}
+            </div>
+        </div>
+         <div class="col-md-10 mid_center">
+            <button type="submit" class="btn btn-success">ENVIAR</button>
+             <button type="reset" class="btn btn-danger">CANCELAR</button>
+         </div>
     </form>
     {% endblock %}

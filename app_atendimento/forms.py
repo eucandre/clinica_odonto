@@ -16,7 +16,7 @@ class Form_relatorio_exame_odonto(forms.ModelForm):
                                           widget=forms.Select(attrs={'class':'form-control'}))
     tooths = forms.ModelMultipleChoiceField(queryset=Dentes.objects.all())
     faces_tooths = forms.ModelMultipleChoiceField(queryset=FacesDentes.objects.all())
-    date_atendence = forms.DateField(widget=forms.TextInput(attrs={'class':'form-control'}))
+    date_atendence = forms.DateField(label='Data e hora para ser atendido',widget=forms.DateInput(attrs={'type':'date','class':'form-control', 'placeholder':'dd/mm/yyyy HH:MM ' }))
 
     note = forms.CharField(widget=forms.Textarea(attrs={'class':'form-control'}))
 
@@ -29,7 +29,8 @@ class Form_relatorio_exame_psico(forms.ModelForm):
                                          widget=forms.Select(attrs={'class': 'form-control'}))
     professional = forms.ModelChoiceField(queryset=Profissionais.objects.all(),
                                           widget=forms.Select(attrs={'class': 'form-control'}))
-    date_atendence = forms.DateField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    date_atendence = forms.DateField(label='Data e hora para ser atendido', widget=forms.DateInput(
+        attrs={'type': 'date', 'class': 'form-control', 'placeholder': 'dd/mm/yyyy HH:MM '}))
     note = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}))
 
     class Meta:
@@ -41,7 +42,8 @@ class Form_relatorio_exame_nutri(forms.ModelForm):
                                          widget=forms.Select(attrs={'class': 'form-control'}))
     professional = forms.ModelChoiceField(queryset=Profissionais.objects.all(),
                                       widget=forms.Select(attrs={'class': 'form-control'}))
-    date_atendence = forms.DateField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    date_atendence = forms.DateField(label='Data e hora para ser atendido', widget=forms.DateInput(
+        attrs={'type': 'date', 'class': 'form-control', 'placeholder': 'dd/mm/yyyy HH:MM '}))
     note = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}))
 
 
@@ -55,7 +57,7 @@ class FormAgendamentoPlanoOdonto(forms.ModelForm):
     atendence = forms.ChoiceField(label='Tipo de atendimento',choices=AGENDAMENTO,widget=forms.Select(attrs={'class': 'form-control'}))
     professional = forms.ModelChoiceField(queryset=Profissionais.objects.all(),
                                           widget=forms.Select(attrs={'class': 'form-control'}))
-    date_atendence = forms.DateTimeField(label='Data e hora para ser atendido',widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder':'dd/mm/yy hh:mm'}))
+    date_atendence = forms.DateTimeField(label='Data e hora para ser atendido',widget=forms.DateInput(attrs={'type':'date','class':'form-control', 'placeholder':'dd/mm/yyyy HH:MM ' }))
     note = forms.CharField(label='Observacao',widget=forms.Textarea(attrs={'class': 'form-control'}))
     active = forms.BooleanField(label='Ativo ?',widget=forms.CheckboxInput(attrs={'class': 'flat'}))
 
@@ -71,7 +73,7 @@ class FormAgendamentoPlanoNutri(forms.ModelForm):
     professional = forms.ModelChoiceField(queryset=Profissionais.objects.all(),
                                           widget=forms.Select(attrs={'class': 'form-control'}))
 
-    date_atendence = forms.DateField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    date_atendence = forms.DateField(label='Data atendiemnto',widget=forms.DateInput(attrs={'type':'date','class':'form-control', 'placeholder':'dd/mm/yyyy HH:MM ' }))
     note = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}))
     active = forms.BooleanField(widget=forms.CheckboxInput(attrs={'class': 'flat'}))
 
@@ -88,7 +90,7 @@ class FormAgendamentoPlanoPsico(forms.ModelForm):
     professional = forms.ModelChoiceField(queryset=Profissionais.objects.all(),
                                           widget=forms.Select(attrs={'class': 'form-control'}))
 
-    date_atendence = forms.DateField(widget=forms.TextInput(attrs={'class': 'form-control'}))
+    date_atendence = forms.DateField(label='Data atendiemento',widget=forms.DateInput(attrs={'type':'date','class':'form-control', 'placeholder':'dd/mm/yyyy HH:MM ' }))
     note = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}))
     active = forms.BooleanField(widget=forms.CheckboxInput(attrs={'class': 'flat'}))
 
@@ -104,7 +106,7 @@ class FormRelatorioExamePlanoOdonto(forms.ModelForm):
     tooths = forms.ModelMultipleChoiceField(queryset=Dentes.objects.all())
     faces_tooths = forms.ModelMultipleChoiceField(queryset=FacesDentes.objects.all())
     evolution = forms.ChoiceField(choices=EVOLUCAO)
-    date_atendence= forms.DateField()
+    date_atendence= forms.DateField(label='Data atendimento',widget=forms.DateInput(attrs={'type':'date','class':'form-control', 'placeholder':'dd/mm/yyyy HH:MM ' }))
     image_register = forms.FileField()
     note = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}))
 
