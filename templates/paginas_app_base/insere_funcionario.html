@@ -45,15 +45,97 @@
     </li>
     <li><a href="/insere_agendamento_plano_psico/">Insere Agendamento Plano Psico</a>
     </li>
-
 {% endblock %}
     {% block conteudo %}
     <form action="." method="post">
         {% csrf_token %}
-        {{ form.errors }}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">ENVIAR</button>
-        <button type="reset" class="btn btn-danger">CANCELAR</button>
+        <div style="color: red">
+        {{ form.errors }}</div>
+        <div class="col-md-10 col-sm-10 col-lg-10">
+            <div class="col-sm-8 col-md-8 col-lg-8">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                {{ form.sex.label_tag }}
+                {{ form.sex }}
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                <br />
+                {{ form.active.label_tag }}
+                {{ form.active }}
+            </div>
 
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <br />
+                {{ form.date_entry.label_tag }}
+                {{ form.date_entry }}
+            </div>
+
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <br />
+                {{ form.email.label_tag }}
+                {{ form.email }}
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <br />
+                {{ form.phone.label_tag }}
+                {{ form.phone }}
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <br />
+                {{ form.cep.label_tag }}
+                {{ form.cep }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <br />
+                {{ form.street.label_tag }}
+                {{ form.street }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <br />
+                {{ form.district.label_tag }}
+                {{ form.district }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <br />
+                {{ form.city.label_tag }}
+                {{ form.city }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <br />
+                {{ form.rg.label_tag }}
+                {{ form.rg }}
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <br />
+                {{ form.cpf.label_tag }}
+                {{ form.cpf }}
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <br />
+                {{ form.birth_day.label_tag }}
+                {{ form.birth_day }}
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <br />
+                {{ form.function.label_tag }}
+                {{ form.function }}
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <br />
+                {{ form.salary.label_tag }}
+                {{ form.salary }}
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                <br />
+                {{ form.note.label_tag }}
+                {{ form.note }}
+            </div>
+        </div>
+        <div class="col-md-10 mid_center">
+            <button type="submit" class="btn btn-success">ENVIAR</button>
+            <button type="reset" class="btn btn-danger">CANCELAR</button>
+        </div>
     </form>
     {% endblock %}
