@@ -8,16 +8,16 @@ class FormInsereProfissionais(forms.ModelForm):
 
     name =  forms.CharField(label='Nome',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     professional_as = forms.ChoiceField(choices=TYPE_PROFESSIONAL, widget=forms.RadioSelect(attrs={'class':'flat'}))
-    salary = forms.FloatField(label='Salario',
+    salary = forms.FloatField(label='Salário',
                               widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
     sex =   forms.ChoiceField(label='Sexo',choices=SEXO,widget=forms.RadioSelect(attrs={'class':'flat'}))
     cep =   forms.CharField(label='CEP',max_length=7, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
-    email = forms.EmailField(label='E-mail',widget=forms.TextInput(attrs={'class':'form-control'}))
+    email = forms.EmailField(label='E-mail',widget=forms.EmailInput(attrs={'type':'email','class':'form-control'}))
     phone = forms.CharField(label='Telefone',max_length=10, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
     register = forms.CharField(label='Rregistro',max_length=150, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
-    birth_day = forms.DateField(label='Data de nascimento',widget=forms.DateInput(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
-    note = forms.CharField(label='Observacao',widget=forms.Textarea(attrs={"class":"form-control"}))
-    active = forms.BooleanField(label='Ativo na clinica?',widget=forms.CheckboxInput(attrs={'class':'flat'}))
+    birth_day = forms.DateField(label='Data de nascimento',widget=forms.DateInput(attrs={'type':'date','class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
+    note = forms.CharField(label='Observação',widget=forms.Textarea(attrs={"class":"form-control"}))
+    active = forms.BooleanField(label='Ativo na clínica?',widget=forms.CheckboxInput(attrs={'class':'flat'}))
 
     class Meta:
         model = Profissionais

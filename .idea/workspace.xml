@@ -8,9 +8,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/db.clinica" afterPath="$PROJECT_DIR$/db.clinica" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app_base/forms.py" afterPath="$PROJECT_DIR$/app_base/forms.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/paginas_app_base/insere_cliente.html" afterPath="$PROJECT_DIR$/templates/paginas_app_base/insere_cliente.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/paginas_app_base/insere_funcionario.html" afterPath="$PROJECT_DIR$/templates/paginas_app_base/insere_funcionario.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/paginas_app_base/item_funcionario.html" afterPath="$PROJECT_DIR$/templates/paginas_app_base/item_funcionario.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/templates/paginas_app_base/insere_dentista.html" afterPath="$PROJECT_DIR$/templates/paginas_app_base/insere_dentista.html" />
     </list>
     <ignored path="clinica.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -88,31 +86,41 @@
       <file leaf-file-name="insere_cliente.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/templates/paginas_app_base/insere_cliente.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="316">
-              <caret line="143" column="11" lean-forward="true" selection-start-line="143" selection-start-column="11" selection-end-line="143" selection-end-column="11" />
+            <state relative-caret-position="94">
+              <caret line="133" column="0" lean-forward="true" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="forms.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="forms.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app_base/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
-              <caret line="38" column="101" lean-forward="false" selection-start-line="38" selection-start-column="101" selection-end-line="38" selection-end-column="101" />
+            <state relative-caret-position="126">
+              <caret line="17" column="103" lean-forward="false" selection-start-line="17" selection-start-column="103" selection-end-line="17" selection-end-column="103" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="insere_funcionario.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/templates/paginas_app_base/insere_funcionario.html">
+      <file leaf-file-name="insere_dentista.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/templates/paginas_app_base/insere_dentista.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1056">
-              <caret line="52" column="22" lean-forward="false" selection-start-line="52" selection-start-column="22" selection-end-line="52" selection-end-column="22" />
+            <state relative-caret-position="316">
+              <caret line="70" column="28" lean-forward="true" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
               <folding>
-                <element signature="e#1905#1923#0#HTML" expanded="true" />
+                <element signature="e#1906#1924#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="views.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app_base/views.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="178" column="23" lean-forward="true" selection-start-line="178" selection-start-column="23" selection-end-line="178" selection-end-column="23" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -158,7 +166,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/templates/paginas_app_contrato/item_contrato_filiado_empresa.html" />
         <option value="$PROJECT_DIR$/templates/paginas_app_contrato/lista_contrtos_filiafo_empresa.html" />
         <option value="$PROJECT_DIR$/clinica.bat" />
         <option value="$PROJECT_DIR$/app_atendimento/models.py" />
@@ -206,9 +213,10 @@
         <option value="$PROJECT_DIR$/templates/pagina_app_atendimento/insere_relatorio_exame_plano_odonto.html" />
         <option value="$PROJECT_DIR$/app_atendimento/forms.py" />
         <option value="$PROJECT_DIR$/templates/paginas_app_base/insere_cliente.html" />
-        <option value="$PROJECT_DIR$/app_base/forms.py" />
         <option value="$PROJECT_DIR$/templates/paginas_app_base/insere_funcionario.html" />
         <option value="$PROJECT_DIR$/templates/paginas_app_base/item_funcionario.html" />
+        <option value="$PROJECT_DIR$/templates/paginas_app_base/insere_dentista.html" />
+        <option value="$PROJECT_DIR$/app_base/forms.py" />
       </list>
     </option>
   </component>
@@ -842,13 +850,6 @@
       <option name="presentableId" value="Default" />
       <updated>1479613257887</updated>
     </task>
-    <task id="LOCAL-00064" summary="Complementado receitra e base&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;">
-      <created>1489451515021</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1489451515021</updated>
-    </task>
     <task id="LOCAL-00065" summary="Falta somente Recebimento do plano&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;&#10;">
       <created>1489455137158</created>
       <option name="number" value="00065" />
@@ -1185,7 +1186,14 @@
       <option name="project" value="LOCAL" />
       <updated>1503545805244</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="Os Formulários de inserção da app_atendimento já foram sanados.">
+      <created>1503599712601</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1503599712602</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TodoView">
@@ -1307,13 +1315,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app_campanha/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="39" lean-forward="false" selection-start-line="0" selection-start-column="39" selection-end-line="0" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app_campanha/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="96">
@@ -1659,42 +1660,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/paginas_app_base/insere_cliente.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="316">
-          <caret line="143" column="11" lean-forward="true" selection-start-line="143" selection-start-column="11" selection-end-line="143" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_base/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="38" column="101" lean-forward="false" selection-start-line="38" selection-start-column="101" selection-end-line="38" selection-end-column="101" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app_atendimento/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="16">
           <caret line="422" column="89" lean-forward="false" selection-start-line="422" selection-start-column="89" selection-end-line="422" selection-end-column="89" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/templates/paginas_app_base/item_funcionario.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="416">
-          <caret line="62" column="52" lean-forward="true" selection-start-line="62" selection-start-column="52" selection-end-line="62" selection-end-column="52" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app_base/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="273" column="59" lean-forward="false" selection-start-line="273" selection-start-column="59" selection-end-line="273" selection-end-column="59" />
           <folding />
         </state>
       </provider>
@@ -1706,6 +1675,48 @@
           <folding>
             <element signature="e#1905#1923#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/paginas_app_base/item_funcionario.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="62" column="52" lean-forward="false" selection-start-line="62" selection-start-column="52" selection-end-line="62" selection-end-column="52" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/paginas_app_base/insere_cliente.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="94">
+          <caret line="133" column="0" lean-forward="true" selection-start-line="133" selection-start-column="0" selection-end-line="133" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_base/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="178" column="23" lean-forward="true" selection-start-line="178" selection-start-column="23" selection-end-line="178" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/paginas_app_base/insere_dentista.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="316">
+          <caret line="70" column="28" lean-forward="true" selection-start-line="70" selection-start-column="28" selection-end-line="70" selection-end-column="28" />
+          <folding>
+            <element signature="e#1906#1924#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app_base/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="17" column="103" lean-forward="false" selection-start-line="17" selection-start-column="103" selection-end-line="17" selection-end-column="103" />
+          <folding />
         </state>
       </provider>
     </entry>
