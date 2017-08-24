@@ -51,12 +51,95 @@
     <form action="." method="post">
         {% csrf_token %}
         {{ form.errors }}
-        {{ form.as_p }}
+        <div class="col-md-10 col-sm-10 col-lg-10">
+            <div class="col-sm-8 col-md-8 col-lg-8">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+            </div>
+                <div class="col-sm-2 col-md-2 col-lg-2">
+                {{ form.sex.label_tag }}
+                {{ form.sex }}
+            </div>
+
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                <br />
+                {{ form.active.label_tag }}
+                {{ form.active }}
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.birth_day.label_tag }}
+                {{ form.birth_day }}
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.date_register.label_tag }}
+                {{ form.date_register }}
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.rg.label_tag }}
+                {{ form.rg }}
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.cpf.label_tag }}
+                {{ form.cpf }}
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.email.label_tag }}
+                {{ form.email }}
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.phone.label_tag }}
+                {{ form.phone }}
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.city.label_tag }}
+                {{ form.city }}
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.street.label_tag }}
+                {{ form.street }}
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.district.label_tag }}
+                {{ form.district }}
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.cep.label_tag }}
+                {{ form.cep }}
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.profession.label_tag }}
+                {{ form.profession }}
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <br /><br />
+                <a href="#" onclick="window.open('/insere_contato_cliente_indica/', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="glyphicon glyphicon-user"> Adicionar Indicação </span></a><br ><br >
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                {{ form.Note.label_tag }}
+                {{ form.Note }}
+            </div>
+
+        </div>
         <br >
         
-        <a href="#" onclick="window.open('/insere_contato_cliente_indica/', 'Pagina', 'STATUS=NO, TOOLBAR=NO, LOCATION=NO, DIRECTORIES=NO, RESISABLE=NO, SCROLLBARS=YES, TOP=10, LEFT=10, WIDTH=770, HEIGHT=400');"><span class="glyphicon glyphicon-user"> Adicionar Indicados </span></a><br ><br >
-        <button type="submit" class="btn btn-success">ENVIAR</button>
-        <button type="reset" class="btn btn-danger">CANCELAR</button>
+
+        <div class="col-md-10 mid_center">
+            <button type="submit" class="btn btn-success">ENVIAR</button>
+            <button type="reset" class="btn btn-danger">CANCELAR</button>
+        </div>
 
     </form>
     {% endblock %}
