@@ -50,7 +50,7 @@
     {% block conteudo %}
     <form action="." method="post">
         {% csrf_token %}
-        {{ form.errors }}
+        <div style="color: red;"> {{ form.errors }}</div>
         <div class="col-md-10 col-sm-10 col-lg-10">
             <div class="col-sm-8 col-md-8 col-lg-8">
                 {{ form.name.label_tag }}
@@ -134,7 +134,6 @@
 
         </div>
         <br >
-        
 
         <div class="col-md-10 mid_center">
             <button type="submit" class="btn btn-success">ENVIAR</button>

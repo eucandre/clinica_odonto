@@ -50,10 +50,56 @@
     {% block conteudo %}
     <form action="." method="post">
         {% csrf_token %}
-        {{ form.errors }}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">ENVIAR</button>
-        <button type="reset" class="btn btn-danger">CANCELAR</button>
+        <div style="color: red">
+            {{ form.errors }}</div>
+        <div class="col-md-10 col-sm-10 col-lg-10">
+            <div class="col-sm-8 col-md-8 col-lg-8">
+                {{ form.name.label_tag }}
+                {{ form.name }}
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.date_end.label_tag }}
+                {{ form.date_end }}
+            </div>
+
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <br />
+                {{ form.reward.label_tag }}
+                {{ form.reward }}
+            </div>
+
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <br />
+                {{ form.reward1.label_tag }}
+                {{ form.reward1 }}
+            </div>
+
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <br />
+                {{ form.reward2.label_tag }}
+                {{ form.reward2 }}
+            </div>
+
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                <br />
+                {{ form.reward3.label_tag }}
+                {{ form.reward3 }}
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                <br />
+                {{ form.active.label_tag }}
+                {{ form.active }}
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                {{ form.note.label_tag }}
+                {{ form.note }}
+            </div>
+        </div>
+        <div class="col-md-10 mid_center">
+            <button type="submit" class="btn btn-success">ENVIAR</button>
+            <button type="reset" class="btn btn-danger">CANCELAR</button>
+        </div>
 
     </form>
     {% endblock %}

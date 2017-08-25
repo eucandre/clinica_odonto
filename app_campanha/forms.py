@@ -1,3 +1,4 @@
+# coding=utf-8
 from django import forms
 
 from .models import *
@@ -6,13 +7,13 @@ from app_base.models import *
 class FormCampanha(forms.ModelForm):
 
     name = forms.CharField(label='Nome da campanha',max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
-    date_end = forms.CharField(label='Data para o fim da campanha',max_length=150, widget=forms.TextInput(attrs={'type':'date','class':'well form-controll active'}))
-    reward = forms.CharField(label='Recompensa',max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
-    reward1 = forms.CharField(label='Recompensa 1',max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
-    reward2 = forms.CharField(label='Recompensa 2',max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
-    reward3 = forms.CharField(label='Recompensa 3',max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
+    date_end = forms.CharField(label='Data para o fim da campanha',max_length=150, widget=forms.DateInput(attrs={'type':'date','class':'form-control'}))
+    reward = forms.CharField(initial=0,label='Recompensa',max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
+    reward1 = forms.CharField(initial=0,label='Recompensa 1',max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
+    reward2 = forms.CharField(initial=0,label='Recompensa 2',max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
+    reward3 = forms.CharField(initial=0,label='Recompensa 3',max_length=150, widget=forms.TextInput(attrs={'class':'form-control'}))
     active = forms.BooleanField(label='Ativo na clinica ?',widget=forms.CheckboxInput(attrs={'class':'flat'}))
-    note = forms.CharField(label='Observacao',widget=forms.Textarea(attrs={"class":"form-control"}))
+    note = forms.CharField(label='Observação',widget=forms.Textarea(attrs={"class":"form-control"}))
 
     class Meta:
         model = campanha

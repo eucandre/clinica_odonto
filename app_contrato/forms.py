@@ -1,3 +1,4 @@
+# coding=utf-8
 from django import forms
 from .models import *
 import datetime
@@ -11,15 +12,15 @@ DAY = ((u'1','1'),(u'2','2'),(u'3','3'),(u'4','4'),(u'5','5'),(u'6','6'),(u'7','
 
 class FormContratoOdonto(forms.ModelForm):
 
-    propose = forms.ModelChoiceField(label="Proposta de orcamento", queryset=Orcamento_Plano_Odonto.objects.all(), widget=forms.Select(attrs={'class': 'form-control'}))
-    professional = forms.ModelChoiceField(label="Nome do Profissional responsavel pelo tratamento",queryset=Profissionais.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
-    time_contract =forms.DateField(label='Data de encerramento do tratamento' ,widget=forms.DateInput(attrs={'type':'date','class':'well' }))
-    type_plane = forms.ChoiceField(label='Tipo de vinculo',choices=TYPE_PLANE, widget=forms.Select(attrs={'class':'form-control'}))
+    propose = forms.ModelChoiceField(label="Proposta de orçamento", queryset=Orcamento_Plano_Odonto.objects.all(), widget=forms.Select(attrs={'class': 'form-control'}))
+    professional = forms.ModelChoiceField(label="Nome do Profissional responsável pelo tratamento",queryset=Profissionais.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
+    time_contract =forms.DateField(label='Data de encerramento do tratamento' ,widget=forms.DateInput(attrs={'type':'date','class':'form-control' }))
+    type_plane = forms.ChoiceField(label='Tipo de vínculo',choices=TYPE_PLANE, widget=forms.Select(attrs={'class':'form-control'}))
     plane_value = forms.CharField(label="Valor do plano",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     date_payment_per_month = forms.ChoiceField(label='Dia de vencimento mensal',choices=DAY ,widget=forms.Select(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
     input_value = forms.CharField(label="Valor de entrada pago",max_length=150, initial=0, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12', 'placeholder':'R$'}))
-    active = forms.BooleanField(label='Ativo na clinica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
-    note = forms.CharField(label='Observacao',widget=forms.Textarea(attrs={"class":"form-control"}))
+    active = forms.BooleanField(label='Ativo na clínica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
+    note = forms.CharField(label='Observação',widget=forms.Textarea(attrs={"class":"form-control"}))
 
     class Meta:
         model= Contrato_odonto
@@ -30,14 +31,14 @@ class FormContratoOdonto(forms.ModelForm):
 class FormContratoNutri(forms.ModelForm):
 
     propose = forms.ModelChoiceField(label="Proposta de orcamento", queryset=OrcamentoPlanoNutri.objects.all(),widget=forms.Select(attrs={'class': 'form-control'}))
-    professional = forms.ModelChoiceField(label="Nome do Profissional responsavel pelo tratamento",queryset=Profissionais.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
+    professional = forms.ModelChoiceField(label="Nome do Profissional responsável pelo tratamento",queryset=Profissionais.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
     time_contract =forms.DateField(label='Data de encerramento do tratamento' ,widget=forms.DateTimeInput(attrs={'type':'datetime-local','class':'form-control' }))
-    type_plane = forms.ChoiceField(label='Tipo de vinculo',choices=TYPE_PLANE, widget=forms.Select(attrs={'class':'form-control'}))
+    type_plane = forms.ChoiceField(label='Tipo de vínculo',choices=TYPE_PLANE, widget=forms.Select(attrs={'class':'form-control'}))
     plane_value = forms.CharField(label="Valor do plano",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     date_payment_per_month = forms.ChoiceField(label='Dia de vencimento mensal',choices=DAY ,widget=forms.Select(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
     input_value = forms.CharField(label="Valor de entrada pago",max_length=150,initial=0, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
-    active = forms.BooleanField(label='Ativo na clinica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
-    note = forms.CharField(label='Observacao',widget=forms.Textarea(attrs={"class":"form-control"}))
+    active = forms.BooleanField(label='Ativo na clínica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
+    note = forms.CharField(label='Observação',widget=forms.Textarea(attrs={"class":"form-control"}))
     class Meta:
         model= Contrato_nutricionista
         fields = ('propose','professional','time_contract','type_plane','plane_value','date_payment_per_month',
@@ -45,15 +46,15 @@ class FormContratoNutri(forms.ModelForm):
 
 class FormContratoPsico(forms.ModelForm):
 
-    propose = forms.ModelChoiceField(label="Proposta de orcamento", queryset=OrcamentoPlanoPsico.objects.all(), widget=forms.Select(attrs={'class': 'form-control'}))
-    professional = forms.ModelChoiceField(label="Nome do Profissional responsavel pelo tratamento",queryset=Profissionais.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
+    propose = forms.ModelChoiceField(label="Proposta de orçamento", queryset=OrcamentoPlanoPsico.objects.all(), widget=forms.Select(attrs={'class': 'form-control'}))
+    professional = forms.ModelChoiceField(label="Nome do Profissional responsável pelo tratamento",queryset=Profissionais.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
     time_contract =forms.DateField(label='Data de encerramento do tratamento' ,widget=forms.DateTimeInput(attrs={'type':'datetime-local','class':'form-control' }))
-    type_plane = forms.ChoiceField(label='Tipo de vinculo',choices=TYPE_PLANE, widget=forms.Select(attrs={'class':'form-control'}))
+    type_plane = forms.ChoiceField(label='Tipo de vínculo',choices=TYPE_PLANE, widget=forms.Select(attrs={'class':'form-control'}))
     plane_value = forms.CharField(label="Valor do plano",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     date_payment_per_month = forms.ChoiceField(label='Dia de vencimento mensal', choices=DAY ,widget=forms.Select(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
     input_value = forms.CharField(label="Valor de entrada pago",max_length=150,initial=0, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
-    active = forms.BooleanField(label='Ativo na clinica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
-    note = forms.CharField(label='Observacao',widget=forms.Textarea(attrs={"class":"form-control"}))
+    active = forms.BooleanField(label='Ativo na clínica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
+    note = forms.CharField(label='Observação',widget=forms.Textarea(attrs={"class":"form-control"}))
     class Meta:
         model= Contrato_psicologo
         fields = ('propose','professional','time_contract','type_plane','plane_value','date_payment_per_month',

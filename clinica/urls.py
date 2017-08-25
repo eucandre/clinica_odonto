@@ -138,7 +138,7 @@ urlpatterns = [
     url(r'^montante/$', atualizaMontante),
 
 
-    url(r'^campanha_venda/$', camapanha_venda),
-    url(r'^cria_campanha/$', campanha),
+    url(r'^campanhas/$', lista_camapanha),
+    url(r'^cria_campanha/$', campanhas),
 
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
