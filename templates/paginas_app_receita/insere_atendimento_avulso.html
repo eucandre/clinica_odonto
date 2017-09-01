@@ -50,10 +50,57 @@
     {% block conteudo %}
     <form action="." method="post">
         {% csrf_token %}
-        {{ form.errors }}
-        {{ form.as_p }}
-        <br><br>
-        <button type="submit" class="btn btn-success">ENVIAR</button>
-        <button type="reset" class="btn btn-danger">CANCELAR</button>
+        <div style="color: red;"> {{ form.errors }}</div>
+        <div class="col-md-10 col-sm-10 col-lg-10">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                {{ form.name_client.label_tag }}
+                {{ form.name_client }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.date_attendance.label_tag }}
+                {{ form.date_attendance }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.professional_attendance.label_tag }}
+                {{ form.professional_attendance }}
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                {{ form.services.label_tag }}
+                {{ form.services }}
+            </div>
+
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                <br />
+                {{ form.value_attendanceB.label_tag }}
+                {{ form.value_attendanceB }}
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                {{ form.value_attendanceCC.label_tag }}
+                {{ form.value_attendanceCC }}
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                {{ form.value_attendanceCD.label_tag }}
+                {{ form.value_attendanceCD }}
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                {{ form.value_attendancePR.label_tag }}
+                {{ form.value_attendancePR }}
+            </div>
+
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                <br />
+                {{ form.value_attendanceD.label_tag }}
+                {{ form.value_attendanceD }}
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                {{ form.type_of_payment.label_tag }}
+                {{ form.type_of_payment }}
+            </div>
+        </div>
+
+        <div class="col-md-10 mid_center">
+            <button type="submit" class="btn btn-success">ENVIAR</button>
+            <button type="reset" class="btn btn-danger">CANCELAR</button>
+        </div>
     </form>
     {% endblock %}

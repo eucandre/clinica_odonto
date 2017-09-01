@@ -29,15 +29,12 @@ class FormInsereProduto(forms.ModelForm):
     name = forms.CharField(label='Nome', max_length=150,widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
     mark = forms.CharField(label='Marca', max_length=150,widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
     provider = forms.ModelMultipleChoiceField(label='Fornecedor',queryset=Fornecedor.objects.all(), widget=forms.CheckboxSelectMultiple(attrs={'class':'flat'}))
-    amount = forms.FloatField(label='Quantidade adquirida comumente',widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
-    value_per_unit_to_buy = forms.FloatField(label='Valor pago por unidade comprada',widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
-    purchase_date = forms.DateField(label='Data de registro',widget=forms.DateInput(attrs={'type':'date','class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
-    date_vaidate = forms.DateField(label='Validade do produto',widget=forms.DateInput(attrs={'type':'date','class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
     product_type = forms.ChoiceField(label='Tipo de produto', choices=TYPE_PRODUCT,widget=forms.RadioSelect(attrs={'class': 'flat'}))
+    active = forms.BooleanField(label='Produto ativo?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
 
     class Meta:
         model = Produto
-        fields = ('name', 'mark', 'provider', 'amount','value_per_unit_to_buy','purchase_date','date_vaidate','product_type')
+        fields = ('name', 'mark', 'provider', 'product_type', 'active')
 
 class FormInsereRetiraProduto(forms.ModelForm):
     product = forms.ModelChoiceField(label='Produto', queryset=Produto.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
