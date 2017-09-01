@@ -50,10 +50,37 @@
     {% block conteudo %}
     <form action="." method="post">
         {% csrf_token %}
-        {{ form.errors }}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">ENVIAR</button>
-        <button type="reset" class="btn btn-danger">CANCELAR</button>
+        <div style="color: red;"> {{ form.errors }}</div>
+         <div class="col-md-10 col-sm-10 col-lg-10">
+             <div class="col-sm-2 col-md-2 col-lg-2">
+                {{ form.amount_withdrawal.label_tag }}
+                 {{ form.amount_withdrawal }}
+             </div>
+             <div class="col-sm-6 col-md-6 col-lg-6">
+                 {{ form.product.label_tag }}
+                 {{ form.product }}
+             </div>
+             <div class="col-sm-4 col-md-4 col-lg-4">
+                 {{ form.date_for_withdrawal.label_tag }}
+                 {{ form.date_for_withdrawal }}
+             </div>
+             <div class="col-sm-2 col-md-2 col-lg-2">
+                 <div class="clearfix"></div>
+                 <div class="clearfix"></div>
+                 {{ form.time_for_withdrawal.label_tag }}
+                 {{ form.time_for_withdrawal }}
+             </div>
+             <div class="col-sm-3 col-md-3 col-lg-3">
+                 {{ form.amout_refresh.label_tag }}</div>
+             <div class="col-sm-2 col-md-2 col-lg-2">
+                <div class="clearfix"></div><br/>
+                 {{ form.amout_refresh }}
+             </div>
+         </div>
+         <div class="col-md-10 mid_center">
+            <button type="submit" class="btn btn-success">ENVIAR</button>
+            <button type="reset" class="btn btn-danger">CANCELAR</button>
+        </div>
 
     </form>
     {% endblock %}

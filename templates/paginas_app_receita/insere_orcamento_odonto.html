@@ -50,10 +50,52 @@
     {% block conteudo %}
     <form action="." method="post">
         {% csrf_token %}
-        {{ form.errors }}
-        {{ form.as_p }}
+        <div style="color: red;"> {{ form.errors }}</div>
+        <div class="col-md-10 col-sm-10 col-lg-10">
+            <div class="col-sm-8 col-md-8 col-lg-8">
+                {{ form.name_client.label_tag }}
+                {{ form.name_client }}
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                {{ form.tooths.label_tag }}
+                {{ form.tooths }}
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                {{ form.faces_tooths.label_tag }}
+                {{ form.faces_tooths }}
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                {{ form.value_tratment.label_tag }}
+                {{ form.value_tratment }}
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                {{ form.services.label_tag }}
+                {{ form.services }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <img src="/media/dentes.jpeg" width="100%">
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                <img src="/media/fd.jpg" width="100%">
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.value_tratment.label_tag }}
+                {{ form.value_tratment }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.date_to_end_tratment.label_tag }}
+                {{ form.date_to_end_tratment }}
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                <br/>
+                {{ form.active.label_tag }}
+                {{ form.active }}
+            </div>
+        </div>
         <br><br>
-        <button type="submit" class="btn btn-success">ENVIAR</button>
-        <button type="reset" class="btn btn-danger">CANCELAR</button>
+        <div class="col-md-10 mid_center">
+            <button type="submit" class="btn btn-success">ENVIAR</button>
+            <button type="reset" class="btn btn-danger">CANCELAR</button>
+        </div>
     </form>
     {% endblock %}

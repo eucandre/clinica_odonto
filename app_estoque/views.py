@@ -152,6 +152,9 @@ def insere_compra_produtos(request):
         form = FormInsereCompraProdutos(request.POST)
         if form.is_valid():
             item = form.save(commit=False)
+            # forn = form.save(commit=False)
+            # forn.provider = request.provider
+            # forn.save()
             item.user = request.user
             item.save()
             return render(request, 'salvo.html')

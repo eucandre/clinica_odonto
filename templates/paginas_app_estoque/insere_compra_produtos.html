@@ -50,10 +50,34 @@
     {% block conteudo %}
     <form action="." method="post">
         {% csrf_token %}
-        {{ form.errors }}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">ENVIAR</button>
-        <button type="reset" class="btn btn-danger">CANCELAR</button>
+         <div style="color: red;"> {{ form.errors }}</div>
+        <div class="col-md-10 col-sm-10 col-lg-10">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.product.label_tag }}
+                {{ form.product }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.amout_purchased.label_tag }}
+                {{ form.amout_purchased }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.purchase_date_product.label_tag }}
+                {{ form.purchase_date_product }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.value_per_unit_to_buy.label_tag }}
+                {{ form.value_per_unit_to_buy }}
+            </div>
 
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.date_vaidate.label_tag }}
+                {{ form.date_vaidate }}
+            </div>
+
+        </div>
+       <div class="col-md-10 mid_center">
+            <button type="submit" class="btn btn-success">ENVIAR</button>
+            <button type="reset" class="btn btn-danger">CANCELAR</button>
+        </div>
     </form>
     {% endblock %}

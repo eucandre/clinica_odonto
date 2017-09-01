@@ -2,10 +2,60 @@
     {% block conteudo %}
     <form action="." method="post">
         {% csrf_token %}
-        {{ form.errors }}
-        {{ form.as_p }}
-        <button type="submit" class="btn btn-success">ENVIAR</button>
-        <button type="reset" class="btn btn-danger">CANCELAR</button>
+        <div style="color: red;"> {{ form.errors }}</div>
+        <div class="col-md-10 col-sm-10 col-lg-10">
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                {{ form.name.label_tag }}
+                {{ form.name}}
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                {{ form.fantasy_name.label_tag }}
+                {{ form.fantasy_name}}
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                {{ form.social_name.label_tag }}
+                {{ form.social_name}}
+            </div>
+
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.cnpj.label_tag }}
+                {{ form.cnpj}}
+            </div>
+            <div class="col-sm-2 col-md-2 col-lg-2">
+                {{ form.active.label_tag }}
+                {{ form.active}}
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                {{ form.type_product.label_tag }}
+                {{ form.type_product}}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.phone.label_tag }}
+                {{ form.phone}}
+            </div>
+            <div class="col-sm-5 col-md-5 col-lg-5">
+                {{ form.site.label_tag }}
+                {{ form.site}}
+            </div>
+            <div class="col-sm-6 col-md-6 col-lg-6">
+                {{ form.matrix.label_tag }}
+                {{ form.matrix}}
+            </div>
+            <div class="col-sm-3 col-md-3 col-lg-3">
+                {{ form.state_registration.label_tag }}
+                {{ form.state_registration}}
+            </div>
+
+            <div class="col-sm-12 col-md-12 col-lg-12">
+                {{ form.note.label_tag }}
+                {{ form.note}}
+            </div>
+        </div>
+
+        <div class="col-md-10 mid_center">
+            <button type="submit" class="btn btn-success">ENVIAR</button>
+            <button type="reset" class="btn btn-danger">CANCELAR</button>
+        </div>
 
     </form>
     {% endblock %}

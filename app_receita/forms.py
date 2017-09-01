@@ -1,3 +1,4 @@
+# coding=utf-8
 from django import forms
 from app_base.models import *
 from app_receita.models import *
@@ -23,8 +24,8 @@ class FormOrcamentoOdontologico(forms.ModelForm):
     name_client = forms.ModelChoiceField(label="Nome do Cliente",queryset=Cliente.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
     tooths = forms.ModelMultipleChoiceField(label='Dente', queryset=Dentes.objects.all(), widget=forms.CheckboxSelectMultiple(attrs={'class':'flat'}))
     faces_tooths = forms.ModelMultipleChoiceField(label="Faces do dente", queryset=FacesDentes.objects.all(), widget=forms.CheckboxSelectMultiple(attrs={'class':'flat'}))
-    services = forms.ModelMultipleChoiceField(queryset=Servicos.objects.all(),widget=forms.CheckboxSelectMultiple(attrs={'class':'flat'}))
-    date_to_end_tratment= forms.DateField(label='Data para o fim do tratamento',widget=forms.DateInput(attrs={'type':'date','class':'well form-controll active'}))
+    services = forms.ModelMultipleChoiceField(label='Serviços',queryset=Servicos.objects.all(),widget=forms.CheckboxSelectMultiple(attrs={'class':'flat'}))
+    date_to_end_tratment= forms.DateField(label='Data para o fim do tratamento',widget=forms.DateInput(attrs={'type':'date','class':'form-control'}))
     value_tratment = forms.CharField(label="Valor do tratamento",max_length=150, widget=forms.TextInput(attrs={'class' : 'form-control col-md-7 col-xs-12'}))
     active = forms.BooleanField(label='Ativo na clinica?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
     class Meta:
