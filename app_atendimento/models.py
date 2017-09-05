@@ -167,8 +167,9 @@ class relatorio_exame_odonto_continuado(models.Model):
     image_register = models.ImageField(
         null=True,
         blank=True,
-        upload_to='/imagem_contrato_odonto/',
+        upload_to='documents/relatorio/exame/%Y/%m/%d',
     )
+
     user = models.ForeignKey(User)
     note = models.TextField()
 
