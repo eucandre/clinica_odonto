@@ -73,6 +73,7 @@ class agendamemto_plano_odonto(models.Model):
     atendence = models.CharField(choices=AGENDAMENTO, max_length=150)
     professional = models.ForeignKey(Profissionais)
     date_atendence = models.DateField()
+    time_atendence = models.TimeField()
     user = models.ForeignKey(User)
     active = models.BooleanField(blank=True)
     note = models.TextField()

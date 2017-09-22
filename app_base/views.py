@@ -8,6 +8,7 @@ from app_atendimento.models import *
 from app_atendimento.models import *
 from app_base.models import *
 
+
 @login_required(login_url='/login/')
 def lista_profissionais(request):
     try:
@@ -282,19 +283,19 @@ def detalha_cliente(request, nr_item):
     return render(request, "paginas_app_base/item_cliente.html", {'item': item})
 
 @login_required(login_url='/login/')
-def verifica_cortesia_odonto(request,nr_item):
+def verifica_cortesia_odonto(nr_item):
     '''
         A funcao esta correta!
     '''
     try:
         item = RecebimentoPlanoOdonto.objects.get(pk=nr_item)
         contrato_item = Contrato_odonto.objects.get(pk=item.name_client.id)
-        cortesia = contrato_item.cortesia
+        # cortesia = contrato_item.cortesia
         if item.TotalPagoTratamento >= 80:
             contrato_item.cortesia = True
             contrato_item.save()
-            return render(request,"paginas_app_base/cortesia.html", {'cortesia':cortesia})
+            return True
         else:
             return False
     except RecebimentoPlanoOdonto.DoesNotExist:
-        raise Http404('Sem Contratos para verificar!')
+        return None

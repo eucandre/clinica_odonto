@@ -188,7 +188,7 @@ def edita_agendamento_plano_odonto(request, nr_item):
             return render(request, 'salvo.html', {'item': item})
     else:
         form = FormAgendamentoPlanoOdonto(instance=item)
-        return render(request, 'pagina_app_atendimento/isere_relatorio_exame_nutri.html', {'form': form})
+        return render(request, 'pagina_app_atendimento/insere_agendamento_plano_odonto.html', {'form': form})
 
 @login_required(login_url='/login/')
 def detalha_agendamento_plano_odonto(request, nr_item):
@@ -311,6 +311,7 @@ def mapa_atendimento_odonto(request):
     #atendimentos_odonto= atendiementos_odonto#, atendiementos_nutri, atendiementos_psico
     atende_amanha= atendimentos_odonto_amanha#,atendimentos_psico_amanha,atendimentos_nutri_amanha
     return render(request,'mapa_atendiemnto.html',{'agenda_odonto':atendiementos_odonto, 'agenda_odonto_amanha':atende_amanha})
+
 
 @login_required(login_url='/login/')
 def insere_relatorio_exame_plano_odonto(request):

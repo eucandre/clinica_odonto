@@ -68,7 +68,7 @@
           <div class="widget_summary">
             <li class="col-md-10 col-sm-10 col-xs-10">
               <a href="/item_agendamento_plano_odonto/{{ i.id }}">
-                <h3>{{ i.name_client }}</h3> * {{ i.atendence }} que sera realizado pelo profissonal <span class="text-success">{{ i.professional }}</span> <span class="btn success">Em {{ i.date_atendence }}</span>
+                <h3>{{ i.name_client }}</h3> * {{ i.atendence }} que sera realizado pelo profissonal <span class="text-success">{{ i.professional }}</span> <span class="btn success">Em {{ i.date_atendence }}, às {{ i.time_atendence }}</span>
               </a>
               {% if i.active %}
               <span class="label label-success"> Ativo </span>

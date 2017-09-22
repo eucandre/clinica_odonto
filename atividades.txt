@@ -3,11 +3,9 @@ Criar:
 	contas a receber;
 	controle de ponto, este depende de equipamento externo;(Criar loggin com reconhecimento de imagem)
     Criar Chat;
-    Adicionar imagens aos RELATÓRIOS;
     Configurar APP_CAMPANHA
     Consertar o tratamento de imagens
     Editar o form do contrato para condicional da cortezia
-    Acrescentar imagens para os relatorios de odonto (amahã 26/07)
     Colocar no dashboard a relação dos funcionarios e suas freequencias.
     Arrumar as relações lógicas do programa, as verificações de ativo, cortezia, etc.
 
@@ -18,3 +16,10 @@ feito:
     Arrumar os forms da app_atendimento (amanhã 26/07)ANALISADOS OS LINKS E EDITADOS
     Editar os templates de formulários ;(Fica para uma proxima etapa, a de acabamento!)
     Inserir imagem bocal geral e atribuir o dente selecionado.
+    Acrescentar imagens para os relatorios de odonto (amahã 26/07)
+
+
+    valor total = 100
+    valot pago = x
+    valor totalx = valor pago100
+    x = valor pago100/valor total

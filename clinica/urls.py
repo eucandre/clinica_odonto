@@ -55,6 +55,7 @@ urlpatterns = [
     url(r'^fornecedores/', lista_fornecedor),
     url(r'^clientes/', lista_clientes),
     url(r'^dentes/', lista_dentes),
+    url(r'^cortesia/(?P<nr_item>\d+)/$', verifica_cortesia_odonto),
     url(r'^orcamento_odonto/', lista_orcamentoOdonto),
     url(r'^orcamento_nutri/', lista_orcamentonutri),
     url(r'^orcamento_psico/', lista_orcamento_psico),
@@ -104,6 +105,7 @@ urlpatterns = [
     url(r'^item_agendamento_plano_odonto/(?P<nr_item>\d+)/$', detalha_agendamento_plano_odonto),
     url(r'^item_agendamento_plano_nutri/(?P<nr_item>\d+)/$', detalha_agendamento_plano_nutri),
     url(r'^item_agendamento_plano_psico/(?P<nr_item>\d+)/$', detalha_agendamento_plano_psico),
+    url(r'^item_campanha/(?P<nr_item>\d+)/$', detalha_campanha),
 
     #---------- edita -------------------------#
 
@@ -134,11 +136,12 @@ urlpatterns = [
     url(r'^edita_agendamento_plano_nutri/(?P<nr_item>\d+)/$',edita_agendamento_plano_nutri),
     url(r'^edita_agendamento_plano_psico/(?P<nr_item>\d+)/$',edita_agendamento_plano_psico),
 
+
     url(r'^mapa_odonto/$', mapa_atendimento_odonto),
     url(r'^montante/$', atualizaMontante),
 
 
     url(r'^campanhas/$', lista_camapanha),
-    url(r'^cria_campanha/$', campanhas),
-
+    url(r'^cria_campanha/$', campanha_insere),
+    url(r'^edita_campanha/(?P<nr_item>\d+)/$',edita_campanha),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

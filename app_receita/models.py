@@ -1,3 +1,4 @@
+# coding=utf-8
 from __future__ import unicode_literals
 from app_base.models import *
 from datetime import *
@@ -40,6 +41,8 @@ class Servicos(models.Model):
     def __unicode__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = 'Serviços'
 
 class Dentes(models.Model):
     number_tooth = models.CharField(max_length=150, choices=TOOTH)
@@ -95,7 +98,7 @@ class Orcamento_Plano_Odonto(models.Model):
         return self.value_tratment.__int__()
 
     class Meta:
-        verbose_name_plural = "Orcamento Plano Odonto"
+        verbose_name_plural = "Orçamento Plano Odontonlógico"
 
 class OrcamentoPlanoNutri(models.Model):
 
@@ -140,7 +143,7 @@ class OrcamentoPlanoPsico(models.Model):
         return self.date_today
 
     class Meta:
-        verbose_name_plural = "Orcamento Plano Psicologia"
+        verbose_name_plural = "Orcamento Plano Psicológico"
 
 class RecebimentoAvulso(models.Model):
     """
@@ -164,3 +167,6 @@ class RecebimentoAvulso(models.Model):
 
     def __unicode__(self):
         return self.name_client.__str__()
+
+    class Meta:
+        verbose_name_plural = 'Recebimento Plano a vulso'

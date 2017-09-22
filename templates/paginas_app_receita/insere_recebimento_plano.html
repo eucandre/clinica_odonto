@@ -45,16 +45,64 @@
     </li>
     <li><a href="/insere_agendamento_plano_psico/">Insere Agendamento Plano Psico</a>
     </li>
+    <script type="text/javascript">
+    function verifica() {
+        var id_fieldD= document.getElementById('id_type_of_payment_3');
+        if (id_fieldD){
+            alert('TEM DINHEIRO MINHA GENTE!');
+        }
+    }
 
+    </script>
 {% endblock %}
     {% block conteudo %}
     <form action="." method="post">
         {% csrf_token %}
-        {{ form.errors }}
-        {{ form.as_p }}
+        <div style="color: red;"> {{ form.errors }}</div>
+        <div class="col-md-10 col-sm-10 col-lg-10">
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.name_client.label_tag }}
+                {{ form.name_client }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.amount_receivedD.label_tag }}
+                {{ form.amount_receivedD }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.amount_receiveCH.label_tag }}
+                {{ form.amount_receiveCH }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.amount_receivedCC.label_tag }}
+                {{ form.amount_receivedCC }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.amount_receivedCD.label_tag }}
+                {{ form.amount_receivedCD }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.amount_receivePR.label_tag }}
+                {{ form.amount_receivePR }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.amount_receivedB.label_tag }}
+                {{ form.amount_receivedB }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.type_of_payment.label_tag }}
+                {{ form.type_of_payment }}
+            </div>
+            <div class="col-sm-4 col-md-4 col-lg-4">
+                {{ form.leftover_value.label_tag }}
+                {{ form.leftover_value }}
+            </div>
+        </div>
+
         <br><br>
-        <button type="submit" class="btn btn-success">ENVIAR</button>
-        <button type="reset" class="btn btn-danger">CANCELAR</button>
+        <div class="col-md-10 mid_center">
+            <button type="submit" class="btn btn-success">ENVIAR</button>
+            <button type="reset" class="btn btn-danger">CANCELAR</button>
+        </div>
 
     </form>
     {% endblock %}

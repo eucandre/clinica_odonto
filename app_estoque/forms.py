@@ -18,7 +18,7 @@ class FormInsererFornecedor(forms.ModelForm):
     site = forms.CharField(label='Endereco de página web',max_length=150, widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12', 'placeholder':'www.sitedofornecedor.com.br'}))
     state_registration = forms.CharField(label='Registro estadual',max_length=150, widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
     note = forms.CharField(label='Observação',widget=forms.Textarea(attrs={"class":"form-control"}))
-    active = forms.BooleanField(label='Fornecedor ativo?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
+    active = forms.BooleanField(required=False,label='Fornecedor ativo?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
 
     class Meta:
         model = Fornecedor
@@ -30,7 +30,7 @@ class FormInsereProduto(forms.ModelForm):
     mark = forms.CharField(label='Marca', max_length=150,widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
     provider = forms.ModelMultipleChoiceField(label='Fornecedor',queryset=Fornecedor.objects.all(), widget=forms.CheckboxSelectMultiple(attrs={'class':'flat'}))
     product_type = forms.ChoiceField(label='Tipo de produto', choices=TYPE_PRODUCT,widget=forms.RadioSelect(attrs={'class': 'flat'}))
-    active = forms.BooleanField(label='Produto ativo?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
+    active = forms.BooleanField(required=False,label='Produto ativo?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
 
     class Meta:
         model = Produto

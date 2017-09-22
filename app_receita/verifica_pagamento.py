@@ -11,10 +11,10 @@ def VerificaPagamento(nr_id):
     obj_contrato_odonto = Contrato_odonto.objects.get(pk=nr_id)
     obj_recebimento_odonto = RecebimentoPlanoOdonto.objects.get(pk=nr_id)
     hoje = date.today()
-    mes = date.month
+    mes = datetime.today().month
     atual = False
 
-    if obj_recebimento_odonto.getMes() == mes:
+    if int(obj_recebimento_odonto.getMes()) == mes:
         return atual==True
     elif obj_recebimento_odonto.getMes() < mes:
         return hoje - int(obj_contrato_odonto.date_payment_per_month)+30

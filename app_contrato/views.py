@@ -5,6 +5,7 @@ from django.contrib import messages
 from django.core.paginator import *
 from app_receita.verifica_pagamento import *
 from django.contrib.auth.decorators import login_required
+from app_base.views import *
 
 @login_required(login_url='/login/')
 def InsereContratoOdonto(request):
@@ -38,8 +39,9 @@ def lista_ContratoOdonto(request):
 
 @login_required(login_url='/login/')
 def edita_contrato_odonto(request, nr_item):
-    # itemr = RecebimentoPlanoOdonto.objects.get(pk=nr_item)
+
     item = Contrato_odonto.objects.get(pk=nr_item)
+    obj_r = RecebimentoPlanoOdonto.objects.get(pk=item.propose.name_client.id)
     if request.method == 'POST':
         form = FormContratoOdonto(request.POST, request.FILES, instance=item)
         if form.is_valid():
@@ -49,15 +51,17 @@ def edita_contrato_odonto(request, nr_item):
             return render(request, 'salvo.html', {'item': item})
     else:
         form = FormContratoOdonto(instance=item)
-    return render(request, 'paginas_app_contrato/insere_contrato_odonto.html', {'form': form,})# 'valor_pago':itemr.TotalPagoTratamento})
+    return render(request, 'paginas_app_contrato/insere_contrato_odonto.html', {'form': form, 'cortesia':obj_r})# 'valor_pago':itemr.TotalPagoTratamento})
 
 @login_required(login_url='/login/')
 def detalha_contrato_odonto(request, nr_item):
     try:
         item = Contrato_odonto.objects.get(pk=nr_item)
+        obj_r = RecebimentoPlanoOdonto.objects.get(pk=item.propose.name_client.id)
+        proposta = Orcamento_Plano_Odonto.objects.get(pk=item.id)
     except Contrato_odonto.DoesNotExist:
         raise Http404('Sem Registro!')
-    return render(request, "paginas_app_contrato/item_contrato_odonto.html", {'item': item})
+    return render(request, "paginas_app_contrato/item_contrato_odonto.html", {'item': item,'valor_pago':obj_r,'proposta':proposta})
 
 
 @login_required(login_url='/login/')

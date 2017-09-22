@@ -53,7 +53,8 @@
     <div class="x_panel">
         <div class="x_title">
             <h2>{{ item.propose.name_client }}
-                <small>Proposta : {{ item.propose.value_tratment }} tipo : {{ item.professional.professional_as }}</small>
+                <small>Proposta : {{ item.propose.value_tratment }} tipo : {{ item.professional.professional_as }}
+                </small>
                 {% if  item.active  %}
                     <span class="label label-success">Ativo</span>
                 {% endif %}
@@ -61,6 +62,7 @@
                     <span class="label label-danger">Inativo</span>
                 {% endif %}
             </h2>
+
             <ul class="nav navbar-right panel_toolbox">
                 <li><a href="/contratos_odonto/"><i class="fa fa-reply"></i></a>
                 </li>
@@ -74,7 +76,9 @@
 
                 <blockquote class="col-sm-10">
                     <cite class="text-justify">{{ item.note }}</cite>
+
                 </blockquote>
+                <div class="col-md-4"> <a href="{{ item.image_register.url }}"> <img width="500" height="auto" src="{{ item.image_register.url }}"></a></div>
 
             </div>
             <div class="col-md-4 col-lg-4 col-sm-5">
@@ -82,15 +86,20 @@
                     <blockquote>
                         <footer>Profissional <cite title="Source Title">{{ item.professional }}</cite>
                         </footer>
-                        <footer>Tipo de plano <cite title="Source Title"> {{ item.type_plane }}</cite>
+                        <footer>Tipo de plano <cite title="Source Title">{{ item.type_plane }}</cite>
                         </footer>
-                         <footer>Valor do plano <cite title="Source Title">{{ item.plane_value }}</cite>
+                         <footer>Valor do plano <cite title="Source Title">  R$  {{ item.plane_value }}</cite>
                         </footer>
                          <footer>Data de vencimento <cite title="Source Title">{{ item.date_payment_per_month }}</cite>
                         </footer>
                         <footer>Valor de entrada do plano <cite title="Source Title"> {{ item.input_value }}</cite>
                         </footer>
-                        <footer>Pagou <cite title="Source Title"> {{ situacao }}</cite>
+                        <footer>Foram pagos {{ valor_pago.TotalPagoTratamento }}% do plano</footer></cite>
+                        <footer>Faltam R${{ valor_pago.leftover_value }}</footer></cite>
+                        <footer>Último pagamento em {{ valor_pago.date_payment }}</footer></cite>
+                        Serviço(s)
+                        {% for i in proposta.services.all %}
+                        <footer>{{ i }} valor:{{ i.cost }}</footer></cite>{% endfor %}
                         </footer>
                        <br>
                     </blockquote>

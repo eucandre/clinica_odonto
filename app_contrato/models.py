@@ -141,7 +141,7 @@ class RecebimentoPlanoOdonto(models.Model):
         Na views ou no form elaborar uma funcao para determinar se serah cobrado jurus.
     """
     name_client = models.ForeignKey(Contrato_odonto)
-    date_payment = models.DateField(auto_now=True)
+    date_payment = models.DateField(auto_now=True)#{'type':'datetime-local'
     payment_for_the_month = models.DateField()
     amount_receivedD = models.FloatField(blank=True)
     amount_receivedCC = models.FloatField(blank=True)
@@ -154,7 +154,7 @@ class RecebimentoPlanoOdonto(models.Model):
     user = models.ForeignKey(User)
 
     def getMes(self):
-        self.date_today = datetime.today().month
+        self.date_payment = datetime.today().month
         return self.date_payment
 
     def TotalPagoTratamento(self):

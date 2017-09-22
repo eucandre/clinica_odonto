@@ -58,13 +58,14 @@ class FormAgendamentoPlanoOdonto(forms.ModelForm):
     atendence = forms.ChoiceField(label='Tipo de atendimento',choices=AGENDAMENTO,widget=forms.Select(attrs={'class': 'form-control'}))
     professional = forms.ModelChoiceField(queryset=Profissionais.objects.all(),
                                           widget=forms.Select(attrs={'class': 'form-control'}))
-    date_atendence = forms.DateTimeField(label='Data e hora para ser atendido',widget=forms.DateInput(attrs={'type':'date','class':'form-control', 'placeholder':'dd/mm/yyyy HH:MM ' }))
-    note = forms.CharField(label='Observacao',widget=forms.Textarea(attrs={'class': 'form-control'}))
-    active = forms.BooleanField(label='Ativo ?',widget=forms.CheckboxInput(attrs={'class': 'flat'}))
+    date_atendence = forms.DateField(label='Data de atendimento',widget=forms.DateInput(attrs={'type':'date','class':'form-control', 'placeholder':'dd/mm/yyyy HH:MM ' }))
+    time_atendence = forms.TimeField(label='Hora para ser atendido',widget=forms.TimeInput(attrs={'type':'time','class':'form-control', 'placeholder':'HH:MM' }))
+    note = forms.CharField(label='Observação',widget=forms.Textarea(attrs={'class': 'form-control'}))
+    active = forms.BooleanField(required=False,label='Ativo ?',widget=forms.CheckboxInput(attrs={'class': 'flat'}))
 
     class Meta:
         model = agendamemto_plano_odonto
-        fields = ('name_client','atendence','professional','date_atendence','active','note')
+        fields = ('name_client','atendence','professional','date_atendence','time_atendence','active','note')
 
 class FormAgendamentoPlanoNutri(forms.ModelForm):
     name_client = forms.ModelChoiceField(label="Nome do Cliente",queryset=Cliente.objects.all(),
@@ -76,7 +77,7 @@ class FormAgendamentoPlanoNutri(forms.ModelForm):
 
     date_atendence = forms.DateField(label='Data atendiemnto',widget=forms.DateInput(attrs={'type':'date','class':'form-control', 'placeholder':'dd/mm/yyyy HH:MM ' }))
     note = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}))
-    active = forms.BooleanField(widget=forms.CheckboxInput(attrs={'class': 'flat'}))
+    active = forms.BooleanField(required=False,widget=forms.CheckboxInput(attrs={'class': 'flat'}))
 
 
     class Meta:
@@ -93,7 +94,7 @@ class FormAgendamentoPlanoPsico(forms.ModelForm):
 
     date_atendence = forms.DateField(label='Data atendiemento',widget=forms.DateInput(attrs={'type':'date','class':'form-control', 'placeholder':'dd/mm/yyyy HH:MM ' }))
     note = forms.CharField(widget=forms.Textarea(attrs={'class': 'form-control'}))
-    active = forms.BooleanField(widget=forms.CheckboxInput(attrs={'class': 'flat'}))
+    active = forms.BooleanField(required=False,widget=forms.CheckboxInput(attrs={'class': 'flat'}))
 
 
     class Meta:

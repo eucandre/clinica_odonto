@@ -19,7 +19,8 @@ class FormContratoOdonto(forms.ModelForm):
     plane_value = forms.CharField(label="Valor do plano",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     date_payment_per_month = forms.ChoiceField(label='Dia de vencimento mensal',choices=DAY ,widget=forms.Select(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
     input_value = forms.CharField(label="Valor de entrada pago",max_length=150, initial=0, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12', 'placeholder':'R$'}))
-    active = forms.BooleanField(label='Ativo na clínica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
+    value_per_mounth = forms.CharField(label="Valor da parcela",max_length=150, initial=0, widget=forms.TextInput(attrs={'type':'number','class':'form-control col-md-7 col-xs-12', 'placeholder':'R$'}))
+    active = forms.BooleanField(required=False,label='Ativo na clínica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
     note = forms.CharField(label='Observação',widget=forms.Textarea(attrs={"class":"form-control"}))
 
     class Meta:
@@ -37,7 +38,7 @@ class FormContratoNutri(forms.ModelForm):
     plane_value = forms.CharField(label="Valor do plano",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     date_payment_per_month = forms.ChoiceField(label='Dia de vencimento mensal',choices=DAY ,widget=forms.Select(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
     input_value = forms.CharField(label="Valor de entrada pago",max_length=150,initial=0, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
-    active = forms.BooleanField(label='Ativo na clínica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
+    active = forms.BooleanField(required=False,label='Ativo na clínica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
     note = forms.CharField(label='Observação',widget=forms.Textarea(attrs={"class":"form-control"}))
     class Meta:
         model= Contrato_nutricionista
@@ -53,7 +54,7 @@ class FormContratoPsico(forms.ModelForm):
     plane_value = forms.CharField(label="Valor do plano",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     date_payment_per_month = forms.ChoiceField(label='Dia de vencimento mensal', choices=DAY ,widget=forms.Select(attrs={'class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
     input_value = forms.CharField(label="Valor de entrada pago",max_length=150,initial=0, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
-    active = forms.BooleanField(label='Ativo na clínica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
+    active = forms.BooleanField(required=False,label='Ativo na clínica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
     note = forms.CharField(label='Observação',widget=forms.Textarea(attrs={"class":"form-control"}))
     class Meta:
         model= Contrato_psicologo
@@ -62,7 +63,7 @@ class FormContratoPsico(forms.ModelForm):
 
 class FormRecebimentoPlano(forms.ModelForm):
     name_client=forms.ModelChoiceField(label="Nome do Cliente",queryset=Contrato_odonto.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
-    payment_for_the_month = forms.DateField(label='Recebimento referente a data', widget=forms.DateInput(attrs={'type':'datetime-local','class':'form-control'}))
+    payment_for_the_month = forms.DateField(label='Recebimento referente a data', widget=forms.DateInput(attrs={'type':'date','class':'form-control'}))
     amount_receivedD=forms.CharField(initial=0,label="Valor pago em dinheiro",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     amount_receivedCC=forms.CharField(initial=0,label="Valor pago em cartao credito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     amount_receivedCD=forms.CharField(initial=0,label="Valor pago em cartao debito",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
@@ -70,11 +71,11 @@ class FormRecebimentoPlano(forms.ModelForm):
     amount_receiveCH=forms.CharField(initial=0,label="Valor pago em cheque",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     amount_receivePR=forms.CharField(initial=0,label="Valor pago sobra promissoria",max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     type_of_payment = forms.MultipleChoiceField(label='Modo de pagamento', choices=PAYMENT_MODEL,widget=forms.CheckboxSelectMultiple(attrs={'class': 'flat'}))
-
+    leftover_value = forms.FloatField(initial=0, widget=forms.TextInput(attrs={'type':'number', 'class':'form-control'}))
     class Meta:
         model = RecebimentoPlanoOdonto
         fields = ('name_client', 'amount_receivedD','payment_for_the_month','amount_receivedCC','amount_receivedCD','amount_receivedB','amount_receiveCH'
-                  ,'amount_receivePR','type_of_payment')
+                  ,'amount_receivePR','type_of_payment','leftover_value')
 
 class FormRecebimentoPlanoPsico(forms.ModelForm):
     name_client=forms.ModelChoiceField(label="Nome do Cliente",queryset=Contrato_psicologo.objects.all(), widget=forms.Select(attrs={'class':'form-control'}))
@@ -126,7 +127,7 @@ class FormContratoEmpresa(forms.ModelForm):
                                    widget=forms.TextInput(attrs={'class': 'form-control col-md-7 col-xs-12'}))
     contract_date = forms.DateField( label="Data de Assinatura do Contrato",
                                    widget=forms.DateInput(attrs={'type': 'datetime-local', 'class': 'form-control'}))
-    active = forms.BooleanField(label='Ativo na clinica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
+    active = forms.BooleanField(required=False,label='Ativo na clinica ?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
     note = forms.CharField(label='Observacao', widget=forms.Textarea(attrs={"class": "form-control"}))
 
     class Meta:

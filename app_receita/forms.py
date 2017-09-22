@@ -27,7 +27,7 @@ class FormOrcamentoOdontologico(forms.ModelForm):
     services = forms.ModelMultipleChoiceField(label='Serviços',queryset=Servicos.objects.all(),widget=forms.CheckboxSelectMultiple(attrs={'class':'flat'}))
     date_to_end_tratment= forms.DateField(label='Data para o fim do tratamento',widget=forms.DateInput(attrs={'type':'date','class':'form-control'}))
     value_tratment = forms.CharField(label="Valor do tratamento",max_length=150, widget=forms.TextInput(attrs={'class' : 'form-control col-md-7 col-xs-12'}))
-    active = forms.BooleanField(label='Ativo na clinica?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
+    active = forms.BooleanField(required=False,label='Ativo na clinica?', widget=forms.CheckboxInput(attrs={'class': 'flat'}))
     class Meta:
         model = Orcamento_Plano_Odonto
         fields = ('name_client', 'tooths', 'faces_tooths', 'services','date_to_end_tratment', 'value_tratment', 'active')

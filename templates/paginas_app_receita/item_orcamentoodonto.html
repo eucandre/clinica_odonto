@@ -76,7 +76,13 @@
                     {% endfor %}
                     {% for i in item.faces_tooths.all %}<br>
                     Face do dente <cite class="text-justify">{{ i }}</cite>
-                    {% endfor %}
+                    {% endfor %}<br />
+                    <div class="col-md-4">
+                        <div class="title">Serviços</div>
+                        {% for i in item.services.all %}<br />
+                        <cite class="text-justify center-block">{{ i }} valor de R$ {{ i.cost }}</cite>
+                        {% endfor %}
+                    </div>
                 </blockquote>
 
             </div>

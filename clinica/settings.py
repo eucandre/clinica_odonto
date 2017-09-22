@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     'app_atendimento',
     'app_campanha',
     'app_contas',
-
+    'simple_history',
 ]
 
 
@@ -52,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'simple_history.middleware.HistoryRequestMiddleware',
 ]
 
 ROOT_URLCONF = 'clinica.urls'

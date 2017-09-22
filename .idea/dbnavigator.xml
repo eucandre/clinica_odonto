@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="true" />
+    <value-preview-text-wrapping value="false" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DataExportManager">
@@ -24,6 +24,84 @@
     <autoscroll-from-editor value="true" />
     <show-object-properties value="true" />
     <loaded-nodes />
+  </component>
+  <component name="DBNavigator.Project.DatabaseConsoleManager">
+    <connection id="c6e5f1dc-c506-4b7f-a61c-066555215d1c">
+      <console name="Connection" type="STANDARD" />
+    </connection>
+  </component>
+  <component name="DBNavigator.Project.DatasetFilterManager">
+    <filter-list connection-id="c6e5f1dc-c506-4b7f-a61c-066555215d1c" dataset="main.app_campanha_campanha_venda" active-filter-id="f59555cd-c9f6-4464-9f83-d03bfff862da">
+      <filter id="f59555cd-c9f6-4464-9f83-d03bfff862da" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="1" active="true" />
+      </filter>
+    </filter-list>
+    <filter-list connection-id="c6e5f1dc-c506-4b7f-a61c-066555215d1c" dataset="main.django_migrations" active-filter-id="b6342304-7608-414d-88bb-6bcc5e9fd93c">
+      <filter id="b6342304-7608-414d-88bb-6bcc5e9fd93c" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="1" active="true" />
+      </filter>
+    </filter-list>
+    <filter-list connection-id="c6e5f1dc-c506-4b7f-a61c-066555215d1c" dataset="main.app_base_funcionario" active-filter-id="4dad356c-0d80-48a6-890c-bdd8830eaf43">
+      <filter id="4dad356c-0d80-48a6-890c-bdd8830eaf43" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="1" active="true" />
+      </filter>
+    </filter-list>
+    <filter-list connection-id="c6e5f1dc-c506-4b7f-a61c-066555215d1c" dataset="main.app_base_cliente" active-filter-id="c3edb544-b975-40e1-922f-e3e40bce9ac9">
+      <filter id="c3edb544-b975-40e1-922f-e3e40bce9ac9" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="1" active="true" />
+      </filter>
+    </filter-list>
+    <filter-list connection-id="c6e5f1dc-c506-4b7f-a61c-066555215d1c" dataset="main.django_content_type" active-filter-id="9082c5de-c6a4-47dd-9110-e56f4bd4d9cb">
+      <filter id="9082c5de-c6a4-47dd-9110-e56f4bd4d9cb" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="1" active="true" />
+      </filter>
+    </filter-list>
+    <filter-list connection-id="c6e5f1dc-c506-4b7f-a61c-066555215d1c" dataset="main.django_admin_log" active-filter-id="4ecac2db-bb3a-4ee4-b85a-31486512a9d7">
+      <filter id="4ecac2db-bb3a-4ee4-b85a-31486512a9d7" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="1" active="true" />
+      </filter>
+    </filter-list>
+    <filter-list connection-id="c6e5f1dc-c506-4b7f-a61c-066555215d1c" dataset="main.django_session" active-filter-id="e7a10f6b-c97a-47da-b31f-1f82f5b90348">
+      <filter id="e7a10f6b-c97a-47da-b31f-1f82f5b90348" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="session_key" operator="=" value="1" active="true" />
+      </filter>
+    </filter-list>
+    <filter-list connection-id="c6e5f1dc-c506-4b7f-a61c-066555215d1c" dataset="main.app_base_cotatos_clientes_indicacoes" active-filter-id="" />
+    <filter-list connection-id="c6e5f1dc-c506-4b7f-a61c-066555215d1c" dataset="main.auth_user" active-filter-id="c6e5f958-2fa9-43cd-b0bb-ec719e3e1df8">
+      <filter id="c6e5f958-2fa9-43cd-b0bb-ec719e3e1df8" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="1" active="true" />
+      </filter>
+    </filter-list>
+    <filter-list connection-id="c6e5f1dc-c506-4b7f-a61c-066555215d1c" dataset="main.auth_user_groups" active-filter-id="93a3783b-5054-4f46-a3c7-5016a5de7d62">
+      <filter id="93a3783b-5054-4f46-a3c7-5016a5de7d62" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="1" active="true" />
+      </filter>
+    </filter-list>
+    <filter-list connection-id="c6e5f1dc-c506-4b7f-a61c-066555215d1c" dataset="main.auth_group" active-filter-id="02bebcae-b06b-4f9c-bcc7-f4b9d12b4409">
+      <filter id="02bebcae-b06b-4f9c-bcc7-f4b9d12b4409" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="1" active="true" />
+      </filter>
+    </filter-list>
+    <filter-list connection-id="c6e5f1dc-c506-4b7f-a61c-066555215d1c" dataset="main.app_campanha_campanha" active-filter-id="506db276-e332-4fe1-9a4f-d05a30534f87">
+      <filter id="506db276-e332-4fe1-9a4f-d05a30534f87" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="1" active="true" />
+      </filter>
+    </filter-list>
+    <filter-list connection-id="c6e5f1dc-c506-4b7f-a61c-066555215d1c" dataset="main.app_estoque_montante" active-filter-id="1570c80f-6f87-4313-92af-9dbdcd9ee714">
+      <filter id="1570c80f-6f87-4313-92af-9dbdcd9ee714" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="1" active="true" />
+      </filter>
+    </filter-list>
+    <filter-list connection-id="c6e5f1dc-c506-4b7f-a61c-066555215d1c" dataset="main.auth_permission" active-filter-id="d4a1d75b-0f7a-4a39-a1a2-8262e58ac6ee">
+      <filter id="d4a1d75b-0f7a-4a39-a1a2-8262e58ac6ee" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="1" active="true" />
+      </filter>
+    </filter-list>
+    <filter-list connection-id="c6e5f1dc-c506-4b7f-a61c-066555215d1c" dataset="main.app_receita_orcamento_plano_odonto" active-filter-id="ee63c962-0209-4d32-ba52-7b9a2a3a29f4">
+      <filter id="ee63c962-0209-4d32-ba52-7b9a2a3a29f4" name="1" temporary="false" custom-name="false" type="basic" join-type="AND">
+        <condition column="id" operator="=" value="1" active="true" />
+      </filter>
+    </filter-list>
   </component>
   <component name="DBNavigator.Project.EditorStateManager">
     <last-used-providers />
@@ -47,7 +125,87 @@
     <recently-used-interfaces />
   </component>
   <component name="DBNavigator.Project.Settings">
-    <connections />
+    <connections>
+      <connection id="c6e5f1dc-c506-4b7f-a61c-066555215d1c" active="true">
+        <database>
+          <name value="Connection" />
+          <description value="" />
+          <database-type value="SQLITE" />
+          <config-type value="BASIC" />
+          <database-version value="3.0" />
+          <driver-source value="BUILTIN" />
+          <driver-library value="" />
+          <driver value="" />
+          <url-type value="FILE" />
+          <host value="" />
+          <port value="" />
+          <database value="" />
+          <files>
+            <file path="C:\Users\Carlos\Desktop\clinica_odonto-master\db.clinica" schema="main" />
+          </files>
+          <os-authentication value="false" />
+          <empty-password value="false" />
+          <user value="" />
+          <password value="" />
+        </database>
+        <properties>
+          <auto-commit value="false" />
+        </properties>
+        <ssh-settings>
+          <active value="false" />
+          <proxy-host value="" />
+          <proxy-port value="22" />
+          <proxy-user value="" />
+          <proxy-password value="" />
+          <auth-type value="PASSWORD" />
+          <key-file value="" />
+          <key-passphrase value="" />
+        </ssh-settings>
+        <details>
+          <charset value="UTF-8" />
+          <ddl-file-binding value="true" />
+          <database-logging value="false" />
+          <connect-automatically value="false" />
+          <restore-workspace value="true" />
+          <restore-workspace-deep value="true" />
+          <environment-type value="default" />
+          <idle-time-to-disconnect value="30" />
+          <password-expiry-time value="10" />
+          <max-connection-pool-size value="7" />
+          <alternative-statement-delimiter value="" />
+        </details>
+        <object-filters hide-empty-schemas="false">
+          <object-type-filter use-master-settings="true">
+            <object-type name="SCHEMA" enabled="true" />
+            <object-type name="USER" enabled="true" />
+            <object-type name="ROLE" enabled="true" />
+            <object-type name="PRIVILEGE" enabled="true" />
+            <object-type name="CHARSET" enabled="true" />
+            <object-type name="TABLE" enabled="true" />
+            <object-type name="VIEW" enabled="true" />
+            <object-type name="MATERIALIZED_VIEW" enabled="true" />
+            <object-type name="NESTED_TABLE" enabled="true" />
+            <object-type name="COLUMN" enabled="true" />
+            <object-type name="INDEX" enabled="true" />
+            <object-type name="CONSTRAINT" enabled="true" />
+            <object-type name="DATASET_TRIGGER" enabled="true" />
+            <object-type name="DATABASE_TRIGGER" enabled="true" />
+            <object-type name="SYNONYM" enabled="true" />
+            <object-type name="SEQUENCE" enabled="true" />
+            <object-type name="PROCEDURE" enabled="true" />
+            <object-type name="FUNCTION" enabled="true" />
+            <object-type name="PACKAGE" enabled="true" />
+            <object-type name="TYPE" enabled="true" />
+            <object-type name="TYPE_ATTRIBUTE" enabled="true" />
+            <object-type name="ARGUMENT" enabled="true" />
+            <object-type name="DIMENSION" enabled="true" />
+            <object-type name="CLUSTER" enabled="true" />
+            <object-type name="DBLINK" enabled="true" />
+          </object-type-filter>
+          <object-name-filters />
+        </object-filters>
+      </connection>
+    </connections>
     <browser-settings>
       <general>
         <display-mode value="TABBED" />
@@ -99,20 +257,20 @@
       <lookup-filters>
         <lookup-objects>
           <object-type name="SCHEMA" enabled="true" />
-          <object-type name="USER" enabled="false" />
-          <object-type name="ROLE" enabled="false" />
-          <object-type name="PRIVILEGE" enabled="false" />
-          <object-type name="CHARSET" enabled="false" />
+          <object-type name="USER" enabled="true" />
+          <object-type name="ROLE" enabled="true" />
+          <object-type name="PRIVILEGE" enabled="true" />
+          <object-type name="CHARSET" enabled="true" />
           <object-type name="TABLE" enabled="true" />
           <object-type name="VIEW" enabled="true" />
           <object-type name="MATERIALIZED VIEW" enabled="true" />
-          <object-type name="NESTED TABLE" enabled="false" />
-          <object-type name="COLUMN" enabled="false" />
+          <object-type name="NESTED TABLE" enabled="true" />
+          <object-type name="COLUMN" enabled="true" />
           <object-type name="INDEX" enabled="true" />
           <object-type name="CONSTRAINT" enabled="true" />
           <object-type name="DATASET TRIGGER" enabled="true" />
           <object-type name="DATABASE TRIGGER" enabled="true" />
-          <object-type name="SYNONYM" enabled="false" />
+          <object-type name="SYNONYM" enabled="true" />
           <object-type name="SEQUENCE" enabled="true" />
           <object-type name="PROCEDURE" enabled="true" />
           <object-type name="FUNCTION" enabled="true" />
@@ -226,21 +384,21 @@
             <filter-element type="OBJECT" id="dblink" selected="true" />
           </user-schema>
           <public-schema>
-            <filter-element type="OBJECT" id="table" selected="false" />
-            <filter-element type="OBJECT" id="view" selected="false" />
-            <filter-element type="OBJECT" id="materialized view" selected="false" />
-            <filter-element type="OBJECT" id="index" selected="false" />
-            <filter-element type="OBJECT" id="constraint" selected="false" />
-            <filter-element type="OBJECT" id="trigger" selected="false" />
-            <filter-element type="OBJECT" id="synonym" selected="false" />
-            <filter-element type="OBJECT" id="sequence" selected="false" />
-            <filter-element type="OBJECT" id="procedure" selected="false" />
-            <filter-element type="OBJECT" id="function" selected="false" />
-            <filter-element type="OBJECT" id="package" selected="false" />
-            <filter-element type="OBJECT" id="type" selected="false" />
-            <filter-element type="OBJECT" id="dimension" selected="false" />
-            <filter-element type="OBJECT" id="cluster" selected="false" />
-            <filter-element type="OBJECT" id="dblink" selected="false" />
+            <filter-element type="OBJECT" id="table" selected="true" />
+            <filter-element type="OBJECT" id="view" selected="true" />
+            <filter-element type="OBJECT" id="materialized view" selected="true" />
+            <filter-element type="OBJECT" id="index" selected="true" />
+            <filter-element type="OBJECT" id="constraint" selected="true" />
+            <filter-element type="OBJECT" id="trigger" selected="true" />
+            <filter-element type="OBJECT" id="synonym" selected="true" />
+            <filter-element type="OBJECT" id="sequence" selected="true" />
+            <filter-element type="OBJECT" id="procedure" selected="true" />
+            <filter-element type="OBJECT" id="function" selected="true" />
+            <filter-element type="OBJECT" id="package" selected="true" />
+            <filter-element type="OBJECT" id="type" selected="true" />
+            <filter-element type="OBJECT" id="dimension" selected="true" />
+            <filter-element type="OBJECT" id="cluster" selected="true" />
+            <filter-element type="OBJECT" id="dblink" selected="true" />
           </public-schema>
           <any-schema>
             <filter-element type="OBJECT" id="table" selected="true" />

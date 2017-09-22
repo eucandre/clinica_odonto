@@ -17,7 +17,7 @@ class FormInsereProfissionais(forms.ModelForm):
     register = forms.CharField(label='Rregistro',max_length=150, widget=forms.TextInput(attrs={'class':'form-control','id':'inputSuccess5'}))
     birth_day = forms.DateField(label='Data de nascimento',widget=forms.DateInput(attrs={'type':'date','class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
     note = forms.CharField(label='Observação',widget=forms.Textarea(attrs={"class":"form-control"}))
-    active = forms.BooleanField(label='Ativo na clínica?',widget=forms.CheckboxInput(attrs={'class':'flat'}))
+    active = forms.BooleanField(required=False,label='Ativo na clínica?',widget=forms.CheckboxInput(attrs={'class':'flat'}))
 
     class Meta:
         model = Profissionais
@@ -39,7 +39,7 @@ class FormInsereFuncionario(forms.ModelForm):
     birth_day = forms.DateField(label='Data de nascimento',widget=forms.DateInput(attrs={'type':'date','class':'form-control', "data-inputmask":"'mask': '99/99/9999'"}))
     note = forms.CharField(label='Observação',widget=forms.Textarea(attrs={"class":"form-control"}))
     salary = forms.FloatField(label='Salário',widget=forms.TextInput(attrs={'type':'number','class':'form-control col-md-7 col-xs-12'}))
-    active = forms.BooleanField(label='Ativo na clínica?',widget=forms.CheckboxInput(attrs={'class':'flat'}))
+    active = forms.BooleanField(required=False,label='Ativo na clínica?',widget=forms.CheckboxInput(attrs={'class':'flat'}))
 
     class Meta:
         model = Funcionario
@@ -60,7 +60,7 @@ class FormInsereCliente(forms.ModelForm):
     district = forms.CharField(label='Bairro',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     city = forms.CharField(label='Cidade',max_length=150, widget=forms.TextInput(attrs={'class':'form-control col-md-7 col-xs-12'}))
     Note = forms.CharField(label='Observação',widget=forms.Textarea(attrs={"class":"form-control"}))
-    active = forms.BooleanField(label='Cliente ativo?',widget=forms.CheckboxInput(attrs={'class':'flat'}))
+    active = forms.BooleanField(required=False,label='Cliente ativo?',widget=forms.CheckboxInput(attrs={'class':'flat'}))
 
     class Meta:
         model = Cliente
