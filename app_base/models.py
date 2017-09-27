@@ -73,6 +73,8 @@ class Funcionario(models.Model):
     history = HistoricalRecords()
 
 
+
+
     def __unicode__(self):
         return self.name
 
@@ -106,7 +108,15 @@ class Cliente(models.Model):
     Note = models.TextField(blank=True)
     active = models.BooleanField(blank=True)
     user = models.ForeignKey(User)
-    
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
 
 
     def __unicode__(self):
@@ -129,6 +139,7 @@ class Cotatos_Clientes_indicacoes(models.Model):
     indicado_por = models.ForeignKey(Cliente)
     user = models.ForeignKey(User)
 
+    history = HistoricalRecords()
     def __unicode__(self):
         return self.name
 
@@ -138,23 +149,9 @@ class Cotatos_Clientes_indicacoes(models.Model):
 
     @_history_user.setter
     def _history_user(self, value):
-        self.user = value    
+        self.user = value
     
 
     class Meta:
         verbose_name_plural = 'Indicados'
 
-register(Cotatos_Clientes_indicacoes)
-
-class HistoricalRecordsVerbose(HistoricalRecords):
-    def get_extra_fields(self, model, fields):
-        def verbose_str(self):
-            return '%s Alterado por %s como de %s' % (
-                self.history_object, self.history_user, self.history_date)
-
-        extra_fields = super(
-            HistoricalRecordsVerbose, self).get_extra_fields(model, fields)
-        extra_fields['__str__'] = verbose_str
-        return extra_fields
-
-register(Cliente, records_class=HistoricalRecordsVerbose)

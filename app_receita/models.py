@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from app_base.models import *
 from datetime import *
 from django.contrib.auth.models import *
-
+from simple_history.models import HistoricalRecords
 PAYMENT_MODEL = ((u'CCredito', 'CCredito'),
                  (u'CDebito', 'CDebito'),
                  (u'Boleto', 'Boleto'),
@@ -38,6 +38,16 @@ class Servicos(models.Model):
     pscico = models.BooleanField(blank=True)
     professional = models.ManyToManyField(Profissionais, blank=True)
 
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
+
     def __unicode__(self):
         return self.name
 
@@ -47,6 +57,16 @@ class Servicos(models.Model):
 class Dentes(models.Model):
     number_tooth = models.CharField(max_length=150, choices=TOOTH)
     user = models.ForeignKey(User)
+
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
 
     def __unicode__(self):
         return self.number_tooth
@@ -58,6 +78,16 @@ class Tipo_Recebimento(models.Model):
 
     type_payment = models.CharField(max_length=150, choices=PAYMENT_MODEL)
 
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
+
     def __unicode__(self):
         return self.type_payment
 
@@ -67,6 +97,16 @@ class Tipo_Recebimento(models.Model):
 class FacesDentes(models.Model):
     face = models.CharField(max_length=20, choices=FACES_TOOTH)
     user = models.ForeignKey(User)
+
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
 
     def __unicode__(self):
         return self.face
@@ -86,6 +126,16 @@ class Orcamento_Plano_Odonto(models.Model):
     note = models.TextField(blank=True)
     active = models.BooleanField(blank=True)
     user = models.ForeignKey(User)
+
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
 
     def __unicode__(self):
         return self.name_client.__unicode__()
@@ -111,6 +161,16 @@ class OrcamentoPlanoNutri(models.Model):
     active = models.BooleanField(blank=True)
     user = models.ForeignKey(User)
 
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
+
     def __unicode__(self):
         return self.name_client.__str__()
 
@@ -130,6 +190,16 @@ class OrcamentoPlanoPsico(models.Model):
     note = models.TextField(blank=True)
     active = models.BooleanField(blank=True)
     user = models.ForeignKey(User)
+
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
 
     def __unicode__(self):
         return self.name_client.__str__()
@@ -164,6 +234,16 @@ class RecebimentoAvulso(models.Model):
     note = models.TextField(blank=True)
     type_of_payment = models.ManyToManyField(Tipo_Recebimento)
     user = models.ForeignKey(User)
+
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
 
     def __unicode__(self):
         return self.name_client.__str__()

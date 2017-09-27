@@ -2,6 +2,7 @@ from __future__ import unicode_literals
 from app_base.models import *
 from app_receita.models import *
 from django.contrib.auth.models import *
+from simple_history.models import HistoricalRecords
 
 TIPO_PLANO = ((u'Odonto', 'Odonto'), (u'Nutri', 'Nutri'), (u'Psico', 'Psico'),(u'Full', 'Full'))
 
@@ -17,6 +18,16 @@ class Contrato_Empresa(models.Model):
     contract_date = models.DateField(auto_now=True,unique_for_date=True)
     active = models.BooleanField(blank=True)
     note = models.TextField()
+
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
 
     def __unicode__(self):
         return self.name_employe

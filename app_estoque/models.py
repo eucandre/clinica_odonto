@@ -3,6 +3,7 @@ from __future__ import unicode_literals
 from django.db import models
 from app_base.models import *
 from django.contrib.auth.models import *
+from simple_history.models import HistoricalRecords
 
 TYPE_PRODUCT = ((u'Limpeza','Limpeza'),(u'Escritorio','Escritorio')
 ,(u'Informatica','Informatica'),(u'Bucal profissional','Bucal profissional'),(u'Bucal venda','Bucal venda'))
@@ -24,6 +25,16 @@ class Fornecedor(models.Model):
     active = models.BooleanField(blank=True)
     user = models.ForeignKey(User)
 
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
+
     def __unicode__(self):
         return self.name
 
@@ -38,6 +49,16 @@ class Produto( models.Model):
     active = models.BooleanField(blank=True)
     user = models.ForeignKey(User)
 
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
+
     def __unicode__(self):
         return self.name
 
@@ -51,6 +72,16 @@ class Retira_Produto(models.Model):
     amount_withdrawal = models.FloatField()
     amout_refresh = models.CharField(max_length=150)# Sera atualizada pelo formulario
     user = models.ForeignKey(User)
+
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
 
     def __unicode__(self):
         return self.product.__str__()
@@ -67,6 +98,16 @@ class Compra_Produto(models.Model):
     date_vaidate = models.DateField()
     user = models.ForeignKey(User)
 
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
+
     def __unicode__(self):
         return self.product.__str__()
 
@@ -77,6 +118,16 @@ class Montante(models.Model):
 
     montante = models.CharField(max_length=150 )#esta variavel sera atualizada no forms
     user = models.ForeignKey(User)
+
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
 
     def save(self, force_insert=False, force_update=False, using=None,
              update_fields=None):

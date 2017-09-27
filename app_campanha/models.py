@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 from django.db import models
 from app_base.models import *
+from simple_history.models import HistoricalRecords
 
 class campanha(models.Model):
     name = models.CharField(max_length=150)
@@ -14,6 +15,16 @@ class campanha(models.Model):
     note = models.TextField()
     user = models.ForeignKey(User)
 
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
+
     def __unicode__(self):
         return self.name
 
@@ -24,6 +35,16 @@ class campanha_venda(models.Model):
     value_sell = models.IntegerField()
     note = models.TextField()
     user = models.ForeignKey(User)
+
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
 
     def __unicode__(self):
         return self.name_seller.__unicode__()
