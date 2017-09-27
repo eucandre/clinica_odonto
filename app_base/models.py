@@ -3,6 +3,8 @@ from __future__ import unicode_literals
 from django.db import models
 
 from django.contrib.auth.models import *
+from simple_history.models import HistoricalRecords
+from simple_history import register
 
 PAYMENT_MODEL=((u'CCredito','CCredito'),(u'CDebito', 'CDebito'),
                (u'Boleto', 'Boleto'), (u'Dinheiro', 'Dinheiro'),
@@ -33,9 +35,18 @@ class Profissionais(models.Model):
     note = models.TextField()
     active = models.BooleanField(blank=True)
     user = models.ForeignKey(User)
+    history = HistoricalRecords()
 
     def __unicode__(self):
         return self.name
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value    
 
     class Meta:
         verbose_name_plural = "Profissionais"
@@ -59,9 +70,20 @@ class Funcionario(models.Model):
     salary = models.FloatField()
     active = models.BooleanField(blank=True)
     user = models.ForeignKey(User)
+    history = HistoricalRecords()
+
 
     def __unicode__(self):
         return self.name
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value    
+    
 
     class Meta:
         verbose_name_plural = 'Funcionarios'
@@ -84,9 +106,13 @@ class Cliente(models.Model):
     Note = models.TextField(blank=True)
     active = models.BooleanField(blank=True)
     user = models.ForeignKey(User)
+    
+
 
     def __unicode__(self):
         return self.name
+    
+    
 
     class Meta:
         verbose_name_plural = 'Clientes'
@@ -106,5 +132,29 @@ class Cotatos_Clientes_indicacoes(models.Model):
     def __unicode__(self):
         return self.name
 
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value    
+    
+
     class Meta:
         verbose_name_plural = 'Indicados'
+
+register(Cotatos_Clientes_indicacoes)
+
+class HistoricalRecordsVerbose(HistoricalRecords):
+    def get_extra_fields(self, model, fields):
+        def verbose_str(self):
+            return '%s Alterado por %s como de %s' % (
+                self.history_object, self.history_user, self.history_date)
+
+        extra_fields = super(
+            HistoricalRecordsVerbose, self).get_extra_fields(model, fields)
+        extra_fields['__str__'] = verbose_str
+        return extra_fields
+
+register(Cliente, records_class=HistoricalRecordsVerbose)

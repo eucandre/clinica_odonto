@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from app_receita.models import *
 from app_contrato.models import *
 from django.contrib.auth.models import *
-
+from simple_history.models import HistoricalRecords
 
 AGENDAMENTO=((u'Atendimento clinico', 'Atendimento clinico'),(u'Exame clinico','Exame clinico'))
 EVOLUCAO = ((u'Bom', 'Bom'),
@@ -27,6 +27,15 @@ class relatorio_exame_odonto(models.Model):
     user = models.ForeignKey(User)
     note = models.TextField()
 
+    history = HistoricalRecords()
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
+
     def __unicode__(self):
         return self.name_client.__str__()
 
@@ -43,6 +52,16 @@ class relatorio_exame_psico(models.Model):
     date_now = models.DateField(auto_now=True)
     user = models.ForeignKey(User)
     note = models.TextField()
+
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
 
     def __unicode__(self):
         return self.name_client.__str__()
@@ -61,6 +80,16 @@ class relatorio_exame_nutri(models.Model):
     user = models.ForeignKey(User)
     note = models.TextField()
 
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
+
     def __unicode__(self):
         return self.name_client.__str__()
 
@@ -77,6 +106,16 @@ class agendamemto_plano_odonto(models.Model):
     user = models.ForeignKey(User)
     active = models.BooleanField(blank=True)
     note = models.TextField()
+
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
 
     def __unicode__(self):
         return self.name_client.__unicode__()
@@ -100,6 +139,16 @@ class agendamemto_plano_nutri(models.Model):
     active = models.BooleanField(blank=True)
     note = models.TextField()
 
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
+
     def __unicode__(self):
         return self.name_client.__str__()
 
@@ -115,6 +164,17 @@ class agendamemto_plano_psico(models.Model):
     user = models.ForeignKey(User)
     active = models.BooleanField(blank=True)
     note = models.TextField()
+
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
+
 
     def __unicode__(self):
         return self.name_client.__str__()
@@ -132,6 +192,17 @@ class agendamento_simples(models.Model):
     active = models.BooleanField(blank=True)
     note = models.TextField()
 
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
+
+
     def __unicode__(self):
         return self.name_client.__str__()
 
@@ -146,6 +217,16 @@ class agendamento_plano_filiado(models.Model):
     user = models.ForeignKey(User)
     active = models.BooleanField(blank=True)
     note = models.TextField()
+
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
 
     def __unicode__(self):
         return self.name_client.__str__()
@@ -174,6 +255,16 @@ class relatorio_exame_odonto_continuado(models.Model):
     user = models.ForeignKey(User)
     note = models.TextField()
 
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
+
     def __unicode__(self):
         return self.name_client.__str__()
 
@@ -194,6 +285,16 @@ class relatorio_exame_nutri_continuado(models.Model):
     user = models.ForeignKey(User)
     note = models.TextField()
 
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
+
     def __unicode__(self):
         return self.name_client.__str__()
 
@@ -213,6 +314,16 @@ class relatorio_exame_psico_continuado(models.Model):
     date_now = models.DateField(auto_now=True)
     user = models.ForeignKey(User)
     note = models.TextField()
+
+    history = HistoricalRecords()
+
+    @property
+    def _history_user(self):
+        return self.user
+
+    @_history_user.setter
+    def _history_user(self, value):
+        self.user = value
 
     def __unicode__(self):
         return self.name_client.__str__()

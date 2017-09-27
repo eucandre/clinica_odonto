@@ -45,6 +45,7 @@ def inicia(request):
     janOr, fevOr, marOr, abrOr, maiOr, junOr = 0, 0, 0, 0, 0, 0
     julOr, agoOr, setOr, outOr, novOr, dezOr = 0, 0, 0, 0, 0, 0
 
+    ht = Cliente.history.all()[0]
     contrato_novo = 0
     indicacoes = Cotatos_Clientes_indicacoes.objects.all()
     seg, ter, qua, qui, sex = 0, 0, 0, 0, 0
@@ -143,18 +144,19 @@ def inicia(request):
         j = j + 1
 
     hoje = datetime.today().month
-    if len(agendamemto_plano_odonto.objects.all())==0:
-        return HttpResponseRedirect('/agendamentos_plano_odonto/')
-    else:
-        a=1
-        while a <= len(agendamemto_plano_odonto.objects.all()):
-            agendaobj = agendamemto_plano_odonto.objects.get(pk=a)
-            a=a+1
+    #if len(agendamemto_plano_odonto.objects.all())==0:
+    #   return HttpResponseRedirect('/agendamentos_plano_odonto/')
+    #else:
+    #    a=1
+     #   while a <= len(agendamemto_plano_odonto.objects.all()):
+     #       agendaobj = agendamemto_plano_odonto.objects.get(pk=a)
+     #       a=a+1
     return render(request, 'index.html',{'Janeiro':jan,'Fevereiro':fev,'Marco':mar,'Abril':abr,'Maio':mai,'Junho':jun
         ,'Julho':jul,'Agosto':ago, 'Setembro':set, 'Outubro':out, 'Novembro':nov, 'Dezembro':dez,
                                          'janeiro':janOr,'fevereiro':fevOr,'marco':maiOr,'abril':abrOr,'maio':maiOr,'junho':junOr,'julho':julOr,
                                         'agosto':agoOr,'setembro':setOr,'outubro':outOr,'novembro':novOr,'dezembro':dezOr,
-                                         'contratos_odonto':contrato_novo, 'hoje':hoje, 'indicacoes':len(indicacoes),'agendamento_odonot':agendaobj})
+                                         'contratos_odonto':contrato_novo, 'hoje':hoje, 'indicacoes':len(indicacoes)
+                                         ,'historia':ht})
 
 @login_required(login_url='/login/')
 def insere_profissional(request):
