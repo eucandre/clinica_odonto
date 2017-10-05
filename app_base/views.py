@@ -44,8 +44,24 @@ def inicia(request):
     
     janOr, fevOr, marOr, abrOr, maiOr, junOr = 0, 0, 0, 0, 0, 0
     julOr, agoOr, setOr, outOr, novOr, dezOr = 0, 0, 0, 0, 0, 0
-
-    ht = Cliente.history.all()[0]
+    #--app_base--#
+    hst_cliente = Cliente.history.all()[0]
+    hst_profissionais = Profissionais.history.all()[0]
+    hst_funcionario = Funcionario.history.all()[0]
+    hst_contatos_clientes_indicacoes = Cotatos_Clientes_indicacoes.history.all()[0]
+    #--app_atendimento--#
+    hst_relatorio_exame_odonto = relatorio_exame_odonto.history.all()[0]
+    hst_relatorio_exame_psico = relatorio_exame_psico.history.all()[0]
+    hst_relatorio_exame_nutri = relatorio_exame_nutri.history.all()[0]
+    hst_agendamento_plano_odonto = agendamemto_plano_odonto.history.all()[0]
+    hst_agendamento_plano_nutri = agendamemto_plano_nutri.history.all()[0]
+    hst_agendamento_plano_psico = agendamemto_plano_psico.history.all()[0]
+    hst_agendamento_simples = agendamento_simples.history.all()[0]
+    hst_agendamento_plano_filiado = agendamento_plano_filiado.history.all()[0]
+    hst_relatorio_exame_odonto_continuado = relatorio_exame_odonto_continuado.history.all()[0]
+    hst_relatorio_exame_psico_continuado = relatorio_exame_psico_continuado.history.all()[0]
+    hst_relatorio_exame_nutri_continuado = relatorio_exame_nutri_continuado.history.all()[0]
+    #--app_campanha--#
     contrato_novo = 0
     indicacoes = Cotatos_Clientes_indicacoes.objects.all()
     seg, ter, qua, qui, sex = 0, 0, 0, 0, 0
@@ -156,7 +172,7 @@ def inicia(request):
                                          'janeiro':janOr,'fevereiro':fevOr,'marco':maiOr,'abril':abrOr,'maio':maiOr,'junho':junOr,'julho':julOr,
                                         'agosto':agoOr,'setembro':setOr,'outubro':outOr,'novembro':novOr,'dezembro':dezOr,
                                          'contratos_odonto':contrato_novo, 'hoje':hoje, 'indicacoes':len(indicacoes)
-                                         ,'historia':ht})
+                                         ,'historia':hst_cliente})
 
 @login_required(login_url='/login/')
 def insere_profissional(request):

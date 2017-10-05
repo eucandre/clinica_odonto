@@ -138,8 +138,8 @@ class Cotatos_Clientes_indicacoes(models.Model):
     cliente = models.BooleanField()
     indicado_por = models.ForeignKey(Cliente)
     user = models.ForeignKey(User)
-
     history = HistoricalRecords()
+
     def __unicode__(self):
         return self.name
 

@@ -8,6 +8,8 @@ Criar:
     Editar o form do contrato para condicional da cortezia
     Colocar no dashboard a relação dos funcionarios e suas freequencias.
     Arrumar as relações lógicas do programa, as verificações de ativo, cortezia, etc.
+    Colocar registro de atividades em todos as classses.
+
 
 feito:
     Análise de cortesia;
